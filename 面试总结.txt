@@ -1,0 +1,271 @@
+﻿1.怎么让一个不定宽高的DIV/IMG，垂直水平居中
+	1)display:table-cell可让大小不固定元素或img垂直居中
+		#outerDiv{
+			display:tabel-cell;
+			text-align:center;
+			vertical-align:middle;
+		}
+		img,#innerDiv{
+			display：inline-block；
+			vertical-align:middle;
+		}
+	2)父元素相对定位，子元素绝对定位
+		#div1{
+			position: relative;
+		}
+		img,#div2{
+			position: absolute;
+			top:50%; //相对与父元素的位置
+			left: 50%;
+			transform:translate(-50%,-50%);//移动自身的50%
+		}
+2.position
+	常见四个属性值：
+	static 默认设置	始终会处于页面流给予的位置，一般不常用。
+	relative 相对于自身移动
+	absolute 脱离文档流 相对于有定位属性的父级移动 
+	fixed 脱离文档流  相对于浏览器窗口，以 body 为依据
+	
+	一般都要配合"left"、"top"、"right" 以及  "bottom"属性使用。
+	
+	
+3.px，em，rem  的区别
+	px 像素（Pixel）绝对单位
+		是相对于显示器屏幕分辨率而言的，是一个虚拟长度单位，是计算机系统的数字化图像长度单位，如果 px 要换算成物理长度，需要指定精度 DPI
+	em 是相对长度单位
+		相对于当前对象内文本的字体尺寸。如当前对行内文本的字体尺寸未被人为设置，则相对于浏览器的默认字体尺寸。它会继承父级元素的字体大小，因此并不是一个固定的值。
+	rem （root em，根 em）是 CSS3 新增的一个相对单位
+		相对于 HTML  根元素。浏览器默认字体大小16px
+		除了 IE8 及更早版本外，所有浏览器均已支持 rem
+		
+4.  BFC Block Formatting Context 块级格式化上下文
+		一个独立的渲染区域，只有Block-level box参与
+		它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干
+		
+		
+	Box: 是 CSS 布局的对象和基本单位
+		一个页面是由很多个 Box 组成的，元素的类型和 display 属性，决定了这个 Box 的类型。 
+		不同类型的 Box， 会参与不同的 Formatting Context（一个决定如何渲染文档的容器），因此Box内的元素会以不同的方式渲染。
+		Block-level Box：
+			display：block/list-item/table，参与 block fomatting context
+		Inline-level Box:
+			display：inline/inline-block/inline-table，参与 inline formatting context；
+		Run-in box Box: css3 中才有
+		
+	 Formatting context：
+		Block fomatting context (简称BFC)
+		Inline formatting context (简称IFC)
+	
+	BFC http://www.cnblogs.com/lhb25/p/inside-block-formatting-ontext.html	
+	BFC布局规则：
+		内部的Box会在垂直方向，一个接一个地放置。
+		Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生重叠
+		每个元素的margin box的左边， 与父元素border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。
+		BFC的区域不会与float box重叠。
+		BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。
+		计算BFC的高度时，浮动元素也参与计算
+	哪些元素会生成BFC
+		根元素
+		float属性不为none
+		position为absolute或fixed
+		display为inline-block, table-cell, table-caption, flex, inline-flex
+		overflow不为visible
+		
+5. 文字自动换行
+	word-break：
+		normal  使用浏览器默认的换行规则
+		break-all  允许单词内换行；
+		keep-all  只能在半角空格或连字符处换行
+	word-wrap：
+		normal 是用浏览器默认的换行规则
+		break-word 在 长单词 或 URL地址 内部 进行换行。
+		
+6.	transition和translate 
+		transition：平滑过渡发生变化的属性
+			transtion-propety  设置过渡属性
+			transtion-duration 设置过渡时间
+			transtion-timing-function 设置过渡速度
+			transtion-delay  设置过渡延时
+		translate：通过移动改变元素的位置；有 x、y、z 三个属性
+		
+
+7.	选择器优先级
+	！important>行内样式>id 选择器>类选择器>标签选择器>通配符>继承
+	权重算法：（0，0，0，0），就是当前选择器的权重
+		第一个 0 对应的是 important 的个数
+		第二个 0 对应的是 id 选择器的个数
+		第三个 0 对应的类选择器的个数
+		第四个 0 对应的是标签选择器的个数。
+	比较：
+		先从第一个 0 开始比较，如果第一个 0  大，那么说明这个选择器的权重高，
+		如果第一个相同，比较第二个，依次类推
+	<!-- css层叠顺序 -->
+	z-index大于0  >  z-index:auto/0  > inline/inline-block > float > block > z-index小于0 > background/border
+		1.z-index越大，越优先显示
+		2.默认：后来者居上	
+		
+8.iframe引入页面内容
+	Iframe 是用来在网页中插入第三方页面
+	早期的页面使用 iframe，主要是用于导航栏这种很多页面都相同的部分，这样可以在切换页面的时候避免重复下载。
+	优点：
+		便于修改，模块分离，像一些信息管理系统会用到。
+		但现在基本上不推荐使用。除非特殊需要，一般不推荐使用。
+	缺点：
+		iframe 的创建比一般的 DOM 元素慢了 1-2  个数量级
+		iframe 标签会阻塞页面的加载，如果页面的 onload  事件不能及时触发，会让用户觉得网页加载很慢，用
+	户体验不好.
+		在 Safari 和 Chrome 中可以通过 js 动态设置 iframe 的 src 属性来避免阻塞.
+		iframe 对于 SEO 不友好，替代方案一般就是动态语言的 Incude 机制和 ajax 动态填充内容等.
+	
+	
+9.xhtml 和 html 有什么区别？
+	HTML 是一种基本的 WEB 网页设计语言
+	XHTML 是一个基于 XML  的置标语言
+	最主要的不同：
+		XHTML  元素必须被正确地嵌套。
+		XHTML  元素必须被关闭。
+		标签名必须用小写字母。
+		XHTML  文档必须拥有根元素
+		
+		
+10.CSS 引入的方式有哪些? link 和@import 的区别是?
+	<!-- 行内样式表：元素内嵌 -->
+		<div style="color:red">红</div>
+	<!-- 内部样式：文档内嵌 -->
+		<style type="text/css">
+		#id1{}  .class1{}  div{}
+		</style>
+	<!-- 外部样式表：外部引用 -->
+		CSS代码保存在扩展名为.css的样式表中
+		HTML文件引用扩展名为.css的样式表，有两种方式
+		1.<!-- 链接式(属于xhtml) 1.只能在html文件引用 2.优先加载css页面到页面 -->
+			<head>
+				<link type='text/css' rel="styleSheet" href='css/shouye.css'/>
+			</head>
+		2.<!-- 导入式(属于css2.1) 1.css文件和html文件均可饮用 2.先加载html结构，再加载css文件 -->
+			<style type="text/css">
+				@import url("css/style2.css")
+			</style>
+	区别：
+		前者无兼容性，后者 CSS2.1  以下浏览器不支持
+		Link支持使用 javascript  改变样式，后者不可	
+
+
+11 清除浮动的几种方式？
+	1，父级 div 定义 height
+	原理：父级 div 手动定义 height，就解决了父级 div 无法自动获取到高度的问题。 简单、代码少、容易掌握 ，但
+	只适合高度固定的布局.
+	2，结尾处加空 div 标签 clear：both
+	
+	3，父级 div 定义 伪类：after  和  zoom
+	/*清除浮动代码*/  //可统一卸载reset.css内，减少重复代码
+	.clearfix：after{//IE8 以上和非 IE 浏览器才支持：after
+		content：""；
+		display：block；
+		visibility：hidden；
+		height：0；
+		line-height：0；
+		clear：both；
+	}
+	.clearfix{zoom：1}//zoom(IE 专有属性)可解决 ie6，ie7 浮动问题 
+	
+	4，父级 div 定义 overflow：hidden
+	超出盒子部分会被隐藏，不推荐使用.
+	5.  双伪元素法：
+	.clearfix：before，.clearfix：after  {
+	content：  ""；
+	display：  block；
+	clear：  both；
+	}
+	.clearfix  {
+	zoom：  1；
+	}		
+12 多屏幕适配
+		能否简述一下如何使一套设计方案，适应不同的分辨率，有哪些方法可以实现？
+	1.流式布局：
+		使用非固定像素来定义网页内容，也就是百分比布局，通过盒子的宽度设置成百分比来根据屏幕的宽度来进
+		行伸缩，不受固定像素的限制，内容向两侧填充。
+		这样的布局方式，就是移动 web  开发使用的常用布局方式。这样的布局可以适配移动端不同的分辨率设备。
+	2.响应式开发：
+		那么 Ethan Marcotte 在 2010 年 5  月份提出的一个概念，简而言之，就是一个网站能够兼容多个终端。越来越
+		多的设计师也采用了这种设计。
+	CSS3 中的 Media Query（媒介查询），通过查询 screen  的宽度来指定某个宽度区间的网页布局。
+	   超小屏幕（移动设备）768px  以下
+	   小屏设备 768px-992px
+	   中等屏幕 992px-1200px
+	   宽屏设备 1200px  以上
+	
+	由于响应式开发显得繁琐些，一般使用第三方响应式框架来完成，比如 bootstrap  来完成一部分工作，当然也
+	可以自己写响应式。
+	阐述下移动 web  和响应式的区别：	
+		移动web开发+PC开发
+			应用场景：一般在已经有PC端的网站，单独开发移动端
+			开发：针对性强，开发效率高
+			适配:只适配移动设备，pad上体验相对较差
+			效率：代码简洁，加载快;
+			
+		响应式开发：
+			应用场景：一套页面兼容各种终端，灵活
+			开发：兼容各种终端，效率低
+			适配:只适配移动设备，pad上体验相对较差
+			效率：代码相对复杂，加载慢
+
+
+
+	
+================================
+兼容性问题
+	1.display：flex    在 ie10  以下都是无效的
+		可能出现的问题：
+		导航栏在 chrome 里面样式完好，在 IE 里文字都聚到一起了
+	2.渐进增强和优雅降级
+
+	
+		
+==================================		
+h5+css3
+		
+		
+	CSS3  新特性有哪些？
+		1.颜色：新增 RGBA，HSLA  模式
+		2.文字阴影（text-shadow、）
+		3.边框：
+			圆角border-radius
+			边框阴影box-shadow
+			图片边框border-image
+		4.盒子模型：box-sizing
+		5.背景：
+			background-size设置背景图片的尺寸 
+			background-origin 设置背景图片的原点
+			background-clip  设置背景图片的裁切区域，以","分隔可以设置多背景，用于自适应布局
+		6.渐变：linear-gradient、radial-gradient
+		7.过渡：transition，可实现动画
+		8.自定义动画@keyframes
+		9. ::selection 元素被选中时的样式设置 
+			在 CSS3 中唯一引入的伪元素是
+		10.媒体查询@media
+		11.多栏布局column
+		12.2D转换：transform
+			translate(x，y)
+			rotate(x，y)
+			skew(x，y)
+			scale(x，y)
+		13.3D转换
+				
+只改变背景图片透明度
+   添加等宽高的伪元素单独设置背景
+#main {
+   position: relative;
+}
+#main:after {
+    content : "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(/wp-content/uploads/2010/11/tandem.jpg); 
+    width: 100%;
+    height: 100%;
+    opacity : 0.2;
+    z-index: -1; //用before代替after会 不用设置z-index
+}		
