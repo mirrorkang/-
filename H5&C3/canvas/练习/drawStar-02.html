@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#canvas{
+				border: 1px solid black;
+				display: block;
+				margin: 0 auto ;
+				
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				var canvas=document.getElementById("canvas");
+				var oGc=canvas.getContext('2d');
+//				var color1=oGc.createLinearGradient(0,0,200,200);
+				var color1=oGc.createRadialGradient(100,100,30,100,100,200);
+					color1.addColorStop(0, 'red');
+	           		color1.addColorStop(.3, 'orange');
+	            	color1.addColorStop(.5, 'yellow');
+	            	color1.addColorStop(.7, 'cyan');
+	            	color1.addColorStop(.9, 'blue');
+	            	color1.addColorStop(1, 'purple');
+//					color1.addColorStop(0, '#ff0000');
+//	           		color1.addColorStop(.5, '#ff00f0');
+//	            	color1.addColorStop(.8, '#ccc');
+//	            	color1.addColorStop(1, '#0000ff');
+				oGc.beginPath();
+				oGc.strokeStyle='yellow';
+				oGc.fillStyle=color1;
+				for (var i=0;i<5;i++) {
+					oGc.lineTo(100+Math.cos((18+72*i)/180*Math.PI)*100,100-Math.sin((18+72*i)/180*Math.PI)*100)
+					oGc.lineTo(100+Math.cos((54+72*i)/180*Math.PI)*50,100-Math.sin((54+72*i)/180*Math.PI)*50)
+				}
+				oGc.closePath();
+				oGc.stroke();
+				oGc.fill();
+				
+			}
+		</script>
+	</head>
+	<body>
+		<canvas id="canvas" width="200" height="200"></canvas>
+	</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				text-align:center;
+			}
+			#canvas{
+				background: pink;
+				/*width: 800px;
+				height: 600px;*/
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				var canvas=document.getElementById("canvas");
+				var ogc=canvas.getContext('2d')/*画笔：2d 绘制图形的上下文环境*/
+		//使用2d方法绘制 与getContext('2d')保持一致	
+			//绘制空心方框 strokeRect
+				ogc.strokeStyle='#000';/*定义描边的颜色*/
+				ogc.lineWidth=1;/*定义线条宽度*/
+//				ogc.strokeRect(50.5,50.5,100,200)/*绘制边框*/
+				//strokeRect(x,y,w,h)
+			//绘制实心方框 fillRect	
+				ogc.fillStyle='rgba(0,0,0,.5)'	//定义填充颜色
+//				ogc.fillRect(150,150,200,200)  //绘制填充区域 默认黑色
+			
+//			自定义绘图
+	            //绘制圆
+				ogc.beginPath();/*定义绘制的开始路径*/
+				ogc.arc(400,300,200,0,Math.PI*2,true);/*arc()绘制弧线   PI=180deg*/
+					//arc(x,y,r,beginRadius,endRadius,boolean)
+					//x,y定义圆心的位置。椭圆 半径和圆点值同时缩放
+					//boolean绘制图形时的顺序: false顺时针（默认） true逆时针
+				ogc.closePath();/*定义绘制的闭合路径*/
+//				ogc.stroke();/*绘制边框*/
+				
+				
+				//绘制其他弧度
+			//左耳朵	
+				ogc.beginPath();
+				
+				ogc.fillStyle='rgba(255,0,0,1)'
+				ogc.arc(300,300,100,Math.PI*.5,0,false)
+//				ogc.closePath();
+				ogc.stroke();
+//				ogc.fill();
+			//右耳朵	
+				ogc.beginPath();
+				
+				ogc.fillStyle='rgba(255,0,0,1)'
+				ogc.arc(600,300,100,Math.PI,Math.PI*.5,false)
+//				ogc.closePath();
+				ogc.stroke();
+//				ogc.fill();
+			//头部	
+				ogc.beginPath();
+				ogc.arc(450,450,150,0,Math.PI*2,false)
+//				ogc.closePath();
+				ogc.stroke();
+			//左眼睛		
+				ogc.beginPath();
+				
+				ogc.save();
+				ogc.fillStyle='blank';
+				ogc.scale(.8,1.2)
+				ogc.arc(470,350,30,0,Math.PI*2,false)
+				ogc.closePath();
+
+				ogc.fill();
+			//右眼睛		
+				ogc.beginPath();
+				ogc.scale(1,1)
+				ogc.arc(650,350,30,0,Math.PI*2,false)
+				ogc.restore();
+				ogc.closePath();
+
+				ogc.fill();
+				
+			//嘴巴		
+				ogc.beginPath();
+				ogc.scale(1,0.5)
+				ogc.arc(450,1100,30,0,Math.PI*2,false)
+				ogc.restore();
+//				ogc.closePath();
+
+				ogc.fill();
+				
+			//椭圆	
+//				ogc.beginPath();
+////				ogc.save(); //保留当前绘制条件
+//				ogc.fillStyle='blanchedalmond';
+//				ogc.scale(.8,1.2) //宽高比例  可绘制椭圆 
+//				ogc.arc(300,300,100,0,Math.PI*2,true)
+////				ogc.restore(); //恢复绘制条件
+//				ogc.closePath();
+//				ogc.fill();
+//				
+//				ogc.beginPath();
+//				ogc.fillStyle='yellow';
+//				ogc.arc(300,300,50,0,Math.PI*2,false)
+//				ogc.closePath();
+////				ogc.fill();
+
+				ogc.clearRect();//清除画布
+			}
+		</script>
+		<style type="text/css">
+			div{
+				color: blanchedalmond;
+			}
+		</style>
+	</head>
+	<body>
+		<!--创建canvas画布-->
+		<canvas id="canvas" width="800" height="800">
+			<!--默认  width:300  height:150-->
+			您的浏览器不支持canvas请更换浏览器
+		</canvas>
+	</body>
+</html>

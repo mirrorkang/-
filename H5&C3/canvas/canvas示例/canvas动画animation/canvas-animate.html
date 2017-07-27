@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>动态绘制</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        canvas {
+            background: lightblue;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var x1 = 0;
+            var y1 = 0;
+            var r = 20;
+            var x = r;
+            var y = r;
+
+            function ballInfo(r) {
+                this.r = r;
+                this.x = this.r;
+                this.y = this.r;
+
+                this.changePosition = function (ax, ay) {
+                    this.x += ax;
+                    this.y += ay;
+
+                };
+                this.drawBall = function () {
+                    var oC = document.getElementById('canvas');
+                    /*获取画布，所有的绘制工作全部在画布上实现*/
+                    var oGc = oC.getContext('2d');
+                    /*定义绘图上下文环境，也就是拿起画笔*/
+                    oGc.fillStyle = 'red';
+                    /*定义画笔绘制颜色（默认为黑色），可以是英文表示法、十六进制、rgb、rgba*/
+                    oGc.clearRect(0, 0, oC.width, oC.height);
+                    //画小球
+                    oGc.moveTo(25, 25);
+                    oGc.beginPath();
+                    console.log(this.x);
+                    oGc.arc(this.x, this.y, this.r, 0, Math.PI * 2, true);
+                    oGc.closePath();
+                    oGc.fill();
+                }
+            }
+
+
+            var myball = new ballInfo(20);
+
+            function draw() {
+                myball.drawBall();
+                myball.changePosition(x1, y1);
+                GetBack(myball.x, myball.y);
+
+            }
+
+             setInterval(draw, 20);
+
+            var a = {
+                x: 5,
+                y: 5
+            }
+
+            function GetBack(rx, ry) {
+                var ballBorder = {
+                    minx: myball.r,
+                    miny: myball.r,
+                    maxx: 800,
+                    maxy: 400
+                }
+                if (rx <= ballBorder.minx && ry <= ballBorder.miny) {
+                    y1 = 0;
+                    x1 = a.x;
+                    myball.x = ballBorder.minx
+                    myball.y = ballBorder.miny;
+                }
+                if (rx >= ballBorder.maxx && ry <= ballBorder.miny) {
+                    x1 = 0;
+                    y1 = a.y;
+                    myball.x = ballBorder.maxx;
+                    myball.y = ballBorder.maxy;
+                }
+                if (rx >= ballBorder.maxx && ry >= ballBorder.maxy) {
+                    y1 = 0;
+                    x1 = -a.x;
+                    myball.x = ballBorder.maxx;
+                    myball.y = ballBorder.maxy;
+                }
+                if (rx <= ballBorder.minx && ry >= ballBorder.maxy) {
+                    x1 = 0;
+                    y1 = -a.y;
+                    myball.x = ballBorder.minx;
+                    myball.y = ballBorder.maxy;
+                }
+
+
+            }
+        }
+    </script>
+</head>
+<body>
+<canvas id="canvas" width="820" height="420">您的浏览器不支持canvas</canvas>
+</body>
+</html>

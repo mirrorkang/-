@@ -1,0 +1,168 @@
+
+12.7  
+css3
+<!-- transform 动画 -->
+	<!-- 2d动画 -->
+	transform:translate(x,y); 位移 可为负值
+	transform:rotate(360deg);/*旋转角度，正值：顺时针；负值：逆时针*/
+	transform:scale(x,y);放大:大于1 缩小:小于1  scale(1.5)=scale(1.5,1.5)
+	transform:skew(xdeg,xdeg) 倾斜  //transform:skew(45deg,-45deg)变成平行四边形
+	<!-- 3d动画 -->
+	transform:rotateX(180deg);
+	transform:rotateY(180deg)
+	transform:rotateZ(180deg)
+	
+	<!-- 动画 过渡属性transition -->
+	transition: width .5s  合写形式*/完成动作所需时间
+		transition-property: width; 可省略 /*需要过渡的css属性  默认 为所有属性all*/
+		transition-duration: 1s;  过渡持续时间，默认为0*/
+		transition-timing-function/*速度变化方式*/
+			ease 默认 速度逐渐变慢
+			ease-in 加速
+			ease-out 减速
+			ease-in-out 先快后慢
+			linear 匀速
+		transition-delay：1s; 动画延迟	
+		
+<!-- animation动画 -->
+	<!-- @keyframes	关键帧 --> 写在style内
+	1.定义动画<!-- 两个关键帧 -->
+	@keyframes name{ <!-- name自定义-->
+		from{属性设置1}
+		to{属性设置2}
+	} 
+	2.定义动画<!-- 多个关键帧 -->
+	@keyframes name{<!-- name自定义-->
+		0%{属性设置1}
+		20%{属性设置2}
+		……
+		100%{属性设置n}	
+	}
+	<!-- animation 调用动画 -->
+	div{
+		animate:move .1s infinite alternate<!--合写-->
+	}
+	<!-- 动画相关属性 -->
+	name动画名称
+	duration时间
+	timing-function方式 
+	delay延迟 
+	interation-count播放次数 默认1次 
+		number / infinite无限次
+	direction播放方向  
+		normal默认0%-100%
+		alternate奇数次正常播放，偶数次逆序播放100%-0%
+	play-state播放状态
+		running 默认：播放中
+		paused 暂停
+
+<!-- 图片拖拽 Drag&Drop -->
+	ondragstart(event) ondragover(event) ondrop(event)
+	<!-- ondragstart(event) -->
+			function ondragstart(event){
+				event.dataTransfer.setData('temp',ev.target.id)
+			}
+			将事件对象的id储存在新建的名为'temp'的dataTransfer
+			//event.target//指的是drag事件的目标
+			//event.dataTransfer临时存放
+			//setData建立数据 名为'text'
+
+	<!-- ondragover(event) -->
+			function ondragover(event){
+				event.preventDefault();//阻止浏览器默认事件
+				此处可阻止拖拽时浏览器以默认链接的方式在新窗口打开元素
+			}
+	<!-- ondrop(event) -->
+			function ondrop(event){
+				var data=event.dataTransfer.getData('temp')	<!--获取数据-->
+				var img1=document.getElementById(data)
+				event.target.appendChild(img1)//追加被拖拽元素
+			}
+Multi-column css多列属性
+	<!-- column-count 设置元素被分割的列数-->  ie不支持
+	column-count:3;
+	-moz-column-count:3; /* Firefox */
+	-webkit-column-count:3; /* Safari and Chrome */
+	
+	
+12.8 canvas画布
+
+canvas行内块元素
+	<canvas id="canvas" width="800" height="800">
+		<!--默认  width:300  height:150-->
+		您的浏览器不支持canvas请更换浏览器
+	</canvas>
+内容在js内绘制
+	var canvas=document.getElementById("canvas");
+	var ogc=canvas.getContext('2d')/*画笔：2d 定义绘制图形的上下文环境*/
+	<!-- 使用2d方法绘制 与getContext('2d')保持一致	 -->
+		beginPath();定义绘制的开始路径
+		ogc.closePath();定义绘制的闭合路径 （可不定义）
+		
+		ogc.save(); 保留当前绘制条件
+		restore();	恢复原来绘制条件
+		clearRect(x,y,w,h) 清除画布
+			清除以x,y为原点的给定w,h的里面内容
+			clearRect(0,0,canvas.width,canvas.height)//清除画布中所有东西
+	1.绘制方框 strokeRect() fillRect()
+		<!--strokeRect 绘制空心方框  -->
+			<!-- strokeStyle -->定义描边的颜色
+				ogc.strokeStyle='#000';
+			<!-- lineWidth -->定义线条宽度  默认为1px,浏览器会渲染成2px
+				ogc.lineWidth=1;
+			<!-- strokeRect(x,y,w,h) -->/*绘制边框*/
+				ogc.strokeRect(50.5,50.5,100,200)
+			
+		<!--fillRect 绘制实心方框  -->默认黑色
+			<!-- fillStyle -->定义填充颜色
+				ogc.fillStyle='rgba(0,0,0,.5)'
+			<!-- fillRect(x,y,w,h) -->/*绘制填充*/
+				ogc.fillRect(150,150,200,200)
+			
+	2.绘制弧线 arc()
+		stroke();/*绘制一般描边*/
+		fill();/*绘制一般填充*/
+		<!-- arc(x,y,r,beginRadius,endRadius,boolean) -->arc()绘制弧线 
+			//x,y定义圆心的位置;半径
+			//beginRadius起点位置(deg);endRadius重点位置(deg)
+			//boolean绘制图形时的顺序:
+				false顺时针（默认） true逆时针 <!-- 同象限的顺序 -->
+			<!-- 绘制圆 -->
+			ogc.arc(400,300,200,0,Math.PI*2,true);/* PI=180deg*/
+			<!-- 绘制椭圆 -->
+			ogc.scale(x,y);半径和圆心值都会同时缩放
+			ogc.arc(400,300,200,0,Math.PI*2,true);
+	3.绘制直线和曲线
+		//绘制直线
+				ogc.lineJoin='round';  /*miter斜接*/ //交点类型
+				ogc.lineCap='round';//相邻点类型
+				ogc.lineWidth=20;
+			<!-- moveto(x,y) 移动画笔至指定位置 -->  线的起点
+				ogc.moveTo(400,300);
+				ogc.lineTo(600,600);
+				ogc.lineTo(400,500);
+				ogc.lineTo(400,300);
+				ogc.stroke();
+	
+	4.绘制文字
+		strokeText() 文本描边
+		fillText()   文本填充
+				ogc.font='bold 80px Microsoft Yahei';
+				ogc.fillStyle='rgb(0,255,255)'
+				ogc.shadowOffsetX=5;//文字阴影偏移量x
+				ogc.shadowOffsetY=5;//文字阴影偏移量y
+				ogc.shadowBlur=10;//文字阴影模糊半径
+				ogc.shadowColor='red';//文字阴影颜色
+				ogc.fillText('文字',200,200) //绘制文字填充
+				ogc.strokeText('文字',200,300)//绘制文字描边
+	5.绘制图片drawImage()
+		drawImage(name,x,y,w,h)；name为图片对象
+			
+			<!-- 创建图片对象 -->
+			var img=new Image();
+			<!-- 定义图片路径 -->
+			img.src='images/sea.jpg';
+			<!-- 当图片加载的时候，把图片画到canvas上 -->
+			img.onload=function(){
+				ogc.drawImage(img,500,300,200,200)
+			}

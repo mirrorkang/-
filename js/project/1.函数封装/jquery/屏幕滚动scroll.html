@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		body{
+			margin: 0;
+		}
+		.one{
+			height: 1500px;
+			background: lightpink;
+			font-size: 100px;
+		}
+		.two{
+			height: 200px;
+			background:lightblue;
+			position: relative;
+			
+		}
+		.three{
+			height: 1400px;
+			background: lightgreen;
+			font-size: 100px;
+		}
+		.two-left,.two-right{
+			width: 30%;
+			height: 150px;
+			position: absolute;
+			opacity: 0;
+			background: lightslategray;
+			
+		}
+		.two-left{
+			left:-50%;
+		}
+		.two-right{
+			right:-50%;
+		}
+	</style>
+	<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			
+			$(window).scroll(function(){
+				var y=$(window).scrollTop();
+				//console.log(y)
+				
+				if(y>=1000 && y<=1500){
+					$('.two-left').stop().animate({left:20,opacity:1},1000);
+					$('.two-right').stop().animate({right:20,opacity:1},1000)
+				}else{
+					$('.two-left').stop().animate({left:'-50%',opacity:0},1000);
+					$('.two-right').stop().animate({right:'-50%',opacity:0},1000)
+					
+				}
+			})
+			
+			
+		})
+	</script>
+	<body>
+		<div class="one"></div>
+		<div class="two">
+			<div class="two-left">left</div>
+			<div class="two-right">right</div>
+		</div>
+		<div class="three"></div>
+	</body>
+</html>

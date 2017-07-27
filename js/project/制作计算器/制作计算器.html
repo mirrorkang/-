@@ -1,0 +1,54 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset='utf-8'>	
+	<title></title>
+	<script>
+		if(confirm('是否打开计算器')){
+			var num1 =parseFloat(prompt('请输入第一个数'));
+			var sign=prompt('请慢慢的放入运算符');
+			var num2= parseFloat(prompt('请输入第二个数'));
+			if((sign=='/')&& (num2==0)){
+				while(num2==0){
+					num2=parseFloat(prompt('请重新输入除数'))  //除数为0时，一直提示重新输入
+				};
+				/*do{
+					var num3=parseFloat(prompt('除数不能为0，请重新输入'));
+					num2=num3;
+				}while(num3==0)*/
+			}
+			
+			switch(sign){
+				case '+':
+				document.write(num1+'+'+num2+'='+(num1+num2));
+				break;
+				case '-':
+				document.write(num1+'-'+num2+'='+(num1-num2));
+				break;
+				case '*':
+				document.write(num1+'*'+num2+'='+(num1*num2));
+				break;
+				case '/':
+				document.write(num1+'/'+num2+'='+(num1/num2));
+				break;
+				
+				default:
+				document.write('请正确输入运算符号');
+			}
+			
+			
+		
+		}else{
+			document.write('您没有打开计算器')
+		}
+	</script>
+	
+<head>
+
+<body>
+	
+
+
+
+</body>
+<html>	

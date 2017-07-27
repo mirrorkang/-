@@ -1,0 +1,89 @@
+@charset "utf-8";
+/*适配iphone6 1rem=100px*/
+
+ header{
+ 	height: 1.2rem;
+ 	padding: 0 .2rem;
+ 	padding-top: .3rem;
+ 	display: flex;
+ 	justify-content: space-between;
+ 	align-items: center;
+ 	color: #283136;
+ 	font-size: .4rem;
+ }
+ header a.fa{/*注意权重 权重小会导致部分属性不生效*/
+ 	
+ 	width: .6rem;
+ 	height: .6rem;
+ 	line-height: .6rem;
+ 	text-align: center;
+ 	border-radius:50%;
+ 	color: #283136;
+ }
+ header a.fa:active{
+ 	background-color:rgba(255,255,0,.3);
+ 	transform: scale(1.3);
+ }
+/*主体*/
+	/*主体共同部分*/
+	.main{
+		padding: 0 .2rem;
+	}
+	.main section{
+		margin-top: .26rem;
+	}
+	.main figure{
+		padding: .24rem;
+		background-size:100%;
+		background-repeat: no-repeat;
+		display: flex;
+		align-items: flex-end;
+	}
+	.main figcaption{
+		width: 100%;
+	}
+	.main figcaption h4{
+		color: white;
+	}
+	.main figcaption .singer{
+		color: #d4c9c8;
+	}
+	
+	/*第一行*/
+	.main .first-line{
+		height: 4.8rem;
+		background-image:url('../images/taskB_2 (1).png');
+		background-image:-webkit-image-set(url('../images/taskB_1 (1).png') 1x,url('../images/taskB_2 (1).png') 2x,url('../images/taskB_3 (1).png') 3x)
+	}
+	.main .first-line .singer{
+		display:flex;
+		justify-content: space-between;
+	}
+	.main .stars{
+		color: #ffca09;
+	}
+	/*第二行*/
+	.main section:nth-child(2){
+		/*width: 7rem;*/
+		display: flex;
+		justify-content: space-between;
+	}
+	.main .second-line{
+		height: 3.2rem;
+		width: 3.4rem;
+	}
+	.second-line.one{
+		background-image:url('../images/taskB_2 (2).png');
+		background-image:-webkit-image-set(url('../images/taskB_1 (2).png') 1x,url('../images/taskB_2 (2).png') 2x,url('../images/taskB_3 (2).png') 3x)
+	}
+	.second-line.two{
+		background-image:url('../images/taskB_2 (3).png');
+		background-image:-webkit-image-set(url('../images/taskB_1 (3).png') 1x,url('../images/taskB_2 (3).png') 2x,url('../images/taskB_3 (3).png') 3x)
+	}
+	/*最后一行*/
+	.main .last-line{
+		height:3rem;
+		background-image:url('../images/taskB_2 (4).png');;
+		background-image:-webkit-image-set(url('../images/taskB_1 (4).png') 1x,url('../images/taskB_2 (4).png') 2x,url('../images/taskB_3 (4).png') 3x)
+	}
+/*主体  结束*/

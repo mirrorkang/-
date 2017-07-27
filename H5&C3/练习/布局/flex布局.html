@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>flexing box 弹性盒</title>
+		<style type="text/css">
+			ul{
+				display: flex;  /*定义弹性盒*/
+				width: 100%;
+				height: 200px;
+				border: 1px solid red;
+				list-style: none;
+				padding: 0;
+				
+				flex-direction: row; /*定义子元素排列方式和顺序*/
+				/*默认:row水平排列 顺序，向左对齐*/
+				/*row-reverse  倒序，向右对齐*/
+				/*column  顺序，向上对齐*/
+				/*column-reverse  倒序，向下对齐*/
+				
+				flex-wrap:wrap;/*定义子元素换行情况*/
+				 /*nowrap 默认  子元素宽度或高度失效*/
+				 /*wrap*/
+				 /*wrap-reverse 倒序排列 向相反方向对齐*/
+				
+				justify-content:space-around;/*子元素主轴方向对齐方式*/
+				/*flex-start 默认    左对齐*/
+				/*flex-end  右对齐*/
+				/*center 居中*/
+				/*space-between 两端分散对齐*/
+				/*space-around 分散居中 */
+				
+				align-items:center; /*交叉轴对齐*/
+				/*flex-start 向上对齐*/
+				/*flex-end  向下对齐*/
+				/*center  垂直居中*/
+				/*stretch  子元素不设高度时，纵向拉伸， */
+			}
+			li{
+				border: 1px solid greenyellow;
+				/*order: 5;排列顺序，值num越小，越靠前 可为负数 但不常用*/
+				/*flex: 1;子元素占父元素的单位量*/
+				width: 80%;
+				height: 50px;
+				
+			}
+			
+			li:nth-child(2){
+				/*order: 1;*//*排列顺序*/
+				/*flex: 5;*/
+				/*align-self: flex-start ;/*子元素自身的垂直对齐方式*/
+				/*align-self: stretch;/*子元素自身的垂直对齐方式*/
+				/*flex-start 向上对齐*/
+				/*flex-end  向下对齐*/
+				/*center  垂直居中*/
+				/*stretch  子元素不设高度时，纵向拉伸， */
+			
+			}
+		</style>
+		
+		<!--flex与浮动，verticle-align冲突-->
+		<!--verticle-align针对inline-block-->
+	</head>
+	<body>
+		<ul>
+			<li class="li li1">li1</li>
+			<li class="li li2">li2</li>
+			<li class="li li3">li3</li>
+			<li class="li li4">li4</li>
+			<li class="li li5">li5</li>
+			
+		</ul>
+	</body>
+</html>

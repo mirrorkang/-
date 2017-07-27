@@ -1,0 +1,43 @@
+load
+	element.load(url,data,function(response,status,xhr))
+	$('#result').load('loadingdata.html')//将请求到所有html内容加载到#result标签内
+	$('#result').load('loadingdata.html #txt2')//指定请求内容
+	$('#result').html(loading).load(url,null,function(){
+		alert($('#result').html())//回掉函数对数据进行操作
+	})
+	
+$.get
+	$.get(url,data,function(data,textstatus){})
+		1.$.get('test.html?name=kqq',function)  等同于 $.get('test.html',{name:'kqq'},function)
+			传入的数据将与url进行组合:.html?name=kqq&age=18;
+			也可以将url+data直接写在url内
+		2.请求地址发生错误时，回调函数不会被调用
+			请求正常时，textstatus值为success
+$.post
+	$.post(url,data,function)
+	
+$.getScript 调用并执行js文件
+	$.getScript('getjs.js',function)
+
+	
+$.ajax	
+	$.ajax({
+		type:"get",
+		url:"ajax_data.html",
+//		async:true,
+//		data:{id:123},//get请求时，此处会转化为jquerystring:?name=kqq&age=18
+//		dataType:'json',//xml
+		success:function(){
+		
+		},
+		error:function(xhr,status,errorStr){
+			
+		},
+		complete:function(xhr,data){//无论请求是否成功都会执行
+			alert('请求完成')
+		},
+		beforeSend:function(){//发出请求前执行
+			//加载中等
+		},
+		cache:false //设为true  则浏览器缓存请求内容，不能及时更新
+	});

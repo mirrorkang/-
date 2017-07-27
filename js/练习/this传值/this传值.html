@@ -1,0 +1,47 @@
+<html>
+<head>
+
+</head>
+
+<body>
+例1<br/>
+
+<input type="text"  onfocus="setStyle(this.id)" id="fname" /><br/>
+<script type="text/javascript">
+	function setStyle(x)
+	{
+		document.getElementById(x).style.background="yellow"
+	}
+</script>
+
+例2 <br/>
+<input id="1" value="3" obblur="go(this)"/><br/>
+<script type="text/javascript">
+	var go = function(obj){  
+		var id = obj.id;
+		var id = obj.value;
+	}
+
+</script>
+
+
+拓展 <br/>
+<!-- 也可以改变一下思路 传自己的ID进去 -->
+<input id="t1" value="3" onblur="go('t1')"/><br/>
+<script type="text/javascript">
+	var go = function(id){
+	   var obj = document.getElementById('id');
+	}
+
+</script>
+
+<!-- 推荐使用jquery jquery操作这个非常简单 -->
+<script type="text/javascript">
+	var go = function(obj){ 
+		 var id = $(obj).attr('id');
+		 var v = $(obj).val();
+	}
+</script>
+
+</body>
+</html>

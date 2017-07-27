@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			img {
+				display: block;
+			}
+			
+			ul {
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+				float: left;
+			}
+			
+			#main {
+				width: 590px;
+				height: 340px;
+				position: absolute;
+				overflow: hidden;
+				
+			}
+			
+			ul li {
+				list-style: none;
+				float: left;
+			}
+			
+			span {
+				width: 30px;
+				height: 60px;
+				position: absolute;
+				line-height: 60px;
+				text-align: center;
+				color: white;
+				background-color: rgba(0, 0, 0, .3);
+				top: 50%;
+				margin-top: -30px;
+				display: none;
+				z-index: 2;
+			}
+			
+			#all>span:hover {
+				background-color: #501500;
+			}
+			
+			#pre {
+				left: 0;
+			}
+			
+			#next {
+				right: 0;
+			}
+			
+			#all {
+				width: 590px;
+				height: 340px;
+				position: relative;
+				overflow: hidden;
+			}
+			#box {
+				width: 590px;
+				height: 340px;
+				position: relative;
+				overflow: hidden;
+			}
+			#all:hover span {
+				display: block;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function() {
+				//获取各容器
+				var main = document.getElementById("main");
+				var box = document.getElementById("box")
+				var demo1 = document.getElementById("demo1");
+				var demo = document.getElementById("demo");
+				var demo2 = document.getElementById("demo2");
+				var demow = 0;
+				var each = demo1.getElementsByTagName('li');
+				for(var i = 0; i < each.length; i++) {
+					// 累加每张图片的宽度
+					demow += each[i].offsetWidth
+				}
+				//将demo1的内容给demo和demo2
+				//当然，如果已经在css写好，下面这串都不用写
+				demo.innerHTML = demo1.innerHTML;
+				demo2.innerHTML = demo1.innerHTML;
+				//设定demo0，1，2的宽度
+				demo1.style.width = demow + 'px';
+				demo.style.width = demow + 'px';
+				demo2.style.width = demow + 'px';
+				//设定demo外容器的 总宽度
+				box.style.width = 3 * demow + 'px';
+				//声明每张图片 宽度eachWidth
+				var eachWidth = each[0].offsetWidth;
+				//声明速度speed
+				var speed = 10;
+				//声明方向dir
+				var dir = 1;
+				//声明一个中间量mid
+				var mid = demow;
+				//设置起始scrollLeft为一个ul的宽度
+				
+				main.scrollLeft=demow;
+				var time=null;
+
+				function move() {
+					//为了防止切窗口回来setInteval大家先清除一下time
+					clearInterval(time);
+					time = setInterval(function(){
+						//增加mid的值
+						mid += speed*dir;
+						//判断mid是一张图片的倍数，暂停。
+						 if(mid%eachWidth ==0){
+						 	clearInterval(time);
+						 	//当dir执行完一次-1时，设置dir为1.
+						 	dir=1
+						 }
+						//根据dir=1的方向，来判断并执行scrollLeft
+						if(dir == 1){
+							//因為初始位置是一个demow额宽度，所以判断，以2个demow来判断
+							if(main.scrollLeft>=2*demow){
+								main.scrollLeft-=demow;
+								//减去一个demow后，设置，demo为初始值
+								mid = demow;
+							}else{
+								//让main.scrollLeft的值为mid值，因为mid始终在增加
+								main.scrollLeft = mid;
+							}
+							
+						}
+						//判断dir为-1
+						if(dir ==-1){
+							//因为最前面是一个demow的值，所以到零界点以一个demow判断。
+							//并加上一个demow。
+							if(main.scrollLeft<=demow){
+								main.scrollLeft+=demow;
+								//加完一个demow后，我的mid为2个demow。
+								//因为下面的else还要用mid的值。
+								mid = 2*demow;
+							}else{
+								//让main.scrollLeft的值为mid值，因为mid始终在变化
+								main.scrollLeft = mid;
+							}
+							
+						}
+					},5)
+				}
+				
+				setInterval(move,3000)
+				//给向前的按钮绑定点击事件，设置方向并且运行一次
+				document.getElementById("pre").onclick= function(){
+					dir = -1;
+					move()
+				}
+				//给向前的按钮绑定点击事件，设置方向并且运行一次
+				document.getElementById('next').onclick=function(){
+					dir = 1;
+					move()
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="all">
+			<span id='pre'>&lt;</span>
+			<span id='next'>&gt;</span>
+			
+			<div id="main">
+				<div id="box">
+				<ul id='demo'></ul>
+				<ul id='demo1'>
+					<li><img src="images/1.jpg" alt="" /></li>
+					<li><img src="images/2.jpg" alt="" /></li>
+					<li><img src="images/3.jpg" alt="" /></li>
+					<li><img src="images/4.jpg" alt="" /></li>
+				</ul>
+				<ul id='demo2'></ul>
+			</div>
+			</div>
+		</div>
+	</body>
+
+</html>

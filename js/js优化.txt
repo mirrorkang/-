@@ -1,0 +1,96 @@
+﻿变量提升
+//提升前
+	(function(log){
+	  'use strict';
+	 
+	  var a = 10;
+	 
+	  for(var i = 0; i < a; i++) {
+		var b = i * i;
+		log(b);
+	  }
+	 
+	  if(a === 10) {
+		var f = function() {
+		  log(a);
+		};
+		f();
+	  }
+	 
+	  function x() {
+		log('Mr. X!');
+	  }
+	  x();
+//提升后
+	(function(log){
+	  'use strict';
+	  // 声明所有变量 All variables used in the closure will be hoisted to the top of the function
+	  var a,
+		  i,
+		  b,
+		  f;
+		  
+	  function x() {
+		log('Mr. X!');
+	  }
+	 
+	  a = 10;
+	 
+	  for(i = 0; i < a; i++) {
+		b = i * i;
+		log(b);
+	  }
+	 
+	  if(a === 10) {
+		// Function assignments will only result in hoisted variables but the function body will not be hoisted
+		// Only by using a real function declaration the whole function will be hoisted with its body
+		f = function() {
+		  log(a);
+		};
+		f();
+
+	  }
+	 
+	  x();
+	 
+	}(window.console.log));
+	 
+		}(window.console.log));
+		
+		
+//
+ 转化为false：false, 0, undefined, null, NaN, ''
+	 (function(log){
+	  'use strict';
+	 
+	  function logTruthyFalsy(expr) {
+		if(expr) {
+		  log('truthy');
+		} else {
+		  log('falsy');
+		}
+	  }
+	 
+	  logTruthyFalsy(true); // truthy
+	  logTruthyFalsy(1); // truthy
+	  logTruthyFalsy({}); // truthy
+	  logTruthyFalsy([]); // truthy
+	  logTruthyFalsy('0'); // truthy
+	 
+	  logTruthyFalsy(false); // falsy
+	  logTruthyFalsy(0); // falsy
+	  logTruthyFalsy(undefined); // falsy
+	  logTruthyFalsy(null); // falsy
+	  logTruthyFalsy(NaN); // falsy
+	  logTruthyFalsy(''); // falsy
+	 
+	}(window.console.log));
+//效果相同  	
+	x = x || y || 1;	 //针对x进行逻辑值转换
+	if(!x) {
+	  if(!y) {
+		x = 1;
+	  } else {
+		x = y;
+	  }
+	}

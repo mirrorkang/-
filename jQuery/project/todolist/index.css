@@ -1,0 +1,30 @@
+@charset "utf-8";
+section.task-list{
+	width: 200px;
+	min-height: 200px;
+
+	float: left;
+	margin:5px;
+	padding: 5px;
+	background:lightpink;
+	border-radius: .5em;
+	
+}
+h3{
+	text-align: center;
+}
+input{
+	margin: 5px auto;
+}
+div.todo-task{
+	width: 100px;
+	height: 80px;
+	background: white;
+}
+div.delete-task{
+	width: 100px;
+	height: 80px;
+	background: white;
+	border:1px dashed black
+}
+

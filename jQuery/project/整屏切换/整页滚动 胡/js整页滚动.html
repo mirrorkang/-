@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			var isWheelUp = function(event) {
+				event = event || window.event;
+				var up = true;
+				if(event.wheelDelta) {
+					up = event.wheelDelta / -120 == 1 ? true : false;
+				} else {
+					up = event.detail / 3 == 1 ? true : false;
+				}
+				return up;
+			}
+			window.onload = function() {
+				var clientw = document.body.clientWidth;
+				var clienth = window.innerHeight;
+				var main = document.getElementById("main");
+				var move = document.getElementById("move");
+				var each = move.getElementsByTagName('div');
+				var len = each.length;
+				main.style.height = clienth + 'px';
+				move.style.height = clienth * len + 'px';
+				for(var i = 0; i < len; i++) {
+					each[i].style.height = clienth + 'px';
+				}
+				var i = 0;
+				var flag = false;
+				document.addEventListener('mousewheel', function(event) {
+					//向下
+				var clienth = window.innerHeight;
+					
+					if(isWheelUp(event)) {
+						if(flag) {
+							return;
+						}
+						i++;
+						console.log(i)
+						if(i > len - 1) {
+							i = len - 1;
+						}
+
+						flag = true;
+						move.style.transform = 'translateY(-' + clienth * i + 'px)'
+						setTimeout(function() {
+							flag = false;
+						}, 1000)
+					}
+					//向上
+					if(!isWheelUp(event)) {
+						if(flag) {
+							return;
+						}
+						i--;
+						if(i < 0) {
+							i = 0;
+						}
+						
+						flag = true;
+						move.style.transform = 'translateY(-' + clienth * i + 'px)'
+						setTimeout(function() {
+							flag = false;
+						}, 1000)
+					}
+				})
+				
+			}
+			window.onresize =function(){
+					var clientw = document.body.clientWidth;
+				var clienth = window.innerHeight;
+				var main = document.getElementById("main");
+				var move = document.getElementById("move");
+				var each = move.getElementsByTagName('div');
+				var len = each.length;
+				main.style.height = clienth + 'px';
+				move.style.height = clienth * len + 'px';
+				for(var i = 0; i < len; i++) {
+					each[i].style.height = clienth + 'px';
+				}
+				}
+		</script>
+		<style type="text/css">
+			body {
+				margin: 0;
+			}
+			
+			#main {
+				width: 100%;
+				position: relative;
+				overflow: hidden;
+			}
+			
+			#move {
+				width: 100%;
+				position: absolute;
+				transition: all 1s;
+			}
+			
+			#move div {
+				width: 100%;
+				box-sizing: border-box;
+			}
+			
+			.box1 {
+				background: red;
+			}
+			
+			.box2 {
+				background: orange;
+			}
+			
+			.box3 {
+				background: yellow;
+			}
+			
+			.box4 {
+				background: green;
+			}
+			
+			.box5 {
+				background: cyan;
+			}
+			
+			.box6 {
+				background: blue;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="main">
+			<div id="move">
+				<div class="box1"></div>
+				<div class="box2"></div>
+				<div class="box3"></div>
+				<div class="box4"></div>
+				<div class="box5"></div>
+				<div class="box6"></div>
+			</div>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			canvas{
+				display:block;
+				margin: 10px auto;
+				background-color: #77B7FF;
+				font-family: helvetica;
+			}
+		</style>
+			<script type="text/javascript">
+			//多个画布不生效
+			window.onload=function(){
+				var canvas1=document.getElementById("canvas1");
+				var ogc1=canvas1.getContext('2d');
+				
+				var canvas2=document.getElementById("canvas2");
+				var ogc2=canvas2.getContext('2d');
+				
+				var canvas3=document.getElementById("canvas3");
+				var ogc3=canvas3.getContext('2d');
+			//圆	
+				ogc1.beginPath();
+				ogc1.save();//
+				ogc1.scale(1.2,1);
+				ogc1.fillStyle='orange';
+				ogc1.strokeStyle='rgba(0,0,255,.3)';
+				ogc1.arc(100,100,50,0,Math.PI,true);
+				ogc1.closePath();
+				ogc1.fill();
+				ogc1.arc(100,100,50,0,2*Math.PI,true);
+				ogc1.stroke()
+			//圆点
+				ogc1.beginPath();
+				ogc1.fillStyle='black';
+				ogc1.arc(100,100,2,0,2*Math.PI,true);
+				ogc1.restore();
+				ogc1.closePath();
+				ogc1.fill();
+				
+			//字体	
+				ogc2.font='bold 50px helvetica';
+				ogc2.save();
+				ogc2.strokeStyle='white';
+				ogc2.shadowColor='orange';
+				ogc2.shadowBlur=5;
+				ogc2.shadowOffsetX=10;
+				ogc2.shadowOffsetY=10;
+				ogc2.strokeText('Helvetica',20,100);
+				ogc2.restore();
+				
+				
+			//图片
+				var img=new Image();
+				img.src='images/tupian.jpg';
+				img.onload=function(){
+					ogc3.drawImage(img,20,50,250,150)
+				}
+			}
+			
+			
+				
+			</script>
+	</head>
+	<body>
+		<canvas id="canvas1" width="300" height="200"></canvas>
+		<canvas id="canvas2" width="300" height="200"></canvas>
+		<canvas id="canvas3" width="300" height="200"></canvas>
+		
+	</body>
+</html>

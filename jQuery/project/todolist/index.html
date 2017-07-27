@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="jqueryui/jquery-ui-1.12.1.custom/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="jqueryui/jquery-ui-1.12.1.custom/jquery-ui.css" />
+		<link rel="stylesheet" href="index.css" />
+		
+		<script>
+			$(document).ready(function(){
+				//日期选择
+				$('#datepicker').datepicker()
+				
+				
+				//添加项目
+				$('.addItem').on('click',function(){
+					var title1=$(this).siblings('.addTitle').val();
+					var date1=$(this).siblings('.addDate').val();
+					var descri=$(this).siblings('.addDescri').val()
+//					var newItem="<p>"+title1+"</p>"
+					var newItem='<div class="todo-task"><div class="task-header">'+title1+'</div><div class="task-date">'+date1+'</div><div class="task-description">'+descri+'</div></div>'
+
+					$('.todo-task').after(newItem)
+//					$('.todo-task').append("<span>11<span>")
+					//添加完成清空
+					$(this).siblings('.addTitle').val('');
+					$(this).siblings('.addDate').val('');
+					$(this).siblings('.addDescri').val('');
+				})
+			})
+			
+		</script>
+	</head>
+	<body>
+		<section>
+			<div itemscope itemtype ="http://schema.org/Movie">
+			  <h1 itemprop="name">Avatar</h1>
+			  <div itemprop="director" itemscope itemtype="http://schema.org/Person">
+			  Director: <span itemprop="name">James Cameron</span> (born <span itemprop="birthDate">August 16, 1954)</span>
+			  </div>
+			  <span itemprop="genre">Science fiction</span>
+			  <a href="../movies/avatar-theatrical-trailer.html" itemprop="trailer">Trailer</a>
+			</div>
+		</section>
+		<section class="task-list">
+			<h3>待处理</h3>
+			<div class="todo-task">
+				<div class="task-header">题目</div>
+				<div class="task-date">11-01-2016</div>
+				<div class="task-description">内容</div>
+			</div>
+		</section>
+		<section class="task-list">
+			<h3>进行中</h3>
+		</section>
+		<section class="task-list">
+			<h3>已完成</h3>
+		</section>
+		<section class="task-list">
+			<h3>添加项目</h3>
+			<form action="" id="todo-form">
+				<input type="text" class="addTitle" placeholder="标题" />
+				<input type="text" class="addDescri" placeholder="内容" />
+				<input type="text" class="addDate" id="datepicker" placeholder="截止日期" />
+				<input type="button" class="addItem" value="添加项目" /><br />
+				<input type="reset" value="清空全部项目" /><br />
+				
+			</form>
+			<div class="delete-task">拖到这里删除</div>
+		</section>
+		
+	</body>
+	
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script type="text/javascript">
+		var province=['北京','山东','江苏']
+		var city=[
+			['北京'],
+			['青岛','济南','日照','泰安'],
+			['徐州','淮安','南通','东台']
+		]
+		window.onload =function(){
+			var pro=document.getElementById("province");
+			var ct=document.getElementById("city");
+			for(var i=0;i<province.length;i++){
+				pro[i+1]=new Option(province[i],i)//Option（innerHTML,value）
+			}
+		}
+		function getCity(){
+			var pro=document.getElementById("province");
+			var ct=document.getElementById("city");	
+			var index=pro.selectedIndex-1;
+			ct.length=0;//清除上次选择后赋给ct的值
+			for(var i=0;i<city[index].length;i++){
+				ct[i]=new Option(city[index][i],index+'_'+i)
+			}
+		}
+	</script>
+	<body>
+		<select name="" id='province' onchange="getCity()">//province的变化引起city的变化
+			<option value="">--请选择--</option>
+		</select>
+		<select name="" id='city' onchange="getDist">
+			<option value="">--请选择--</option>
+		</select>
+	</body>
+</html>

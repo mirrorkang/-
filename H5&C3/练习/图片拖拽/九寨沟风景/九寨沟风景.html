@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			header{
+				width: 100%;
+				height: 50px;
+				background-color: #25A4BB;
+				color: white;
+				box-sizing: border-box;
+				padding: 0 10px;
+				display:flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+			header a{
+				color: white;
+				text-decoration: none;
+			}
+			
+			.container figure{
+				width: 100%;
+				height: 350px;
+				display: flex;
+				justify-content: flex-start;
+				align-items: center;
+				flex-wrap: wrap;
+				/*height: 200px;*/
+				border: 1px solid gainsboro;
+			}
+			.container figure img{
+				margin:5px;
+			
+			}
+		</style>
+		<script>
+			function drag(e){
+				e.dataTransfer.setData('imgs',e.target.id)
+			}
+			function dragover(e){
+				e.preventDefault();
+			}
+			function drop(e){
+				e.preventDefault();
+				var data=e.dataTransfer.getData('imgs');
+				var data1=document.getElementById(data);
+				e.target.appendChild(data1)
+			}
+		</script>
+	</head>
+	<body>
+	<header>
+		<img src="images/header-left-arrow_l.png" alt="" />
+		<h2>九寨沟 - <a href="#">首页</a></h2>
+		<section>
+		<img src="images/logo_l.png" alt="" />
+		<!--<h5>首页</h5>-->
+		</section>
+		
+	</header>
+	<div class="container">
+		<section >
+			<h2>请选择景点</h2>
+			<figure ondragover="dragover(event)" ondrop="drop(event)">
+				<img id='01' draggable="true" ondragstart="drag(event)" src="images/01.jpg" alt="" />
+				<img id='02' draggable="true" ondragstart="drag(event)" src="images/02.jpg" alt="" />
+				<img id='03' draggable="true" ondragstart="drag(event)" src="images/03.jpg" alt="" />
+				<img id='04' draggable="true" ondragstart="drag(event)" src="images/04.jpg" alt="" />
+				<img id='05' draggable="true" ondragstart="drag(event)" src="images/05.jpg" alt="" />
+				<img id='06' draggable="true" ondragstart="drag(event)" src="images/06.jpg" alt="" />
+				<img id='07' draggable="true" ondragstart="drag(event)" src="images/07.jpg" alt="" />
+				<img id='08' draggable="true" ondragstart="drag(event)" src="images/08.jpg" alt="" />
+			</figure>
+		</section>
+		<section>
+			<h2>目的地</h2>
+			<figure  ondragover="dragover(event)" ondrop="drop(event)"></figure>
+		</section>
+	</div>
+	</body>
+</html>

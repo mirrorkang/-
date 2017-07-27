@@ -1,0 +1,182 @@
+/*头部*/  /*左侧*/
+/*<link rel="stylesheet" type="text/css" href="css kqq/home kqq.css"/>*/
+
+
+/*商品详情*/
+#main-right{
+	width: 790px;
+	margin-left: 13px;
+	/*float: left;*/
+}
+.gds_detail{
+	width: 300px;
+	height: 0;/*gds_detail 不明原因margin影响后面布局*/
+	margin: 0;
+}
+/*产品大图*/
+.gds_detail .imgs{
+	width:310px;
+	height: 310px;
+	border: 1px solid black;
+	position: relative;
+}
+.imgs img{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.smlImg div{
+	display: none;
+}
+.gds_detail .lkBigimg{
+	text-align: center;
+	margin: 10px;
+}
+/*产品分类介绍*/
+.tab_intro{
+	width: 310px;
+	margin-top: 10px;
+	position: relative;
+	font-size: 12px;
+}
+
+.tab_intro dt{
+	background-color: #F1F1F1;
+	margin-right: 5px;
+	border: 1px solid #898989;
+	border-bottom: 0px;
+	display: inline-block;
+	font-size: 14px;
+	cursor: pointer;
+}
+.tab_intro dd{
+	line-height: 23px;
+	border: 1px solid black;
+	position: absolute;
+	display: none;
+	left: 0;
+}
+ /*购物详情*/
+.shop_infor{
+	float: right;
+	width: 448px;
+	font-size: 12px;
+	line-height: 25px;
+}
+.shop_infor ul{
+	list-style: none;
+}
+.shop_infor ul{
+	list-style: none;
+}
+.shop_infor li:first-child span{
+	text-decoration: line-through;
+}
+.shop_infor li:nth-child(2) span{
+	color: red;
+	font-size: 18px;
+	font-weight: bold;
+}
+	/*颜色图片*/
+	.clth_color img{
+		border: 1px solid #BBB;
+	}
+	/*尺寸选择*/
+.size li{
+	width: 32px;
+	height: 32px;
+	line-height: 32px;
+	text-align: center;
+	font-family: times;
+	border: 1px solid #AAA;
+	display: inline-block;
+	cursor: pointer;
+	
+}
+	/*数量选择*/
+	/*评分*/
+	.scores ul{
+		width: 80px;
+		height: 16px;
+		background-image: url('../images/star-matrix.gif');
+		cursor: pointer;
+	}
+	.scores ul li{
+		width: 16px;
+		height: 16px;
+		/*margin: 0;*/
+		float: left;
+	}
+	/*加入购物车*/
+	img.cart{
+		margin-top: 20px;
+	}
+	/*购物车*/
+	.cartTip{
+		display: none;
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		/*z-index: 100;*/
+		background-color: rgba(0,0,0,.5);
+		
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+	.cartTip .tipCont{
+		width: 500px;
+		height: 200px;
+		background-color: rgba(0,0,0,0.2);
+		padding: 10px;
+		position: absolute;
+		margin: auto;
+		
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+	
+	.tipCont h5{
+		color: #666;
+		height: 30px;
+		line-height: 30px;
+		padding-left: 20px;
+		background-color:#EBF2FA;
+	}
+	
+	.orderInfo{
+		height: 130px;
+		background-color: white;
+		padding: 30px 10px 10px 20px;
+		position: relative;
+	}
+	
+	.ico-ok{
+		width: 33px;
+		height: 33px;
+		float: left;
+		background-image: url('../images/box.png');
+		background-position:-66px 0px;
+		/*position: absolute;*/
+	}
+	.orderInfo span{
+		font-weight: bold;
+		line-height: 2.5em;
+		margin-left: 30px;
+	}
+	.orderInfo .orderInfo_cont{
+			margin-left: 10px;
+			font-size: 12px;
+			line-height: 1.5;
+	}
+	.orderInfo button{
+		height: 24px;
+		width: 80px;
+		position: absolute;
+		right: 20px;
+		bottom:10px;
+	}

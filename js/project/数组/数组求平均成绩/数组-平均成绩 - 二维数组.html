@@ -1,0 +1,34 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset='utf-8'>	
+	<title></title>
+	<script type="text/javascript" language="javascript"> 
+		var grades=[
+			[79,67,66,87,66,91],
+			[84,57,86,78,76,93],
+			[63,87,81,97,76,82]
+		]
+		for(var i=0;i<grades.length;i++){
+			var sum=0; //初始值为0，默认定义为number
+			for(var j=0;j<grades[i].length;j++){
+				sum += grades[i][j]
+			}
+			avg=sum/grades[i].length;
+			n=i+1; //i=i+1会影响后一轮i循环的值；最后给i+1重新定义变量
+			document.write('第'+n+'个班级的平均分数：'+avg+'分 <br />')
+		}
+	</script>
+	
+<head>
+
+<body>
+	<br />
+	一班成绩：79,67,66,87,66,91  <br />
+	二班成绩：84,57,86,78,76,93  <br />
+	三班成绩：63,87,81,97,76,82  <br />
+
+
+
+</body>
+<html>	

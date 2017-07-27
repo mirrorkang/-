@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				text-align:center;
+			}
+			#canvas{
+				background: pink;
+				/*width: 800px;
+				height: 600px;*/
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				var canvas=document.getElementById("canvas");
+				var ogc=canvas.getContext('2d')/*画笔：2d 绘制图形的上下文环境*/
+		//使用2d方法绘制 与getContext('2d')保持一致	
+				//绘制直线
+				ogc.lineWidth=20;
+				ogc.moveTo(400,300);
+//					moveto(x,y) 移动画笔至指定位置  线的起点
+				ogc.lineJoin='round';  /*miter*/ //交点类型
+				ogc.lineCap='round';//相邻点类型
+				ogc.lineTo(600,600); //线的终点
+				ogc.lineTo(400,500)
+				ogc.lineTo(400,300)
+				ogc.stroke();
+//				ogc.clearRect(0,0,canvas.width,canvas.height)//清除画布中所有东西
+//				clearRect(x,y,w,h)  清除以x,y为原点的给定w,h的里面内容
+			}
+		</script>
+		
+	</head>
+	<body>
+		<!--创建canvas画布-->
+		<canvas id="canvas" width="800" height="800">
+			<!--默认  width:300  height:150-->
+			您的浏览器不支持canvas请更换浏览器
+		</canvas>
+	</body>
+</html>

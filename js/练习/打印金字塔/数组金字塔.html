@@ -1,0 +1,34 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset='utf-8'>	
+	<title></title>
+	<script type="text/javascript" language="javascript"> 
+	window.onload= function(){
+		var arr=[]; //定义一个数组，为空
+		//var txt=''; //txt='' 引号内部为空 系统识别为字符串，便于后面+=运算
+		for(var i=0;i<8;i++){
+			for(var j=0;j<i+1;j++){
+				
+				//txt +='&nbsp;*'
+				arr.push('&nbsp;*')
+			}
+			//txt +='<br />';//每循环一次i，换行
+			arr.push('<br />')
+		 }
+		
+		//arr.push(txt);
+		var newarr = arr.join(''); //join用新字符分割数组 注意改变后的数组需定义
+		document.getElementById('div1').innerHTML=newarr;
+	}
+	</script>
+	
+<head>
+
+<body>
+	
+<div id ='div1' style='text-align:center'></div>
+
+
+</body>
+<html>	

@@ -1,0 +1,178 @@
+.myshoppingcart{
+	margin-left: 10px;
+}
+	/*当当为您推荐*/
+.shopping-main-suggesttitle{
+	background-image: url(../images/shopping_commend_bg.gif);
+	background-repeat: repeat-x;
+	
+	padding-left: 20px;
+	border: 1px solid  #999;
+	border-bottom: none;
+	height: 21px;
+	line-height: 21px;
+}
+.shopping-main-suggesttitle div{
+	width: 15px;
+	height:15px;
+	float: right;
+	margin-right: 5px;
+	margin-top: 2px;
+	background-image:url(../images/shopping_arrow_up.gif)
+}
+.shopping-main-suggesttitle div:hover{
+	
+	background-image: url(../images/shopping_arrow_down.gif);
+}
+/*推荐书目*/
+.shopping-main-suggests{
+	overflow: hidden;
+	border: 1px solid gray;
+}
+.shopping-main-suggests .cutline{
+	background-image: url(../images/shopping_dotted.gif);
+	background-repeat: repeat-y;
+	float: left;
+	width: 10px;
+	height: 120px;
+	margin-left: 30px;
+	margin-right: -15px;
+	
+}
+.shopping-main-suggests-left,.shopping-main-suggests-right{
+	float: left;
+}
+.shopping-main-suggests ul{
+	padding: 0 auto;
+}
+.shopping-main-suggests li{
+	display: inline-block;
+	margin: 0;
+	
+}
+	ul .bookname{
+	 width: 220px;
+	}
+	 .bookname a,.buyit a,.shopping-main-buylist a{
+	 	text-decoration: none;
+	 	margin: 0;
+	 }
+	 .bookname a:hover,.buyit a:hover,.shopping-main-buylist a:hover{
+	 	text-decoration: underline;
+	 }
+	 
+	.buyit a{
+		color: #ED610C;
+	}
+	.originalprice{
+		width:70px ;
+		text-decoration: line-through;
+		color: #999;;
+	}
+	.currentprice{
+		width: 70px;
+	}
+/*推荐书目结束*/
+
+/*购物清单*/
+	.shopping-main-buylist h3{
+		margin-bottom: 3px;
+		font-weight: 100px;
+		font-size: 14px;
+		color: #333;
+		font-family: 宋体;
+	}
+	.shopping-main-buylist ul{
+		padding: 0;margin: 0;
+	}
+	.shopping-main-buylist li{
+		display: inline-block;
+	}
+	.shopping-main-buylisttitle{
+		background-color: #d8e4c6;
+		height: 25px;
+		line-height:25px ;
+	}
+	/*购物车标题*/
+	.shopping-main-buylisttitle li{
+		color: #333;
+	}
+	.shopping-main-buylist dl,.shopping-main-buylist dd{
+		margin: 0;
+	}
+	/*购物车列表*/
+	dl .buylist-bookname{
+		width:400px;
+		margin-left: 30px;
+	}
+	dl .buylist-singlebonus,dl .buylist-marketprice,dl .buylist-ddprice{
+		width:120px;
+		text-align: center;
+	}
+	dl .buylist-countnum,dl .buylist-delete{
+		width:70px;
+		text-align: center;
+	}
+	.buylist-countnum input{
+		width: 30px;
+		text-align: center;
+		font-size: 12px;
+	}
+	.shopping-main-buylist dd{
+		height: 35px;
+		line-height: 35px;
+		border-bottom: 1px dashed  #CCC;
+		background-color: #FEFBF2;
+	}
+	.shopping-main-buylist dd:hover{
+		background-color: white ;
+	}
+
+	/*金额结算*/
+	.shopping-main-buysum{
+		background-color: #cddbb8;
+		overflow: hidden;
+		height: 45px;
+		vertical-align: middle;
+		padding-top: 12px;
+		padding-right: 10px;
+	}
+	.shopping-main-buysum span{
+		color:#BD3E00;
+	}
+	.shopping-main-buysum span:hover{
+		cursor: default;
+	}
+	.shopping-main-buysum img:hover{
+		cursor: pointer;
+	}
+	.shopping-main-buysum img,.shopping-main-buysum div{
+		float:right;
+		margin-left:20px;
+		font-family: 宋体;
+	}
+	.totalmoney{
+		font-weight: bold;
+		font-size: 14px;
+		margin-bottom: 10px;
+		padding-top:7px;
+	}
+	.savemoney{
+		border-right: 1px solid #666666;
+		padding-right:20px;
+	}
+	
+	
+/*底边*/
+	.shopping-footer{
+		width: 960px;
+		/*margin: 0 auto;*/
+		
+	}
+	.shopping-footer p{
+		text-align: center;
+	}
+	
+	.shopping-footer img{
+		vertical-align: middle;
+	}

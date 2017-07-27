@@ -1,0 +1,36 @@
+.header{
+	width: 1000px;
+	height: 50px;
+	padding: 0 200px;
+	/*border: 1px solid lightgrey;*/
+	position: relative;
+}
+.header-left{
+	margin: 0;
+}
+.header-left{
+	font-size: 24px;
+	font-family: "微软雅黑";
+	line-height: 50px;
+	
+}
+
+.header-left img,.header-left span{
+	float: left;
+}
+.header-left img:first-child{
+	margin-top: 8px;
+}
+.header-left img:last-child{
+	margin-top: 10px;
+}
+.header-right{
+	font-size: 12px;
+	font-family: "微软雅黑";
+	position: absolute;
+	top:25px;
+	right:220px;
+}
+.header-right a{
+	text-decoration: none;
+}

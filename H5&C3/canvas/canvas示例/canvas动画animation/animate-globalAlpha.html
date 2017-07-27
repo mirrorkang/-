@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>canvas透明度</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        canvas{
+            background: lightblue;
+        }
+    </style>
+    <script>
+        window.onload=function() {
+            var oC = document.getElementById('canvas');
+            var oGc = oC.getContext('2d');
+            for(var i=0;i<50;i++){
+                oGc.save();
+                oGc.transform(.95,0,0,.95,30,30);
+                oGc.rotate(Math.PI/60);
+                oGc.beginPath();
+                oGc.fillStyle='rgba(255,0,0,'+(1-(i+5)/20)+')';
+                oGc.arc(500,0,50,0,Math.PI*2,true);
+                oGc.closePath();
+                oGc.fill();
+            }
+        }
+    </script>
+</head>
+<body>
+<canvas id="canvas" width="800" height="600">您的浏览器不支持canvas</canvas>
+
+</body>
+</html>

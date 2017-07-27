@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>放大镜</title>
+		<style type="text/css">
+			body{
+				margin-left: 100px;
+			}
+			#box img{
+				width: 300px;
+				height: 300px;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				var box=document.getElementById("box");
+				var img=box.getElementsByTagName('img')[0];
+					var imgh=img.offsetHeight;
+					var imgw=img.offsetWidth;
+				box.style.position='relative';
+				box.style.width=imgw+'px';
+				box.style.height=imgh+'px';
+				
+			//创建放大镜工具
+				var detailBox=document.createElement('div');
+					
+				box.appendChild(detailBox);
+					
+				
+				detailBox.style.position='absolute';
+				detailBox.style.width='150px';
+				detailBox.style.height='150px';
+				detailBox.style.opacity=0.3;
+				detailBox.style.backgroundColor='red';
+				
+				detailBox.style.display='none';
+				
+			//创建显像容器	
+				var showBox =document.createElement('div');
+				showBox.style.display='none';
+				document.getElementsByTagName('body')[0].appendChild(showBox);
+				
+				showBox.style.position='fixed';
+				showBox.style.width='400px';
+				showBox.style.height='400px';
+				showBox.style.overflow='hidden';
+				
+				//创建显像内容
+				var showImg=document.createElement('img');
+				showImg.src=img.getAttribute('src')
+				
+				showBox.appendChild(showImg);
+				
+				showImg.style.position='absolute';
+				
+				
+				
+				//鼠标点击事件
+				box.onmousemove=function(){
+					detailBox.style.display='block';
+					
+					
+					var x=event.pageX;
+					var y=event.pageY;
+					
+				//容器display:none时无法获取相应指标	detailh、detailw需在事件内部定义
+					var detailh=detailBox.offsetHeight;
+					var detailw=detailBox.offsetWidth;
+					
+					var boxw=this.offsetWidth;
+					var boxh=this.offsetHeight;
+					var boxx1=this.offsetLeft;
+					var boxy1=this.offsetTop;
+					
+					var boxx2=boxx1+boxw;
+					var boxy2=boxy1+boxh;
+					
+					if( x>boxx1 && x<boxx2    &&   y>boxy1 && x<boxy2){
+						//限制鼠标跟随应当范围
+						detailBox.style.left=x-detailw/2- boxx1+'px';
+						detailBox.style.top=y-detailh/2- boxy1+'px';
+						
+						if(x<boxx1+detailw/2){detailBox.style.left=0};
+						if(x>boxx2-detailw/2){detailBox.style.left=boxx2-detailw-boxx1+'px'};
+						
+						if(y<boxy1+detailh/2){detailBox.style.top=0};
+						if(y>boxy2-detailh/2){detailBox.style.top=boxy2-detailh-boxy1+'px'};
+						//限制鼠标跟随应当范围 结束
+						
+						//显像
+						showBox.style.display='block';
+						showBox.style.zIndex=100;//遮盖其他东西
+						
+						showBox.style.top=boxy1+'px';
+						showBox.style.left=boxx2+'px';
+							//显像内容
+						var detailx=detailBox.offsetLeft;
+						var detaily=detailBox.offsetTop;
+						//显像图片 与原始图片的比例 2
+						showImg.style.width=300*2+'px';
+						showImg.style.height=300*2+'px';
+						showImg.style.left=-detailx*2+'px';
+						showImg.style.top=-detaily*2+'px';
+							//显像内容结束
+						//显像 结束
+					}
+					
+					
+					
+					
+					
+					
+				}
+				box.onmouseleave=function(){
+					detailBox.style.display='none';
+					showBox.style.display='none';
+				}
+				
+				
+				
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<img src="images/guilin.jpg"/>
+		</div>
+	</body>
+</html>

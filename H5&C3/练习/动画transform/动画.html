@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			ul{
+				padding: 0;
+				border: 1px solid red;
+				overflow: hidden;
+				
+				list-style: none;
+			}
+			li{
+				width: 200px;
+				height: 200px;
+				padding: 20px;
+				margin: 5px;
+				border: 1px solid green;
+				box-sizing: border-box;
+				display: inline-block;
+				
+				
+				overflow: hidden;
+				
+			}
+			li img{
+				width: 100%;
+				transition:.5s ;/*完成动作所需事件*/
+			}
+			li:nth-child(1):hover img{
+				transform:translate(10px,0px);
+			}
+			li:nth-child(2):hover img{
+				transform:rotate(360deg);/*旋转角度，正值：顺时针；负值：逆时针*/
+			}
+			li:nth-child(3):hover img{
+				transform:scale(1.5);/*放大 缩小scale(1.5)=scale(1.5,1.5)*/
+			}
+			
+			li:nth-child(4) img{
+				transform:skew(45deg,-45deg)
+			}
+			li:nth-child(4):hover img{
+				transform:skew(0deg,0deg)
+			}
+			li:nth-child(5):hover img{
+				transform:rotateX(180deg);
+				transform:rotateY(180deg)
+			}
+			li:nth-child(6):hover img{
+				transform:rotateY(180deg)
+			}
+			li:nth-child(7):hover img{
+				transform:rotateZ(180deg)
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li><img src="images/01.jpg"/>transform:translate(10px,0px)</li>
+			<li><img src="images/02.jpg"/>transform:rotate(360deg)</li>
+			<li><img src="images/03.jpg"/>transform:scale(1.5)</li>
+			<li><img src="images/04.jpg"/>transform:skew(45deg,-45deg)</li>
+			<li><img src="images/01.jpg"/>rotateX</li>
+			<li><img src="images/02.jpg"/>rotateY</li>
+			<li><img src="images/03.jpg"/>rotateZ</li>
+		</ul>
+	</body>
+</html>

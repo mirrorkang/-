@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+		//选择排序：就是将数组中一个数与其他数比较
+		//逐渐把小的放前面
+		
+		function chooseSort(arr){
+			for(var i=0;i<arr.length-1;i++){
+				document.write('遍历次数：'+i+'<br>');
+				for(var j = i+1;j<arr.length;j++){
+					if(arr[i]>arr[j]){
+						var temp = arr[i];
+						arr[i] = arr[j];
+						arr[j] = temp;
+					}
+					document.write('交换次数'+(j-i)+'  交换结果：'+arr+'<br>');
+				}
+				document.write('<hr>');
+			}
+		}
+			var arr = [5,4,3,2,1];
+			chooseSort(arr);
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

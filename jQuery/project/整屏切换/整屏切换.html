@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//判断滚动方向是否向下
+			function isDown(event){
+				var down = true;
+				// 判端滚轮向下 谷歌||火狐
+				if(event.originalEvent.wheelDelta<0 || event.originalEvent.detail>0 ){ 
+					down = true;
+				}
+				// 判端滚轮向上 谷歌||火狐
+				if(event.originalEvent.wheelDelta>0 || event.originalEvent.detail<0 ){ 
+					down = false;
+				}
+				return down;
+			}
+			
+			$(document).ready(function(){
+				var clienth=$(window).height();//窗口高度
+				var len=$('.box div').length;
+				$('.main,.box div').height(clienth);//容器高度，页面高度均等于窗口高度
+				$('.box').height(clienth*len);
+				
+				var scrollIndex=0;
+				var flag=true;
+				$(document).on('mousewheel || DOMMouseScroll',function(event){
+					setTimeout(function(){
+						if(isDown(event)){
+							scrollIndex++;
+							if(scrollIndex>len-1){scrollIndex=len-1};
+							$('.box').animate({
+								top:-clienth*scrollIndex
+							},1000)
+						}	
+					},0)
+					
+				
+				
+				
+//				
+//				<!-- 	if(flag){//防止用户连续滚动
+//						if(isDown(event)){
+//							scrollIndex++;
+//							if(scrollIndex>len-1){scrollIndex=len-1};
+//							$('.box').animate({
+//								top:-clienth*scrollIndex
+//							},1000,function(){
+//								flag=true;//回掉函数，待外层函数执行完后执行
+//							})
+//							
+//						flag=false;//isDown(e)每执行一次，flag重新赋值一次
+//						}
+//						if(!isDown(event)){
+//							scrollIndex--;
+//							if(scrollIndex<0){scrollIndex=0}
+//							$('.box').animate({
+//								top:-clienth*scrollIndex
+//							},1000,function(){
+//								flag=true
+//							})
+//							flag=false
+//						}
+//						
+//					}
+//					
+//				})
+//				 -->
+			})
+//			$(window).on('resize',function(){//窗口大小改变时
+//				
+			})
+		</script>
+		<style type="text/css">
+			body{
+				margin: 0;
+			}
+			
+			.main{
+				width: 100%;
+				position: relative;
+				overflow: hidden;
+			}
+			.box{
+				width: 100%;
+				position: absolute;
+			}
+			
+			.box div:nth-child(1){background-color: red;}
+			.box div:nth-child(2){background-color: orange;}
+			.box div:nth-child(3){background-color:yellow;}
+			.box div:nth-child(4){background-color: green}
+			.box div:nth-child(5){background-color: cyan;}
+			.box div:nth-child(6){background-color: blue;}
+			.box div:nth-child(7){background-color:purple;}
+			
+		</style>
+	</head>
+	<body>
+		<div class="main">
+			<div class="box">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+		
+	</body>
+</html>

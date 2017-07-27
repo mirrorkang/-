@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>canvas画星星</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        canvas{
+            background: lightblue;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="600" height="600"></canvas>
+<script>
+    window.onload=function(){
+        var oC=document.getElementById('canvas');
+        var oGc=oC.getContext('2d');
+        oGc.strokeStyle="orange";
+        drawStar(oGc,150,300,oC.width/2,oC.height/2);
+        function drawStar(cxt,r,R,x,y){
+            cxt.beginPath();
+            for(var i=0;i<5;i++){
+                cxt.lineTo(Math.cos((18+i*72)/180*Math.PI)*R+x,-Math.sin((18+i*72)/180*Math.PI)*R+y);//点的顺序：1,3,5,7,9
+                cxt.lineTo(Math.cos((54+i*72)/180*Math.PI)*r+x,-Math.sin((54+i*72)/180*Math.PI)*r+y)//点的顺序：2,4,6,8,10
+            }
+            cxt.closePath();
+            cxt.stroke();
+        }
+    };
+
+</script>
+</body>
+</html>

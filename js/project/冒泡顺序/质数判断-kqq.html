@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+		</style>
+		<script type="text/javascript">
+			
+			for(var i=2;i<=100;i++)	{
+				var arr=[];
+				for(var j=2;j<=(i+1)/2;j++){
+					if(i%j==0){
+						j=i;
+						arr.push(j);
+					}
+				}
+				if(arr.length==0){
+					document.write(i+'<br />')
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

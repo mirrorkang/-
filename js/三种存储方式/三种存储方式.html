@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>localStorage本地存储</title>
+    <style>
+        div {
+            height: 400px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            border: none;
+            cursor: pointer;
+            color: #ffffff;
+            font-size: 16px;
+            padding: 5px 10px;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .black {
+            background-color: black;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            //获取元素
+            var cdiv = document.getElementById('colorC');
+            var cred = document.getElementById('red');
+            var cgreen = document.getElementById('green');
+            var cblack = document.getElementById('black');
+            var ca = document.getElementById('clearAll');
+            //定义按钮点击事件
+            cred.onclick = function () {
+                var value = "red";
+                cdiv.style.background = value;
+                //设置localStorage;setItem(key,value)用来设置localStrage;
+                window.localStorage.setItem("divcolor", value);
+            }
+            cgreen.onclick = function () {
+                var value = "green";
+                cdiv.style.background = value;
+                window.localStorage.setItem("divcolor", value);
+              }
+              cblack.onclick = function () {
+                var value = "black";
+                cdiv.style.background = value;
+                window.localStorage.setItem("divcolor", value);
+            }
+            function colorRestore() {
+                //取localStorage的value值并赋值;setItem(key):获取localStorage的值
+                cdiv.style.backgroundColor = window.localStorage.getItem("divcolor");
+            }
+
+          /*sessionStorage*/
+         /* cred.onclick = function () {
+            var value = "red";
+            cdiv.style.background = value;
+            //设置localStorage;setItem(key,value)用来设置localStrage;
+            window.sessionStorage.setItem("divcolor", value);
+          }
+          function colorRestore() {
+            //取localStorage的value值并赋值;setItem(key):获取localStorage的值
+            cdiv.style.backgroundColor = window.sessionStorage.getItem("divcolor");
+          }*/
+
+            //调用函数改变div背景颜色
+            colorRestore();
+
+            //清除localStorage
+            ca.onclick = function () {
+                window.localStorage.clear();
+            }
+
+        }
+    </script>
+</head>
+<body>
+<section>
+    <div id="colorC"></div>
+    <button id="red" class="red">变红</button>
+    <button id="green" class="green">变绿</button>
+    <button id="black" class="black">变黑</button>
+    <button id="clearAll">删除所有存储</button>
+    <p><mark>刷新浏览器或关闭重新打开浏览器试试，div背景色有没有存储;点击删除后再试试呢！</mark></p>
+</section>
+<hgroup>
+    <h4>相关文档链接</h4>
+    <h5><a href="http://www.tuicool.com/articles/Y77J3m">推酷</a>
+        <a href="http://blog.csdn.net/happyflyingave/article/details/25415413">51cto</a>
+        </h5>
+    <h5><span>cookie,session,localStorage三者的异同点基本上是每个公司都会问的面试题</span>
+        <a href="http://www.cnblogs.com/kangaoxiaoshi/p/5100276.html">离线缓存文章</a>
+        <a href="http://www.imooc.com/learn/46">离线缓存视频</a>
+    </h5>
+</hgroup>
+</body>
+</html>

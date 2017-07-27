@@ -1,0 +1,73 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset='utf-8'>	
+	<title></title>
+	<script type='text/javascript'>
+		//setInterval(function(){},time);每time(毫秒ms)执行一次
+		//setTimeout(function(){},time);一段time(毫秒ms)后，执行一次
+		var i=10;
+		
+	</script>
+	
+<head>
+
+<body>
+	<button onclick="start()">开始</button>
+	<button  onclick="stop()">暂停</button>
+	<button  onclick="end()">结束</button>
+	<button  onclick="reset()">重置</button>
+	<h1 id='h1-1'>10</h1>
+	<h1 id='h1-2'></h1>
+	
+	<script type='text/javascript'>	
+		var obj1=document.getElementById('h1-1');
+		var obj2=document.getElementById('h1-2');
+		var time;
+		function set(){
+			var i = obj1.innerHTML;
+			i--;
+			//obj1.innerHTML=i;
+			obj2.innerHTML='计时开始';
+			if(i<=0){
+			clearInterval(time);
+			i=0;
+			obj2.innerHTML='计时结束';
+			}
+			obj1.innerHTML=i
+		}
+		
+		function start(){
+			clearInterval(time);
+			time=setInterval(set,1000); //time隐式声明(无var)
+			
+		}
+		
+		function stop(){
+			clearInterval(time);//清除定时器
+			
+			obj2.innerHTML='暂停';
+		}
+		function end(){
+			clearInterval(time);
+			//obj1.innerHTML=0;
+			obj2.innerHTML='计时结束';
+		}
+		function reset(){
+			clearInterval(time);
+			obj1.innerHTML=10;
+			obj2.innerHTML='';
+		}
+		
+		
+		/*var i=10;
+		setInterval(function(){
+			document.write(i+"<br />");
+			i--;
+		}
+		,1000)*/ 
+		//输出10，9,8，……0，-1
+	</script>	
+
+</body>
+<html>	

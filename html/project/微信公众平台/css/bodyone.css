@@ -1,0 +1,86 @@
+.bodyone{
+	width: 1380px;
+	height: 400px;
+	background-image: url(../images/background.png);
+	background-size: 1400px 450px;
+	margin: 10px;
+	position: relative;
+	
+}
+.login,.code2d{
+	background-color:white;
+	position: absolute;
+	top:20px;
+	border-radius: 3px;
+}
+
+
+/*登录设置*/
+
+
+.login{
+	width: 350px;
+	height: 260px;
+	right:300px;
+	padding:0 30px;
+} 
+
+.login h3{
+	font-weight: 100px;
+	color: dimgray;
+	margin-top: 28px;
+	margin-bottom:10px ;
+}
+
+.login-number,.login-password{
+	width: 300px;
+	height: 45px;
+	border: 1px solid lightgrey;
+	background-repeat: no-repeat;
+	
+	padding-left: 45px;
+	background-position: 5px 10px;
+	
+}
+.login-number{
+	background-image: url(../images/user.png);
+	
+}
+/*.login-number:focus{
+	content: '';
+}*/
+.login-password{
+	background-image: url(../images/password.png);
+	margin-bottom: 10px;
+}
+
+.remenberpsw a{
+	float: right;
+	text-decoration: none;
+	font-size: 12px;
+}
+
+.login .button{
+	color: white;
+	margin-top: 10px;
+	width: 120px;
+	height: 35px;
+	border-radius: 5px;
+	background-color:rgb(68,181,73);
+}
+/*二维码*/
+.code2d{
+	width: 140px;
+	height:170px;
+	text-align: center;
+	right:150px;
+	color: darkgrey;
+	font-family: "微软雅黑";
+}
+.code2d img{
+	margin-top:10px;
+}
+
+.code2d p{
+	margin: 5px auto;
+}

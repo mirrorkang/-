@@ -1,0 +1,38 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset='utf-8'>	
+	<title>数组传参</title>
+	<script type="text/javascript" language="javascript"> 
+	window.onload = function(){
+		var arr1=[79,67,66,87,66,91];
+		var arr2=[84,57,86,78,76,93];
+		var arr3=[63,87,81,97,76,82];
+		
+		//定义函数，设置数组为参数，通过传进不同数组，执行不同数组arr1,arr2,arr3的结果
+		function avg(arr){
+			var sum=0;
+			for (var x in arr){ 
+			sum +=arr[x];   //for …… in循环遍历所有值
+			}
+			return sum/arr.length
+		}
+			document.getElementById('grades').innerHTML +=('一班平均成绩'+avg(arr1)+'<br />');
+			document.getElementById('grades').innerHTML +=('一班平均成绩'+avg(arr2)+'<br />');
+			document.getElementById('grades').innerHTML +=('一班平均成绩'+avg(arr3)+'<br />');
+	}		
+	</script>
+	
+<head>
+
+<body>
+	<p>
+		一班：79,67,66,87,66,91  <br />
+		
+		二班：84,57,86,78,76,93  <br />
+		三班：63,87,81,97,76,82  <br />
+	</p>
+	<p id='grades'></p>
+
+</body>
+<html>	

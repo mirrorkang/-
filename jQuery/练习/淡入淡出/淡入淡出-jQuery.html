@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#main{
+				width: 400px;
+				height: 300px;
+				position: relative;
+			}
+			#main div{
+				width: 400px;
+				height: 300px;
+				position: absolute;
+				color: white;
+				display: none;
+			}
+			#main div:nth-child(1){background: red;display: block;}
+			#main div:nth-child(2){background: orange;}
+			#main div:nth-child(3){background: yellow;}
+			#main div:nth-child(4){background: green;}
+		</style>
+		<script src="../jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var i=0;
+				//定义函数
+				function change(){
+					i++;
+					if(i>3){i=0};
+					//eq(index) 是选择器也是方法
+					$('#main div').eq(i).fadeIn(500).siblings().fadeOut(500)
+				}
+				//执行函数
+				var time= setInterval(change,1000);
+				
+				//hover停止轮换
+				$('#main').hover(function(){
+					clearInterval(time)
+				},function(){
+					 time= setInterval(change,1000)
+				})
+			})
+		</script>
+	</head>
+	
+	<body>
+		<div id="main">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+		</div>
+	</body>
+</html>

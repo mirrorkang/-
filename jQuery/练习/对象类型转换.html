@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+	
+	</style>
+	<script src="./js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+
+		$(document).ready(function(){
+			var $h1=$('h1')      //jQuery对象
+			var h1=$('h1').get(0)//转化为DOM对象
+			var h1dom=$h1[0]	 //转化DOM对象
+			//$h1.html(123);     //jQuery对象 用法
+			h1dom.innerHTML="DOM对象" //为DOM对象 用法
+			
+			var h2dom=document.getElementsByTagName('h2')[0];
+			var h2dom1=document.getElementsByTagName('h2')[1];
+			//h2dom.innerHTML=789;
+			var $dom1=$(h2dom1)
+			$dom1.html("jQuery对象")
+		})
+	
+		
+		
+	
+	</script>
+	<body>
+		<h1></h1>
+		<h1></h1>
+		<h2></h2>
+		<h2></h2>
+		
+	</body>
+</html>

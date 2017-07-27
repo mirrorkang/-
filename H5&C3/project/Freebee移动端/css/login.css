@@ -1,0 +1,119 @@
+@charset "utf-8";
+body{
+	background-color: #85d2c5;
+}
+/*主体*/
+.container{
+	height:10.96rem;
+	padding: .10rem;
+	padding-top: 0;
+	display: flex;
+	align-items: center;
+}
+.container section{
+	display: block;
+	height:6.82rem;
+	text-align: center;
+	width: 100%;
+	/*background-color: red;*/
+}
+
+.logo{
+	height:1.10rem;
+	width: 3rem;
+	margin: 0 auto;
+	background-size: 100%;
+	background-image:url(../images/login_dpr2_logo.png);
+	background-image:-webkit-image-set(url(../images/login_dpr1_logo.png) 1x,url(../images/login_dpr2_logo.png) 2x,url(../images/login_dpr3_logo.png) 3x)
+	
+}
+.container form{
+	margin-top: 1.1rem;
+}
+.container input::-webkit-input-placeholder{
+		color:#5e978d;
+	}
+.container	input::-moz-placeholder{/*火狐 高版本*/
+		color:#5e978d;
+	}
+.container	input:-moz-placeholder{/*火狐 低版本*/
+		color:#5e978d;
+	}
+.container	input:-ms-input-placeholder{
+		color:#5e978d;
+	}
+.container p{
+	margin: .20rem auto;
+	width: 5.26rem;
+	border-bottom: 1px solid #77bdb1;
+	font-size: .34rem;
+}
+.container p .fa{
+	width: .38rem;
+	color: white;
+}
+.container p input{
+	width: 4.74rem;
+	height: .90rem;
+	text-indent: .2rem;
+	outline: none;
+	border: 0;
+	background-color: #85d2c5;
+	
+}
+
+.container input[type='submit']{
+	display: block;
+	margin: 0 auto;
+	width: 3.96rem;
+	height: .8rem;
+	color: white;
+	font-size: .28rem;
+	background-color: #705d76;
+	border: 0;
+	border-radius: .05rem;
+	margin-top: .68rem;
+	margin-bottom: .30rem;
+}
+.container a{
+	display: block;
+	height: .54rem;
+	line-height: .54rem;
+	padding: .10rem;
+	color: white;
+	text-align: center;
+	font-size: .16rem;
+}
+/*主体 结束*/
+/*尾部*/
+footer{
+	height: 2.34rem;
+	background-color: #6aa89e;
+	color: white;
+	text-align: center;
+	padding-top: .50rem;
+	padding-bottom: .34rem;
+}
+footer .fa{
+	height: .80rem;
+	width: 3.90rem;
+	line-height: .80rem;
+	text-align: center;
+	display: block;
+	font-size: .28rem;
+	margin: 0 auto;
+	margin-bottom: .34rem;
+	border: 1px solid white;
+	border-radius: .10rem;
+}
+footer .fa::before{
+	text-align: start;
+	display: inline-block;
+	width:.50rem ;
+}
+footer  a.sign{
+	color: white;
+	text-decoration: underline;
+}
+}
+/*尾部结束*/

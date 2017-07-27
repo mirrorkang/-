@@ -1,0 +1,95 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset='utf-8'>	
+	<title></title>
+	<script type="text/javascript" language="javascript"> 
+	
+	//1.使用object构造函数创建一个对象 
+	var person =new object();
+	person.name='zhangsan';
+	person.age='18';
+	
+	
+	//2.使用对象字面量创建对象
+	var person = {
+		name:'zhangsan',
+		say:function(){
+			alert(this.name)
+		}
+		
+	}
+	//person.say();
+	
+	
+	//3.使用自定义构造函数模式创建对象
+	function say1(Name,Age){ //创建对象；
+		this.name =Name;     //创建对象新属性，并赋值。
+		this.age =Age;
+		this.show=function(){
+			alert(this.name+'今年'+this.age+'，说了句您好')
+		}
+	}
+	var lisi =new say1('李四',22)
+	//lisi.show();
+	//alert(lisi.name)
+	
+	function Car(Name,Color){
+		this.name= Name;
+		this.color= Color;
+		this.showColor =function(){
+			alert(this.name+","+this.color)
+		}
+	}
+	var car1 =new Car('car1','yellow');
+	var car2 =new Car('car1','blue')
+	car1.showColor();
+	car2.showColor();
+	
+	//4.使用工厂函数创建对象
+		function createPerson(name,age,job){
+		
+			var obj=new object()
+			obj.name=name;
+			obj.age=age;
+			obj.job=job;
+			obj.sayName=function(){
+				alert(this.name);
+			}
+			return obj
+		
+		}
+		//createPerson('kevin',31,'h5开发').sayName();
+		
+		
+	//5.原型模式
+		function Person(){
+		
+		}
+		
+		Person.prototype={
+			construtor:Person,
+			name:'mary',
+			age:31,
+			job:'h5',
+			friends:['Herry','John'],
+			sayFriends:function(){
+				alert(this.friends)
+			}
+		}
+		var person1=new Person();
+		person1.friends.push('Joe');
+		person1.sayFriends();//Herry,John,Joe
+		var person2=new Person;
+		person2.sayFriends();//Herry,John,Joe
+	</script>
+	
+<head>
+
+<body>
+	
+
+
+
+</body>
+<html>	

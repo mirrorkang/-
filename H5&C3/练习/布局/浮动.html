@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        a{
+            float: left;
+        }
+        body{
+            width:500px;
+        
+        }
+        div{
+            width:100%;
+            border: 1px solid greenyellow;
+        }
+        div:nth-child(1){
+            float: left;
+        }
+        div:nth-child(2){
+            float: right;
+        }
+    </style>
+    <!--
+    float影响：破坏性  包裹性 清空格
+    1.浮动元素默认块级化
+    2.脱离文档流
+    -->
+    <!--
+    清浮动：
+    1.父元素的伪元素 p::after/ p::before{content:'';display:block;clear:both}
+    2.父元素： overflow:auto/hidden；
+        缺点：对seo优化不利
+    3.浮动元素的非浮动同辈元素（块级元素） clear：both；
+        同辈元素（前后均可）：1.非浮动   2块级元素 3 clear：both
+        缺点：增加无意义的空标签
+    -->
+</head>
+<body>
+<!--<a href="#">111</a>-->
+<!--<a href="#">111</a>-->
+<!--<a href="#">111</a>-->
+<div id="diV1">diV1</div>
+<div id="diV2">diV2</div>
+<p></p>
+</body>
+</html>

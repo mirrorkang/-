@@ -1,0 +1,126 @@
+@charset "utf-8";
+/*header height: .44rem;*/
+body{
+	display: flex;
+	/*overflow: hidden;*/
+}
+.homepage{
+	display: block;
+	height:13.30rem;
+	width: 7.50rem;
+	left:5.80rem ;
+	margin-top:.44rem;
+	background-image:url(../images/homePage.png);
+	background-size:cover;
+}
+
+#homeSetting{
+	width: 5.80rem; 
+	height:13.30rem;
+	padding:0 .24rem;
+	background-color: #685e55;
+	z-index: -1;
+}
+#homeSetting form{
+	padding-top:.44rem;/*header height: .44rem;*/
+	width: 100%;
+	height: 1.44rem;
+	line-height: 1rem;
+	font-size: .40rem;
+	color: #a49f99;
+	
+}
+
+#homeSetting form p{
+	width: 100%;
+	line-height: .68rem;
+	border:1px solid #595149;
+	border-radius:2em;/*??2em    .34rem*/
+	background-color:#5f564d;
+	padding-left: .10rem;
+}
+#homeSetting form input{
+	height: .68rem;
+	width: 4rem;
+	background-color:#5f564d;
+	border: none;
+	text-indent: .1rem;
+	color: #a49f99;
+}
+#homeSetting form p::before{
+	display:inline-block;
+	height: .68rem;
+	line-height: .68rem;
+	width: .68rem;
+	text-align: center;
+}
+/*当前用户*/
+ .userInfor{
+  	height: 5rem;
+  	margin: 0 auto;
+  	text-align: center;
+  	color: white;
+ }
+#homeSetting .userInfor figure{
+	width: 2.48rem;
+	height: 2.48rem;
+	margin:.36rem auto;
+	background-size: 100% 100%;
+	background-image:url(../images/HSetting_dpr2_myphoto.png)
+}
+#homeSetting .userInfor h4{
+	font-size: .40rem;
+}
+#homeSetting .userInfor h6{
+	font-size: .30rem;
+	color:#9e9993;
+	margin-top: .1rem;
+}
+.userInfor .fa-map-marker::before{
+	color: #85d2c5;
+}
+.menu a li{
+	display: inline;
+}
+.menu a{
+	width: 5.32rem;
+	height: 1.02rem;
+	line-height: 1.02rem;
+	color: white;
+	font-size: .40rem;
+	
+}
+/*.menu a:nth-child(1){*/
+.menu a:active{
+	background-color: #776f66;
+	border-top:1px solid #595149;
+	border-bottom:1px solid #595149;
+	
+}
+.menu a li{
+	color: white;
+	font-family:"arial";
+	margin-left: .30rem;
+}
+.menu .fa::before{
+	display: inline-block;
+	width: 1.05rem;
+	height: 1.05rem;
+	font-size: .45rem;
+	text-align: center;
+}
+.menu .fa:nth-child(1){
+	color: #f17e56;
+}
+.menu .fa:nth-child(2){
+	color: #85d2c5      ;
+}
+.menu .fa:nth-child(3){
+	color: #ad8fb7    ;
+}
+.menu .fa:nth-child(4){
+	color: #fadb9b ;
+}
+.menu .fa:nth-child(5){
+	color: #a8a39f;
+}

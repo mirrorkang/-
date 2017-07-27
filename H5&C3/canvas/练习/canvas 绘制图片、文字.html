@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				text-align:center;
+			}
+			#canvas{
+				background: pink;
+				/*width: 800px;
+				height: 600px;*/
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				var canvas=document.getElementById("canvas");
+				var ogc=canvas.getContext('2d')/*画笔：2d 绘制图形的上下文环境*/
+		//使用2d方法绘制 与getContext('2d')保持一致	
+		//绘制图片
+//				var img=new Image();
+//				img.src='images/sea.jpg';
+//				img.onload=function(){
+//					ogc.drawImage(img,500,300,200,200)
+//					//drawImage(name,x,y,w,h)
+//				}
+		
+		//绘制文字
+				ogc.font='bold 80px Microsoft Yahei';
+				ogc.fillStyle='rgb(0,255,255)'
+				ogc.shadowOffsetX=5;//文字阴影偏移量x
+				ogc.shadowOffsetY=5;//文字阴影偏移量y
+				ogc.shadowBlur=10;//文字阴影模糊半径
+				ogc.shadowColor='red';//文字阴影颜色
+				
+				ogc.fillText('canvas文字',200,200) //文字填充
+				ogc.strokeText('canvas文字',200,300)//
+				
+				
+			}
+		</script>
+		
+	</head>
+	<body>
+		<!--创建canvas画布-->
+		<canvas id="canvas" width="800" height="800">
+			<!--默认  width:300  height:150-->
+			您的浏览器不支持canvas请更换浏览器
+		</canvas>
+	</body>
+</html>

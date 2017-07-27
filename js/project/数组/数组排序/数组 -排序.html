@@ -1,0 +1,33 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset='utf-8'>	
+	<title>对数组进行排序</title>
+	<script type="text/javascript" language="javascript"> 
+	var myarr=[11,4444,333,222]
+	myarr.push(555) //向数组末尾添加新值，并返回新数组的长度
+	
+	myarr.sort() //对数组进行排序，返回排序后的数组;以字符串形式排列
+	
+	//针对数字，数组逆序排列
+	myarr.sort(function(a,b){
+		return b-a;
+	})
+	
+	//document.write(myarr)
+	
+	
+	var new_arr =myarr.join('>')
+	document.write(new_arr)
+	</script>
+		
+	
+<head>
+
+<body>
+	
+
+
+
+</body>
+<html>	

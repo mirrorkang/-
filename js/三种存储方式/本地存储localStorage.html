@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-3.1.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//cookie 存储时间有限；加密程度高； ie支持
+			
+			//localStorage 本地存储,无过期时间
+					//localStorage.setItem/getItem  
+			
+			//sessionStorege //关闭即刷新
+			
+		//jQuery方法
+//		$(document).ready(function(){
+//			$('input').click(function(){
+//				var color=$(this).val();
+//				$('#div').css('background-color',color);
+//				window.localStorage.setItem('divColor',color)
+//			})
+//			function colorRestore(){
+//				$('#div').css('background-color',window.localStorage.getItem('divColor'))
+//			}
+//			colorRestore();
+//		})
+		//js方法
+		window.onload=function(){
+			var div1=document.getElementById("div");
+			var btn=document.getElementsByTagName('input');
+			for (var i=0;i<btn.length;i++) {
+				btn[i].onclick=function(){
+					for (var j=0;j<btn.length;j++) {
+						if(this==btn[j]){
+							var color=btn[j].value;
+							div1.style.background=color;
+							window.localStorage.setItem('divColor',color)
+						}
+						
+					}
+					
+				}
+			}
+			//调用
+			div1.style.background=window.localStorage.getItem('divColor')	
+			
+		}
+		</script>
+	</head>
+	<body>
+		<div id='div' style="width: 200px;height:200px;border:1px solid black">默认无背景颜色</div>
+		<input type="button"  name="" id="" value="red" />
+		<input type="button" name="" id="" value="yellow" />
+		<input type="button" name="" id="" value="blue" />
+	</body>
+</html>

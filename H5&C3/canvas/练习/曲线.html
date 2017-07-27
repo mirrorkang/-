@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>贝塞尔曲线</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        canvas{
+            background: lightblue;
+        }
+    </style>
+    <script>
+window.onload=function(){
+    var oC=document.getElementById('canvas');
+    var oGc=oC.getContext('2d');
+    oGc.save();
+    oGc.strokeStyle='red';
+    /*绘制二次贝塞尔曲线*/
+    oGc.beginPath();
+    oGc.moveTo(100,100);
+    oGc.quadraticCurveTo(130,40,180,120);
+   /* oGc.closePath();*/
+    oGc.stroke();
+    oGc.restore();
+    /*绘制三次贝塞尔曲线*/
+    oGc.beginPath();
+    oGc.moveTo(300,300);
+    oGc.bezierCurveTo(370,130,430,470,580,150);
+   /* oGc.closePath();*/
+    oGc.stroke();
+}
+    </script>
+</head>
+<body>
+<canvas id="canvas" width="800" height="600">你的浏览器不支持canvas,换了吧赶紧的。</canvas>
+<article>
+    <h3>绘制曲线</h3>
+    <section>
+        <h4>二次贝塞尔曲线</h4>
+        <div>
+            <p>语法：quadraticCurveTo(cpx,cpy,x,y)</p>
+            <p>cpx，cpy表示控制点的坐标；x，y表示终点坐标；</p>
+            <p>数学公式表示如下：</p>
+            <p>二次方贝兹曲线的路径由给定点P0、P1、P2的函数B（t）追踪：</p>
+                <div><img src="../images/gongshi.png" alt="gongshi2"/></div>
+            <div><img src="../images/erci.png" alt="erci"/></div>
+            <div><img src="../images/erci.gif" alt="ercidongtai"/></div>
+        </div>
+    </section>
+    <h4>三次贝塞尔曲线</h4>
+    <div>
+        <p>语法：bezierCurveTo(cp1x,cp1y,cp2x,cp2y,x,y)</p>
+        <p>cp1x，cp1y表示第一个控制点的坐标；&nbsp;cp2x，cp2y表示第二个控制点的坐标；&nbsp;x，y表示终点的坐标；</p>
+        <p>数学公式表示如下：</p>
+        <p>P0、P1、P2、P3四个点在平面或在三维空间中定义了三次方贝兹曲线。曲线起始于P0走向P1，并从P2的方向来到P3。一般不会经过P1或P2；这两个点只是在那里提供方向资讯。P0和P1之间的间距，决定了曲线在转而趋进P3之前，走向P2方向的“长度有多长”。</p>
+        <p><img src="../images/sancibeisaier.png" alt="gongshi3"/></p>
+        <div><img src="../images/gongshi.png" alt="gongshi"/></div>
+        <div><img src="../images/sanci.png" alt="erci"/></div>
+        <div><img src="../images/sanci.gif" alt="ercidongtai"/></div>
+    </div>
+    </section>
+</article>
+</body>
+</html>

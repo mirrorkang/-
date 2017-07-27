@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 500px;
+				height: 200px;
+				background-color: #ADFF2F;
+				margin: 10px auto;
+			}
+		</style>
+		<script type="text/javascript">
+	
+			function drag(ev){
+				//ev.dataTransfer.setData('temp',ev.target.id)
+				<!-- console.log(ev) -->
+	
+				ev.dataTransfer.setData('text',ev.target.id)
+				//ev 指的是整个drag事件
+				//ev.target//指的是drag事件的目标
+				//ev.dataTransfer临时存放
+				//setData建立数据 名为'text'
+				//将事件对象的id储存在新建的名为'text'的dataTransfer
+			}
+			
+			function allowdrop(ev){
+				ev.preventDefault();//阻止浏览器默认事件
+				//这里指  浏览器以默认链接的方式在新窗口打开元素
+			}
+			function drop(ev){
+				ev.preventDefault();//阻止浏览器默认事件
+				//这里指  拖拽时浏览器以默认链接的方式在新窗口打开元素
+				var data=ev.dataTransfer.getData('text')
+				var img1=document.getElementById(data)
+				ev.target.appendChild(img1)//追加被拖拽元素
+			}
+		</script>
+	</head>
+	<body>
+		<div class="one" ondragover="allowdrop(event)" ondrop="drop(event)">
+			<!--<p id='01' draggable="true" ondragstart="drag(event)" >123</p>-->
+			<img id='01' src="cloud-up.png" draggable="true" ondragstart="drag(event)"/>
+			<!--draggable 可拖动的   默认false
+				ondragstart 元素被拖动时的事件
+				ondragover元素拖动到目标区域时的事件
+				ondrop元素置于目标区域时的事件
+			-->
+		</div>
+		<div class="two" ondragover="allowdrop(event)" ondrop="drop(event)">
+			
+		</div>
+		
+	</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>康倩倩机试</title>
+		<style type="text/css">
+		/*取消body自带影响布局的属性*/		
+			body{
+				margin:0;
+				padding:0;
+				font-family: "微软雅黑";
+			}
+			#myhtml{
+				width: 1000px;
+				margin: 0 auto;
+			}
+			/*设置页面各板块等宽*/
+			.header .main .footer{
+				width: 1000px;
+				
+			}
+			
+	/*头部*/
+			.header{
+				border: 1px solid #ededed;
+			}
+			.header ul{
+				margin-bottom: 0;
+			}
+			.header ul .header li{
+				padding: 0;
+				
+			}
+			
+			.header ul{
+				font-family: "微软雅黑";
+				font-size: 12px;
+				line-height: 35px;
+				background-color: rgb(249,249,249);
+				color: rgb(51,51,51);
+				margin-top: 0;
+				
+				
+			}
+			/*设置分割虚线*/
+			.header li{
+				display: inline-block;
+				border-right: 1px dotted black;
+				line-height: 13px;
+				padding:0 10px 0 7px;
+				/*margin-left: 0;*/
+			}
+			.header li:last-child{
+				border-right:none;
+			}
+	/*main*/
+			.main{
+				overflow:hidden;
+				margin-top: 20px;
+			}
+	/*main-left*/
+			.main-left,.main-right{
+				width: 500px;
+				float: left;
+				overflow: hidden;
+			}
+			.main-left img{
+				margin-left: 100px;
+			}
+	/*main-right*/
+			.main-right form{
+				border: 1px solid #d8d8d8;
+				width: 280px;
+				padding:0 10px 10px 50px;
+				font-size: 16px;
+				margin-left: 100px;
+			}
+			.main-right input{
+				text-align: center;
+			}
+			.main-right h2{
+				margin-left: 15px;
+				margin-bottom: 30px;
+				font-size: 20px;
+				color: #f60;
+				font-weight: 100;
+			}
+			.main-right p{
+				width: 236px;
+				margin: 20px 0px 2px 0;
+			}
+			.main-right a{
+				display: inline-block;
+				float: right;
+				text-decoration: none;
+			}
+			.loginhelp{
+				display: block;
+				float: right;
+				margin-top: 4px;
+				margin-right: 3px;
+			}
+			.main-right input{
+				display: inline-block;
+				width: 220px;
+				line-height: 20px;
+				padding:8px;
+				border: 1px solid #d5d5d5;
+				/*position: relative;*/
+			}
+			.main-right .yanzhengma{
+				background-image: url(images/0_07.jpg);
+				background-position: right;
+				background-repeat: no-repeat;
+			}
+			/*登录按钮*/
+			.loginin{
+				margin: 10px 0 ;
+			}
+ 		/*footer*/
+ 			
+ 			.footer{
+ 				margin-top:120px;
+ 			}
+ 			.footer p{
+ 				font-size: 12px;
+ 				color: #8d8d8d;
+ 				text-align: center;
+ 				margin: 3px 0;
+ 			}
+		
+		</style>
+	</head>
+	<body>
+		
+		<div id="myhtml">
+	<!--头部-->		
+			<div class="header">
+				<ul >
+					<li>自如首页</li>
+					<li>自如找房</li>
+					<li>自如友家</li>
+					<li>自如客</li>
+					<li>服务中心</li>
+					<li>关于自如</li>
+				</ul>
+			</div>
+			<div class="main">
+				<div class="main-left">
+					<img src="images/0_03.jpg"/>
+				</div>
+				
+				<div class="main-right">
+					<form action="" method="post">
+					<h2>登录</h2>
+					<p>用户名</p>	
+					<input type="text" value="" placeholder="请输入注册邮箱或签约时手机号"/>
+					<p>密&nbsp;&nbsp;码 <a href="#">忘记密码？</a></p>
+					<input type="password" value="" />
+					<p>验证码 <a href="#">点击换一张图片</a></p>
+					<input class="yanzhengma" type="text" value="" />
+					<p>
+						<a href="#">登录帮助</a>
+						<img class="loginhelp" src="images/0_11.jpg"/>
+					</p>
+					<img class="loginin" src="images/0_15.jpg"/>
+					</form>
+				</div>
+				
+			</div>
+			<div class="footer">
+				<p>客服电话：400-100-1111 周一至周五9:00-20:00</p>
+				<p>Copyright@2013 ziroon.com版权上海自如资产管理有限公司所有 京ICP备11024601号-9</p>
+			</div>
+			
+			
+		</div>
+	</body>
+</html>

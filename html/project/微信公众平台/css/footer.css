@@ -1,0 +1,14 @@
+.footer ul{
+	height: 70px;
+	list-type:none;
+	background-color:gray;
+	line-height: 70px;
+	text-align: center;
+}
+
+.footer li,.footer span{
+	display:inline-block;
+	color: white;
+	font-size: 12px;
+	margin: auto 5px;
+}

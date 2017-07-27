@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			@keyframes drive{
+				from{
+					left: -800px;
+				}
+				to{
+					left: 1500px;
+				}
+			
+			}
+			
+			@keyframes bird1{
+				from{
+					left: 1400px;
+				}
+				to{
+					left: -700px;
+				}
+			
+			}
+			@keyframes bird2{
+				from{
+					left: 1500px;
+				}
+				to{
+					left: -600px;
+				}
+			
+			}
+			@keyframes scroll{
+			
+				from{
+					transform:rotate(0deg);
+				}
+				to{
+					transform:rotate(1800deg)
+				}
+				
+			}
+			body{
+				position: relative;
+			}
+			div{
+				position: absolute;
+				bottom: 0;
+				animation:drive 5s infinite linear alternate ;
+			}
+			div .wheel{
+				position: absolute;
+				bottom: 5px;
+				animation: scroll 5s infinite linear alternate;
+				
+				/*transform:rotateZ(360deg);
+				transition-duration: 3s;*/
+			}
+			div .wheel1{
+				left: 96px;
+			}
+			div .wheel2{
+				left:522px;
+			}
+			
+			.bird1{
+				position: absolute;
+				width:80px ;
+				height: 100px;
+				top: 10px;
+				/*right: 0;*/
+				animation: bird1 5s ease-in-out infinite;
+			}
+			.bird2{
+				position: absolute;
+				width:40px ;
+				height: 60px;
+				top: 0px;
+				left: -50px;
+				animation: bird2 5s ease-in-out ;
+			}
+		</style>
+	</head>
+	<body> 
+		<img src="images/road.jpg" alt="" />
+		<img class="bird1" src="images/bird.png" alt="" />
+		<img class="bird2" src="images/bird.png" alt="" />
+		<div>
+			<img src="images/car.png" alt="" />
+			<img class="wheel wheel1" src="images/wheel.png" alt="" />
+			<img class="wheel wheel2" src="images/wheel.png" alt="" />
+		</div>
+	</body>
+</html>

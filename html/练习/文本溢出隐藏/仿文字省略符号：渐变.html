@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			.gradient{
+				width: 300px;
+				height: 300px;
+				background: linear-gradient(left,red,blue); /*线性渐变*/
+				background: -moz-linear-gradient(left,transparent,red,orange,yellow,green,blue); 
+				background: -webkit-linear-gradient(left,transparent,blue);
+			}
+			
+			.class2{
+				height:36px;
+				line-height: 18px;
+				overflow: hidden;
+				position: relative;
+			}
+			.class2:after{
+				content: "…";
+				position: absolute;
+				right:0;
+				bottom: 0;
+				padding-left: 40px;
+				background: linear-gradient(left,tranparent,white);
+				background: -moz-linear-gradient(left,transparent,white 50%);
+				background: -webkit-linear-gradient(left,transparent,white 50%);
+			}
+		</style>
+	</head>
+	<body>
+		
+		<pre>
+			div:after模仿 文本省略显示功能
+			需考虑文本行数是否固定，内容是否超出
+			
+			div
+			height=n*line-height；
+			overflow: hidden;
+			position: relative;
+			
+			div:after
+			content: "…";
+			position: absolute;
+			right:0;
+			bottom: 0;
+			padding-left: 40px;撑开容器，拉长渐变
+			background: linear-gradient(left,tranparent,white 38%); 设置背景渐变
+			考虑兼容问题 -moz  -webkit  -o    ie不兼容
+		</pre>
+		
+		<!--<div class="box">
+			<div class="gradient">外框</div>
+		</div>-->
+		
+		<div class="class2">
+		中华人民共和国华人民共和华人民共和华人民共
+		和华人民共和华人民共和华人民共和华人民共和
+		华人民共和华人民共和华人民共和华人民共和华人民共和
+		
+		</div>
+	</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>用户注册</title>
+		<style type="text/css">
+			form{
+				width: 320px;
+				box-sizing: border-box;
+				margin:20px auto ;
+				padding: 10px;
+				
+				border: 2px solid #aea9a9;
+				border-radius: 15px;
+				background:#F7F7F7;
+				
+				position: relative;
+			}
+			form p:first-child{
+	/*待居中*/
+				width: 80px;
+				position: absolute;
+				margin: -20px 160px;
+				left: -40px;
+				text-align: center;
+				background-image: linear-gradient(to top,#F7F7F7 50%,#ffffff 70% );
+				
+			}
+			label{
+				display: block;
+				line-height: 1.5 ;
+			}
+			form input,form textarea{
+				width: 280px;
+				margin:2px auto;
+				text-indent: 10px;
+				font-size: 18px;
+				line-height: 1.5;
+				border: 1px solid #ccc;
+				border-radius: 5px;
+				background:#F7F7F7;
+				background: url(images/asterisk_orange.png) no-repeat;
+				background-position: right;
+			}
+			input#submit{
+				background:#F7F7F7;
+			}
+			/*验证码*/
+			
+			.checkcode input{
+				width:100px ;
+			}
+			.checkcode img{
+				width: 60px;
+				height: 25px;
+				vertical-align: middle;
+				margin: auto 5px;
+				margin-top: -4px;
+			}
+			.checkcode a{
+				text-decoration: none;
+				font-size: 12px;
+			}
+			input:focus,textarea:focus{
+				outline: none; 	/*取消focus时的蓝色边框*/
+				background:url(images/cancel.png) no-repeat;
+				background-color: white;
+				background-position: right;
+				 
+				box-shadow:0 0 5px 2px #ccc;
+			}
+			input:valid,textarea:valid{
+				background: url(../images/tick.png) no-repeat;
+				background-position: right; 
+			}
+			
+			
+			/*上传文件*/
+			.files{
+				overflow: auto;
+				margin-top: 10px;
+			}
+			.files input#file{
+				display: none;
+			}
+			.files label{
+				float: left;
+				width: 80px;
+				height: 105px;
+				background: url(images/shangchaun.png) no-repeat;
+				background-position: bottom;
+			}
+			.files .fr{
+				width: 150px;
+				margin: 5px;
+				float: right;
+				
+				font-size: 14px;
+				color: #aea9a9;
+			}
+		</style>
+	</head>
+	<body>
+		<form action="#" method="post" oninput="money.value=salary.value*100+'元'">
+			<p>用户注册</p>
+			<label for="username">用户名：</label>
+			<input type="text"  name="username" id="username"  value="" placeholder="请输入用户名" required autofocus/>
+			
+			<label for="psd">密码：</label>
+			<input type="password" name="psd" id="psd" value="" placeholder="请输入密码" required/>
+			
+			<label for="tel">手机号：</label>
+			<input type="tel" pattern="^[1][3,4,5,7,8][0-9]{9}$" name="tel" id="tel" value="" placeholder="请输入手机号" required/>
+			
+			<label for="email">Email：</label>
+			<input type="email" name="email" id="email" value="" placeholder="email@example" required/>
+			
+			<label for="search">网址：</label>
+			<input type="url" name="search" id="search" value="" placeholder="http://www.example.com" required/>
+			
+			<label for="age">年龄：</label>
+			<input type="number" name="age" id="age" value=""  min='5' max="100" placeholder="请输入年龄" required/>
+			
+			<label for="salary">
+				工资：<output name='money' for='salary'></output>
+			</label>
+			<input type="range" name="salary" id="salary" value="30" required/>
+			
+			
+		<!--验证码-->	
+			<div class="checkcode">
+				<label for="code">请输入验证码：</label>
+				<input type="text" name="code" id="code"  value=""  required/>
+				<img src="images/yanzhengma.jpg"/>
+				<a href="#">看不清，换一张</a>
+			</div>
+			
+		<!--上传文件-->
+		<div class="files">
+			<label for="file" class="fl">点击上传：</label>
+			<input type="file" name="file" id="file"  value=""  required/>
+			<p class="fr">
+				1 、照片文件类型必须为.jpg, 例如：zhaopian.jpg。<br />
+				2 、照片格式要求：文件大小不超过20KB，宽120 像素，高160 像素。
+			</p>
+		</div>
+			<label for="suggets">建议或意见：</label>
+			<textarea name="suggets" id="suggets" rows="2" cols="40" required></textarea>
+			<input type="submit" id='submit' value="提交"/>
+		</form>
+	</body>
+</html>

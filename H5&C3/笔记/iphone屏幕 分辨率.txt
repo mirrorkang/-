@@ -1,0 +1,17 @@
+
+
+机型      手机分辨率   屏幕尺寸  ppi/dpi    dpr
+iphone5   640*1136      4.0                   2
+
+iphone6   750*1334      4.7      325          2
+
+iphone6plus  1242*2208     5.5                3
+
+
+ppi每英寸上的像素点  
+iphone6 ppi=(750^2+1334^2)^（1/2） /屏幕尺寸=325
+
+ppr设备渲染值  设备与代码的比值
+
+手机分辨率汇总
+https://fusiontables.google.com/DataSource?docid=1N_eJYR_topuk3xmrOeNhYEsST_LAJikGKKzOQ2o

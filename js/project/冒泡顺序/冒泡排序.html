@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+		
+		//冒泡排序：就是比较数组中每相邻两个数的大小
+		//大的放后面，小的放前面
+			function maopaoSort(arr){
+				for(var i=0;i<arr.length-1;i++){//遍历次数
+					document.write('遍历次数：'+i+'<br>');
+					for(var j=0;j<arr.length-i-1;j++){//交换次数
+						if(arr[j]>arr[j+1]){  //前者比后者大
+							var temp = arr[j];  //前者给临时变量
+							arr[j] = arr[j+1];	//后者放到前面
+							arr[j+1] = temp; //临时变量给后者
+						}
+					document.write('交换次数'+(j+1)+'  交换结果：'+arr+'<br>');
+					}
+				document.write('<hr>');
+				}	
+				return arr;
+			}
+			
+			var arr = [5,4,3,2,1];
+			maopaoSort(arr);
+			//console.log(arr);
+			
+			
+			
+			
+			function maopao(arr){
+				for(var i=0;i<arr.length;i++){
+					for(var j=0;j<arr.length-i;j++){
+						var temp=arr[j];
+						if(arr[j]>arr[j+1]){
+							arr[j]=arr[j+1];
+							arr[j+1]=temp;
+						}
+					}
+				}
+				return arr;
+			
+			}
+			var arr1 = [5,2,4,3,1];
+			maopao(arr1);
+			console.log('arr1',arr1)
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+body{
+	width: 7.5rem;
+	height: 13.32rem;
+	padding: .02rem;
+}
+/*头部 小图标*/
+header{
+	position: fixed;
+	z-index: 99;
+	width: 7.5rem;
+	height: .44rem;
+	padding: .10rem;
+	background-color:rgba(0,0,0,.1); 
+}
+header div{
+	/*width: 7.24rem;*/
+	height: .24rem;
+	line-height: .24rem;
+	padding: 0 .02rem;
+	color: white;
+	background-color:rgba(0,0,0,.2);
+	text-align: center;
+}

@@ -1,0 +1,62 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset='utf-8'>	
+	<title></title>
+	<script type='text/javascript'>
+		function mychoice(){
+			var all = document.getElementsByName('hobby');
+			var txt='';
+			for (var i=0;i<all.length;i++){
+				if(all[i].checked){  //all[i].checked  等同于  all[i].checked==true
+					txt += all[i].value+' ';
+				}
+			}
+			document.getElementsByTagName('div')[0].innerHTML=txt;
+		}
+		
+		//jQuery
+		/*
+		$(document).ready(function(){
+    	$(':button').click(function(){
+    		var txt='';
+    		var $input=$(':checkbox:checked');
+	    	
+	    	for (var i=0;i<$input.length;i++) {
+    		 txt+=$input[i].value+'<br />';
+    		}
+	    	$('#text').html(txt);
+    	})
+    	
+    	
+    })
+		
+		
+		*/
+		
+	</script>
+	
+<head>
+
+<body>
+	
+	<form>
+		<h1>选择你的爱好：</h1>
+		<ul>
+			<li><input type='checkbox' name='hobby' value='音乐'/>音乐</li>
+			<li><input type='checkbox' name='hobby' value='登山'/>登山</li>
+			<li><input type='checkbox' name='hobby' value='游泳'/>游泳</li>
+			<li><input type='checkbox' name='hobby' value='阅读'/>阅读</li>
+			<li><input type='checkbox' name='hobby' value='打球'/>打球</li>
+			<li><input type='checkbox' name='hobby' value='跑步'/>跑步</li>
+			<li><input type='checkbox' name='hobby' value='其他'/>其他</li>
+		</ul>
+		<input onclick='mychoice()' type='button' value='查看我选择的课程' />
+		<div></div>
+	
+	
+	</form>
+
+
+</body>
+<html>	

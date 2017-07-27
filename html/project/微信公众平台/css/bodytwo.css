@@ -1,0 +1,82 @@
+bodytwo{
+	width: 1400px;	
+
+}
+/*系统公告*/
+
+.newsinform{
+	margin-right: 20px;
+	
+}
+.clear{
+	clear: both;
+}
+.newsinform{
+	float: left;
+	margin-right: 40px;
+}
+.bodytwo ul{
+	width: 940px;
+	height: 35px;
+	font-family: "微软雅黑";
+	border: 1px solid darkgray;
+	margin: 0px 200px;
+	padding: 0 3px 0 10px;
+	line-height: 35px;
+	font-size: 24px;
+}
+.bodytwo li{
+	/*display: inline-block;*/
+	width: 370px;
+	line-height: 35px;
+	vertical-align: center;
+	position: relative;	
+	float: left;
+	color: #CAC4C4;
+	margin: 0 auto;
+}
+.news span,.news a{
+	font-size: 14px;
+}
+.news a{
+	color: black;
+	text-decoration: none;
+	margin-left:-10px;
+	position: absolute;
+	top:0px;
+}
+.news img{
+	position: absolute;
+	top:7px;
+	right:-25px
+
+}
+.newsmore{
+	float: right;
+}
+/*账号分类*/
+
+.counts{
+	margin: 20px 200px;
+}
+.counts div{
+	
+	width: 240px;
+	height: 280px;
+	
+	font-size: 14px;
+	color: darkgray;
+	margin-left: 60px;
+	text-align: center;
+	float: left;
+}
+.counts p{
+	font-size: 18px;
+	color: black;
+}
+.counts img{
+	padding-top: 20px;
+}
+.counts>p{
+	font-size: 20px;
+}

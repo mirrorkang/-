@@ -1,0 +1,54 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset='utf-8'>	
+	<title></title>
+	<script type='text/javascript'>
+		if(confirm('是否打开计算器')){
+			//function cacul(num1,sign,num2){}
+		var num1=parseFloat(prompt('请输入第一个数'));
+		var sign=prompt('请输入一个运算符');
+		var num2=parseFloat(prompt('请输入第二个数'));
+		
+		if(sign=='/'&&num2==0){
+		//var num2=parseFloat(prompt('除数不能为0，请重新输入第二个数'));
+			while(num2==0){
+				num2=parseFloat(prompt('除数不能为0，请重新输入第二个数'))
+			}
+		}
+		
+		var result1=num1+num2;
+		var result2=num1-num2;
+		var result3=num1*num2;
+		var result4=num1/num2;
+		
+		switch(sign){
+			case '+':
+			document.write(num1+sign+num2+'='+ result1)
+			break;
+			case '-':
+			document.write(num1+sign+num2+'='+ result2)
+			break;
+			case '*':
+			document.write(num1+sign+num2+'='+ result3)
+			break;
+			case '/':
+			document.write(num1+sign+num2+'='+ result4);
+			break;
+			default:
+			document.write('请正确输入运算符号');
+			}
+		
+		}else{
+		document.write('您没有运行计算器')}
+	</script>
+	
+<head>
+
+<body>
+	
+
+
+
+</body>
+<html>	

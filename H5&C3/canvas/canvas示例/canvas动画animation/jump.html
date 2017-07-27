@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>小球弹跳</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        button{
+            position: absolute;
+            top: 200px;
+            left: 550px;
+        }
+        #stop{
+            left: 600px;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="800" height="400"></canvas>
+<button id="begin">开始</button>
+<button id="stop">停止</button>
+<script>
+    window.onload=function(){
+        var begin=document.getElementById('begin');
+        var stop=document.getElementById('stop');
+        var timer=null;
+        var canvas = document.getElementById('canvas');
+        var oGc = canvas.getContext('2d');
+        var dir = 20;
+        var width = 800;
+        var height = 400;
+        var exp = 10;//像素移动的位置
+        function jump()
+        {
+            oGc.clearRect(0,0,width,height);//清除上一次的痕迹
+            oGc.fillStyle = "red";
+            oGc.beginPath();
+            oGc.arc(300, dir, 20, 0, Math.PI * 2, true);
+            oGc.closePath();
+            oGc.fill();
+            dir = dir + exp;
+            if(dir==0){
+                exp += 10;
+            }
+            else if(dir==height)
+            {
+                exp -= 10;
+            }
+        }
+        begin.onclick=function(){
+            clearInterval(timer);
+            timer=setInterval(jump,20);
+        }
+        stop.onclick=function(){
+            clearInterval(timer);
+        }
+    }
+</script>
+</body>
+</html>

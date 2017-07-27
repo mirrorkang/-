@@ -1,0 +1,41 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset='utf-8'>	
+	<title></title>
+	<script type='text/javascript'>
+		
+		function new_win(){
+			window.open(
+			'http://www.baidu.com',
+			'百度',
+			'height=380px,width=320px,toolbars=no,scrollbar=0,location=0,status=0,menubar=0,resizable=0'
+			
+			)
+		}
+		
+		
+		//打开空白新窗口
+		myWindow=window.open('','','width=200,height=100') //将新窗口定义为一个对象
+		myWindow.document.write("这是新窗口") //在新窗口写入内容
+		myWindow.focus()  //把键盘焦点给予一个窗口。
+		
+	/*
+		window.open(URL,name,features,replace))  打开新窗口
+		URL 为空时，新窗口空白
+		name	一个可选的字符串，
+			该字符串是一个由逗号分隔的特征列表，其中包括数字、字母和下划线，该字符声明了新窗口的名称。
+			这个名称可以用作标记 <a> 和 <form> 的属性 target 的值。如果该参数指定了一个已经存在的窗口
+		，那么 open() 方法就不再创建一个新窗口，而只是返回对指定窗口的引用。在这种情况下，features 将被忽略
+		replace	可省略
+			true - URL 替换浏览历史中的当前条目。
+			false - URL 在浏览历史中创建新的条目。
+	*/
+	</script>
+	
+<head>
+
+<body>
+	<div id='div1' onclick='new_win()'>点击进入“baidu”</div>
+</body>
+<html>	

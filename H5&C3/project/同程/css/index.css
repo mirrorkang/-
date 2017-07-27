@@ -1,0 +1,175 @@
+@charset "utf-8";
+body{
+	width: 320px;
+	background-color: #F0F0F0;
+	border: 1px solid #E4E1DA;
+}
+/*头部*/
+
+header{
+	height: 44px;
+	line-height: 44px;
+	text-align: center;
+	background-color: #3cafdc;
+	font-size: 1.5em;
+	color: white;
+	position: relative;
+}
+header #goBack,header #menu{
+	display: inline-block;
+	width: 30px;
+	height: 44px;
+	background-image: url('../images/header-nav.png');
+	position: absolute;
+}
+
+header #goBack{
+	left: 5px;
+	background-position: -35px 13px;
+}
+header #menu{
+	top: 0;
+	right: 5px;
+	background-position: 0px 13px;
+}
+/*头部 结束*/
+
+/*导航*/
+#nav{
+	margin-top: 10px;
+	width: 100%;
+	overflow: hidden;
+	font-size: 0;
+	background: #FFFFFF;
+}
+#nav a{
+	width: 79px;/*25%*/
+	height: 85px;
+	border-left:1px solid #E4E1DA ;
+	border-top:1px solid #E4E1DA ;
+	/*vertical-align: middle;*/
+	display: inline-block;
+}
+#nav a div{
+	width: 38px;
+	height: 38px;
+	margin: 7px auto;
+	background-image: url('../images/navIcon.png');
+	background-size:310px 150px;
+}
+
+#nav a figcaption{
+	text-align: center;
+	color: #64625f;
+	font-size: 12px;
+}
+.a1 div{
+	background-color: #FF7661;
+	background-position:-6px -7px;
+}
+.a2 div{
+	background-color: #66CCFF;
+	background-position:-56px -7px;
+}.a3 div{
+	background-color: #90CC00;
+	background-position:-106px -7px;
+}
+.a4 div{
+	background-color: #FF9F63;
+	background-position:-156px -57px
+}
+.b1 div{
+	background-color:#77B7FF;
+	background-position:-6px -57px;
+}
+.b2 div{
+	background-color: #FFBD5F;
+	background-position:-56px -57px;
+}.b3 div{
+	background-color: #56D8C4;
+	background-position:-106px -57px;
+}
+.b4 div{
+	background-color: #FFD33B;
+	background-position:-156px -7px
+}
+/*导航 结束*/
+
+/*其他链接*/
+.otherlink{
+	padding: 5px;
+	overflow: hidden;
+}
+.otherlink li{
+	width:145px;
+	height: 60px;
+	background-color: white;
+	margin-top: 7px;
+	padding-left: 5px;
+	padding-top: 5px;
+	vertical-align: middle;
+	color: #ccc;
+	font-size: 15px;
+	position: relative;
+}
+.otherlink li div{
+	width: 60px;
+	height: 100%;
+	position: absolute;
+	top:0;
+	right: 0;
+	background-image: url('../images/navIcon.png');
+	background-size:310px 150px;
+}
+.otherlink li:nth-child(1) div{
+	background-position: -195px 15px
+}
+.otherlink li:nth-child(2) div{
+	background-position: -250px 0px
+}
+.otherlink li:nth-child(3) div{
+	background-position: -255px -65px
+}
+.otherlink li:nth-child(4) div{
+	background-position: -193px -45px
+}
+.otherlink a{
+	display: block;
+}
+.otherlink li.top  a{
+	color:#ff6e47 ;
+	font-size: 19px;
+}
+.otherlink li.bottom  a{
+	color:#50c3eb ;
+	font-size: 19px;
+}
+/*其他链接 结束*/
+
+
+/*尾部*/
+footer{
+	margin-top: 10px;
+	padding: 10px;
+	height: 80%;
+	background-color: #3CAFDC;
+	text-align: center;
+	color: white;
+	font-family: "微软雅黑";
+	font-size: 12px;
+}
+
+footer ul li{
+	display: inline-block;
+	margin: 5px 10px;
+}
+footer  a{
+	color:white;
+}
+footer .nowscreen a{
+	color: #ddd;
+}
+footer p{
+	margin: 5px;
+}
+/*尾部  结束*/

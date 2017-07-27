@@ -1,0 +1,77 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset='utf-8'>	
+	<title></title>
+	<script type="text/javascript" language="javascript"> 
+	window.onload=function(){   //window.onload后加载
+		function time1(){
+			var time=new Date();
+			var yr=time.getFullYear();
+			var mth=time.getMonth()+1;  // 月份+1
+			var dy=time.getDate();
+			
+			
+			var wk=time.getDay();
+									
+			var wkday='';         //星期数转换
+				switch (wk){
+					case 0:
+					wkday='星期日'
+					break;
+					case 1:
+					wkday='星期一'
+					break;
+					case 2:
+					wkday='星期二'
+					break;
+					case 3:
+					wkday='星期三'
+					break;
+					case 4:
+					wkday='星期四'
+					break;
+					case 5:
+					wkday='星期五'
+					break;
+					case 6:
+					wkday='星期六'
+					break;
+				}
+			var h=time.getHours();
+			var am_pm=''
+				if(h==0){      //0点，改成 上午 12点
+					h=12;
+					am_pm='上午'
+				}else if(h<12){
+					am_pm='上午';
+				}else if(h=12){  //中午12点，数字保持不变； 下午
+					am_pm='下午';
+				}else if(h>12){ //中午12-23点，数字-12； 下午
+					h -=12;
+					am_pm='下午'
+				}
+			
+			
+			var m=time.getMinutes();
+			var s=time.getSeconds();
+			
+			nowtime=yr+'年'+mth+'月'+dy+'日 '+am_pm +' '+h+':'+m+':'+s+' '+wkday
+		
+			document.getElementById('timeshow').innerHTML=nowtime
+		}	
+			time1(); //时间轮播前，先执行一次函数，可保证打开页面即有显示。
+			setInterval(time1,1000) //每秒更新一次
+	}
+	</script>
+	
+<head>
+
+<body>
+	
+<h1 style='color:red'>你好，欢迎光临！</h1>
+<h1 id='timeshow'></h1>
+
+
+</body>
+<html>	

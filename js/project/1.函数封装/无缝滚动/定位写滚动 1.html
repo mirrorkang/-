@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#main {
+				position: relative;
+				overflow: hidden;
+				width: 590px;
+				height: 340px;
+			}
+			
+			#demo {
+				width: 9440px;
+				background: greenyellow;
+				position: absolute;
+				left: 0;
+				
+			}
+			
+			#demo>div {
+				width: 4720px;
+				overflow: hidden;
+				float: left;
+			}
+			
+			#demo>div img {
+				float: left;
+			}
+			
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var i=1;
+				var j=0;
+				var x=0;//margin-left 负数
+				function move(){
+					time =setInterval(function(){
+						j+=i;
+						if(j%590==0){
+							clearInterval(time)
+						}
+						x=-j
+						if(-x>=demo1.offsetWidth){
+							x += demo1.offsetWidth;
+							j=0
+						}
+						demo.style.left=x+'px'
+					},2)
+					
+					
+				}
+				setInterval(move,4000)
+				//move()
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="main">
+			<div id="demo">
+				<div id="demo1">
+					<img src="images/1.jpg" alt="" />
+					<img src="images/2.jpg" alt="" />
+					<img src="images/3.jpg" alt="" />
+					<img src="images/4.jpg" alt="" />
+					<img src="images/5.jpg" alt="" />
+					<img src="images/6.jpg" alt="" />
+					<img src="images/7.jpg" alt="" />
+					<img src="images/8.jpg" alt="" />
+				</div>
+				<div id="demo2"></div>
+			</div>
+		</div>
+	</body>
+
+</html>

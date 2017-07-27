@@ -1,0 +1,72 @@
+1、有的标签有默认的属性，每个浏览器默认的都有差异
+   
+	开始即设置ul,body,p,h1,h2,h3,ol{
+				margin：0px；
+				padding：0px;
+ 				font-size: 14px;
+ 				font-weight: normal;
+				}
+		ul,ol{ list-style: none; }
+		img { border: none; }IE6图片会有边框
+	*{margin：0px；padding：0px;},这个是对所有的标签去除样式，有些标签并没有默认的样式，
+	这样写法会消耗服务器能耗
+
+	IE6 不支持span：hover
+
+2、input浏览器默认的宽度不一样
+
+	样式当中要自定义input文本框的宽度
+
+3、取消chrome浏览器和火狐浏览器下input和textarea的默认样式
+	
+	（1）取消chrome下input和textarea的聚焦边框：
+		input,button,select,textarea{outline:none}
+
+	（2）取消chrome下textarea可拖动放大：
+		textarea{resize:none}
+
+4、css3特有属性
+	-moz、-ms、-webkit、-o分别是目前流行浏览器的私有属性
+		-ms-transform:rotate(7deg);      //-ms代表ie内核识别码
+		-moz-transform:rotate(7deg);     //-moz代表火狐内核识别码
+		-webkit-transform:rotate(7deg);  //-webkit代表谷歌内核识别码
+		-o-transform:rotate(7deg);       //-o代表欧朋【opera】内核识别码
+		transform:rotate(7deg);          //统一标识语句，最好这句话也写下去，符合w3c标准
+ps:使用css3属性时，大部分都要带这些识别前缀，早期点的浏览器才能识别，后来有整合一个js文件的，不写
+   这个你也可以网上搜索下这个文件，嵌入你的页面就好了
+
+5、margin合并解决方案
+   ps:一个盒子如果没有padding-top和border-top，那这个盒子会和其内部文档流第一个子元素的外边距重叠，
+      合并后的外边距等于两个中外边距较大者
+	1、设置父元素border：1px solid transparent;
+	2、设置父元素padding：1px;
+	3、设置父元素overflow：hidden
+	4、设置父元素或者本身浮动属性
+	5、设置父元素relative，子元素absolute
+
+6、容器内只放图片会有3px的空白
+   原因：由于img是行内块元素，浏览器会按照行内元素处理，认为其vertical-align：baseline，把它显示在
+         父元素的基线以上，如果把图片当成文字，文字放在一个没有设置宽高属性的div里面，上下都会留白
+	 因为文字有em框（当没有为文字设置额外的边距line-height的时候，em框指的是字体与基线的距离）
+	 这也是为什么4、5条可以消除这个间隙的原因
+	1、设置img为block
+	2、设置img浮动属性，同时父元素清除浮动
+	3、设置父容器跟图片相同的高度
+	4、当容器只有图片时，设置父元素line-height:0px
+	5、设置父元素font-size:0px
+	6、当图片尺寸大于23px时可设置图片vertical-align:middle可让间隙消失
+	（关于23px是浏览器的问题，有的是18px,是浏览器对容器有默认的行高）
+
+7、设置block为line-block同一行显示的时候，每个line-block之间会有默认的间隙
+   原因：每个block代码独占一行的时候会出现此问题，因为换行会被默认为一个空格间距
+	1、设置父元素font-size:0px，子元素的字体大小重新设置
+	2、设置每个盒子的margin-left为负值，第一个盒子的margin-left为0px
+	3、设置父元素的letter-spacing为负值，子元素设置letter-spacing：normal
+	4、设置父元素word-spacing为负值，子元素的字是英文需要重新设置word-spacing，中文则不需要
+	（负值需要根据浏览器设置，每个浏览器默认的空格大小不一样）
+
+8、图片和文字一行，让图片和文字垂直居中显示
+	同时设置img和文字（文字用容器包起来）vertical-align:middle，父容器设置相应的line-height
+	
+9、css中的层叠上下文和层叠顺序	
+	正z-index》z-index：auto（0）》inline/inline-block》float》block》负z-index》background/border	   

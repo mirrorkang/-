@@ -1,0 +1,40 @@
+﻿移动端 需定义
+	
+	<head>
+		
+		<!-- 移动端 定义视图模式 -->
+		<meta name='viewport' content="width=devive-width,initial-scale=1,user-scale=none"/>
+		<!--name="viewport" -->
+		<!--initial-scale 初始缩放比-->
+		<!--禁止用户缩放user-scale=none-->
+		 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+		  <!-- meta信息，可维护 --> 
+		  <meta charset="UTF-8" /> 
+		  <meta name="apple-mobile-web-app-capable" content="yes" /> 
+		  <meta name="apple-mobile-web-app-status-bar-style" content="black" /> 
+		  <meta content="telephone=no" name="format-detection" /> 
+		<!--搜索关键字 -->
+		  <meta name="keywords" content="景点门票，特价机票，酒店预订，出境度假，自助游" /> 
+		<!-- 网站介绍 -->
+		  <meta name="description" content="同程旅游是中国领先的手机一站式旅游预订平台" /> 
+  
+	</head>
+
+css 开端定义	
+@charset "utf-8";
+
+
+	
+快捷键：
+<!-- 系统 -->
+	alt+tap 切换操作界面
+	windows+tap 切换操作界面(立体)
+
+	fn+空格  开小灯
+ 
+ <!-- notepad++ -->
+ 
+ <!-- Hbuilder --> 
+ ctrl+enter 任意位置切换到下一行
+
+	

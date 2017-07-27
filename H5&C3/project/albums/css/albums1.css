@@ -1,0 +1,126 @@
+@charset "utf-8";
+
+/*1rem=100*/
+body{
+	background: #FAFAFA;
+}
+header{
+	height:1.28rem;
+	padding-top:.38rem;
+	background-image: linear-gradient(to right,#f51f59,#691eb6);
+}
+header div{
+	height: .9rem;
+	display: flex;
+	justify-content:space-between;
+	align-items: center;
+	color: white;
+	font-size:.4rem;
+}
+header div .fa{
+	color: white;
+	width:.92rem;
+	height: .92rem;
+	line-height: .92rem;
+	text-align: center;
+}
+/*头部结束*/
+
+/*边框？*/
+.menu{
+	display: flex;
+	/*flex: 7;*/
+	justify-content: space-between;
+	align-items: center;
+	color: #515151;
+	font-size: .35rem;
+	
+}
+.menu{
+	border-bottom: 1px solid #ececec;
+}
+.menu p{
+	flex: 7;
+	text-align: center;
+}
+.menu a.fa{
+	flex: 1.2;
+	height: .92rem;
+	line-height: .92rem;
+	text-align: center;
+	color: #515151;
+	border-left: 1px solid #ececec;
+	
+}
+/*移动端为点击效果  不能使用 ??*/ /*:active点击的瞬间*/
+.menu a.active:hover{ 
+	border-bottom: 4px solid #fc0;
+}
+
+
+/*主体*/
+.gds{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content:space-between;/*bug 横屏时某些机型中间空隙过大  ？？？*/
+	padding:0 .26rem;
+}
+
+.gds a{
+	margin-top: .26rem;
+	/*width: 3.36rem;*/  /*其下元素有宽度 不设宽度有无影响？？*/
+}
+.gds figcaption{
+	width: 3.36rem;
+	display: block;
+	border: 1px solid #ececec;
+	border-top: none;
+	padding: .1rem;
+	font-family: arial;
+	
+}
+.gds figcaption h4{
+	color:#263135;
+	font-size: 16px;
+}
+.gds figcaption h5{
+	color:#6d6d6d;
+	font-size: 14px;
+}
+.gds figcaption h6{
+	text-align: end;
+	color:#6d6d6d;
+	font-size: 12px;
+}
+.gds figure div{
+	width: 3.36rem;
+	height: 3.08rem;
+	background-size: 100%; /*兼容异常机型
+	background-repeat: no-repeat;/*兼容异常机型*/
+}
+.gds a:nth-child(1) div{
+	background-image: url('../images/2pic (1).jpg');
+	background-image:-webkit-image-set(url('../images/1pic (1).jpg') 1x,url('../images/2pic (1).jpg') 2x,url('../images/3pic (1).jpg') 3x)
+}
+.gds a:nth-child(2) div{
+	background-image: url('../images/2pic (2).jpg');
+	background-image:-webkit-image-set(url('../images/1pic (2).jpg') 1x,url('../images/2pic (2).jpg') 2x,url('../images/3pic (2).jpg') 3x)
+}
+.gds a:nth-child(3) div{
+	background-image: url('../images/2pic (3).jpg');
+	background-image:-webkit-image-set(url('../images/1pic (3).jpg') 1x,url('../images/2pic (3).jpg') 2x,url('../images/3pic (3).jpg') 3x)
+}
+.gds a:nth-child(4) div{
+	background-image: url('../images/2pic (4).jpg');
+	background-image:-webkit-image-set(url('../images/1pic (4).jpg') 1x,url('../images/2pic (4).jpg') 2x,url('../images/3pic (4).jpg') 3x)
+}
+.gds a:nth-child(5) div{
+	background-image: url('../images/2pic (5).jpg');
+	background-image:-webkit-image-set(url('../images/1pic (5).jpg') 1x,url('../images/2pic (5).jpg') 2x,url('../images/3pic (5).jpg') 3x)
+}
+.gds a:nth-child(6) div{
+	background-image: url('../images/2pic (6).jpg');
+	background-image:-webkit-image-set(url('../images/1pic (6).jpg') 1x,url('../images/2pic (6).jpg') 2x,url('../images/3pic (6).jpg') 3x)
+}
+
+/*主体 结束*/

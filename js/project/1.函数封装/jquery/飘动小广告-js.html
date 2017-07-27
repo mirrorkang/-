@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>飘动小广告</title>
+		<style type="text/css">
+			#ads{
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				overflow: hidden;
+				left: 0;
+				top: 0;
+				display: block;
+			}
+			.closeAds{
+				position: absolute;
+				top: 0;
+				right:0;
+				cursor: pointer;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				var ads=document.getElementById("ads");
+				var closeAds=document.getElementsByClassName('closeAds')[0];
+				
+				var w=window.innerWidth-ads.offsetWidth;
+				var h=window.innerHeight-ads.offsetHeight;
+				
+				var x= ads.offsetLeft;//水平距离
+				var y= ads.offsetTop;//垂直距离
+				var m=1;var n=1;
+				function auto(){
+					if(x>w){m=-1};
+					if(x<0){m=1};
+					if(y>h){n=-1};
+					if(y<0){n=1}
+					x+=m;y+=n;
+					ads.style.left=x+'px';
+					ads.style.top=y+'px';
+				}
+				t = setInterval(auto,20);
+				ads.onmouseover=function(){
+					clearInterval(t);
+				}
+				//鼠标移出：当广告显示时，定时器继续；当广告消失时，不作任何执行动作
+				ads.onmouseout=function(){
+					if(ads.style.display!=='none'){
+						t = setInterval(auto,20)
+					}
+				}	
+				closeAds.onclick=function(){
+					ads.style.display='none';
+				}
+
+				
+				
+			}
+		</script>
+	</head>
+	<body>
+		<div id="ads">
+			<img src="images/ads.jpg"/>
+			<div class="closeAds">✘</div>
+		</div>
+	</body>
+</html>

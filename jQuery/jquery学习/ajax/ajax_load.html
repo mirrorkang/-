@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../jQuery库/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<body>
+		<button>ClickME</button>
+		<div id="result"></div>
+		
+	</body>
+	
+	
+	<script>
+		$(document).ready(function(){
+			$('button').on('click',function(){
+				
+				
+				
+				var loading="加载中……";//"<img src=''>"也可加载图片
+				var url ='ajax_data.html';
+				
+				//loading
+				//load(url,data,function(response,status,xhr))
+				
+				
+//				$('#result').html(loading).load('ajax_data.html') //加载请求地址内的所有内容				
+				//$('#result').html(loading).load(url + ' span');//加载指定内容
+				//$('#result').html(loading).load('ajax_data.html #txt2')
+				
+				
+				//回掉函数
+//				$.get(url,{name:'kqq'},function(data,textstatus){
+//					alert(data) //请求地址错误时，不会调用回掉函数
+//					alert(textstatus)
+//				})
+//				$.get(url+'?name=kqq',function(data,textstatus){
+//					alert(data)
+//				})
+				
+				//getScript 执行js文件
+//				$.getScript('getjs.js',function(data,textstatus){
+//					alert('js文件已被调用')
+//				})
+//				
+				var data='';
+				$.ajax({
+					type:"post",//跨域只能用get
+					url:"ajax_data.json",
+//					async:true,
+//					data:{"firstName": "Brett", "lastName":"McLaughlin", "email": "aaaa"},//get请求时，此处会转化为jquerystring:?name=kqq&age=18
+//					dataType:'json',//xmls
+					success:function(data){
+						console.log(data)
+//						var datalist =data
+//						console.log(datalist.people)
+					}
+//					error:function(xhr,status,errorStr){
+//						
+//					},
+//					complete:function(xhr,data){//无论请求是否成功都会执行
+//						alert('请求完成')
+//					},
+//					beforeSend:function(){//发出请求前执行
+//						//加载中等
+//					},
+//					cache:false //设为true  则浏览器缓存请求内容，不能及时更新
+				});
+			})
+		})
+	</script>
+</html>

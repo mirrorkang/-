@@ -1,0 +1,173 @@
+10.31-11.04
+
+<!-- css精灵：css sprite -->是一种网页图片应用处理方式。
+	将一个页面涉及到的所有零星图片都包含到一张大图中去
+	这样一来，当访问该页面时，载入的图片就不会像以前那样一幅一幅地慢慢显示出来了。
+	对于当前网络流行的速度而言，不高于200KB的单张图片的所需载入时间基本是差不多。
+		.one{background-position: 0px 0px;}
+		.two{background-position-x: 0px -22px;}		
+<!-- 滑动门：鼠标悬停时，背景图片更换; -->
+		通常两张背景在同一张图片上，通过变换background-position：x y实现。
+		
+
+<!-- 通过hover +后代选择器，控制后代的显现		 -->
+		div:hover ul{
+			display: block;
+		}		
+<!-- 利用div 做小三角符号 ▲ -->
+			div{
+				margin: 1px;
+				width: 0;
+				border-left: 50px solid transparent;
+				border-right:50px solid transparent;
+				border-top: 100px solid hotpink; //箭头向下
+			}
+			 
+			左箭头?
+			#triangle-left {
+				width: 0;
+				height: 0;
+				border-top: 50px solid transparent;
+				border-right: 100px solid red;
+				border-bottom: 50px solid transparent;
+			}
+			
+			左上箭头◤
+			#triangle-topleft {
+				width: 0;
+				height: 0;
+				border-top: 100px solid red;
+				border-right: 100px solid transparent;
+			}
+11.01
+<!-- 选择器伪类 -->
+	p:first-child/last-child{} 子孙后代中，所有第一个后代为P的元素
+	p:first-line{}块级元素首行属性
+	p:first-letter首字母属性
+	p:nth-child(2n)偶数项
+	input:focus{}鼠标点击至表单内部时的属性
+	自定义滚动条伪类
+	::-webkit-scrollbar{width:4px;}
+	::-webkit-scrollbar-thumb{background-color:rgb(185,45,61);border-radius:3px;}
+
+	
+<!-- 多色字体：伪元素 -->
+	通过伪元素选择器制作多色字体			
+	span{
+		font-size: 80px;
+		color: blueviolet;
+		position: relative;
+		font-family:"隶书";
+	}
+		
+	span:before{
+		content: '看，晓风残月';
+		color: lawngreen;
+		height: 80%;
+		position: absolute;
+		width: 100%;
+		overflow: hidden;
+		white-space:nowrap
+	}
+	span:after{
+		content: '看，晓风残月';
+		color: yellow;
+		height: 60%;
+		width: 50%;
+		position: absolute;
+		left:0px;
+		overflow: hidden;
+		white-space:nowrap
+	}
+	
+11.02	
+<!-- 特殊元素 常见影响 -->
+
+	元素设置inline-block后,margin-top不可为负值；
+	
+	<!-- 行内块line-block元素 左右自带间隙 -->
+		解决方案：
+			1.标签首尾紧接，标签间无回车或空格（可写在同一行）；
+			2.父元素 font-size: 0， 元素本身font-size可单独设置；  <!-- 推荐 -->
+			3.左侧元素margin-left设置为负值  注意：如果同行所有元素都设置，最左侧元素margin也会改变，元素整体向左偏移
+			4.父元素 字间距word-spacing设置负值，子元素内部相关属性有继承（不影响中文字间距；)
+			5.父元素 字间距letter-spacing设置负值，子元素内部相关属性有继承； 
+	
+	<!-- inline-block 底部自带3px间距 -->
+	图片img元素，自带3px间距，不能在父元素内居中
+	解决方案：
+		(图片过小时，注意使用方法 一般情况图片不小于23px)
+		1.图片大于23px，设置属性垂直居中vertical-align: middle;
+		2.调试父元素height等于图片高度;
+		3.设置 属性display: block;
+		4.元素本身有float效果，父元素清除浮动；
+		5.当父元素内仅有img时：line-height：0或font-size:0；
+		
+		
+	<!--图片和文字垂直对齐-->
+	同时设置img和文字（文字用容器包起来）vertical-align:middle，父容器设置相应的line-height
+
+	
+	<!-- 垂直居中 -->
+		1.line-height	对块元素 设置line-height与height值相等，则 其内 行内元素 上下居中
+		2.vertical-align:middle  对块元素设置，内部文字或块元素（含block，inline-block：img）上下居中
+	
+	<!-- 浮动卡位 --> 
+	float  会默认将元素转化为块元素
+	解决方案：
+		1.设置margin值；
+		2.box-sizing:border-box
+		
+	<!-- margin合并问题 -->
+		块元素，其内为空时（无文本）或没有padding-top和border-top，
+		内含块元素的margin与父元素margin出现合并情况，取并值（取大）
+		解决方案：
+			1.设置border值 border-top:1px solid transparent
+			2.设置padding=1px(值足够小，内眼可模糊忽略)
+			3.内部加上文本内容
+			4.父元素有浮动float 注释：浮动后，如未清除浮动，后面元素的margin同样会与上面元素合并
+			5.父元素overflow：auto/hidden，影响‘第一代’的margin合并问题；
+			6.本身带有position属性：父元素有定位属性，子元素绝对定位；
+	
+11.03
+<!-- css层叠顺序 -->
+z-index大于0  >  z-index:auto/0  > inline/inline-block > float > block > z-index小于0 > background/border
+		1.z-index越大，越优先显示
+		2.默认：后来者居上
+
+11.04
+<!-- 文本溢出 -->
+	单行文本，超出宽度时，文本自动省略
+			white-space: nowrap;文本强制不换行 
+			overflow: hidden;隐藏 溢出文本
+			text-overflow: ellipsis;溢出文本省略号显示
+			
+	多行文本，文本超出范围自动省略（适合于谷歌浏览器，手机移动端，safari）
+		注释：(可结合height,设置省略出现在最后一行)
+		text-overflow: ellipsis;
+		overflow: hidden;
+		display: -webkit-box;
+		-webkit-line-clamp:2;省略功能所在的行==文本的行数
+		-webkit-box-orient: vertical;框的子元素应该排列方式
+	
+		
+<!-- 文本属性 -->
+	缩进 text-indent 2em/10px/20% ，可为负值
+	对齐方式：text-align  justify两端对齐 只针对大段英文，
+	单词间距 word-spacing 可用于英文单词，内部带有空格隔断开的中文词组，可为负值
+	字间距 letter-spacing，可用于字母，文字， 可为负值
+	text-transform: 文本的大小写
+		uppercase 所有字母大写；
+		lowercase 全部小写
+		capitalize首字母大写；
+	text-decoration: blink闪光  多数浏览器已不支持；
+	white-space: 设置如何处理元素内的空白
+		normal	默认。空白会被浏览器忽略。
+		pre	空白会被浏览器保留。其行为方式类似 HTML 中的 <pre> 标签。
+		nowrap	文本不会换行
+		pre-wrap	保留空白符序列，但是正常地进行换行。
+		pre-line	合并空白符序列，但是保留换行符。
+		inherit	规定应该从父元素继承 white-space 属性的值。
+		
+	direction:rtl ltr 规定文本的方向 / 书写方向。  与unicode-bidi结合使用，可使文字倒序
+	unicode-bidi:bidi-override 两者结合使用 //重写文本

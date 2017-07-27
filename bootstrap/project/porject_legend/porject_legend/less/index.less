@@ -1,0 +1,154 @@
+@font-face{
+    font-family: fontello;
+    src: url(../font/fontello.eot);
+    src: url(../font/fontello.svg);
+    src: url(../font/fontello.ttf);
+    src: url(../font/fontello.woff);
+}
+@font-face {
+                font-family:myfont; /*自定义字体名称：myfont*/
+                src: url('../font-family/Sansation_Light.eot');    /*eot  兼容ie9*/
+                src: url('../font-family/Sansation_Light.ttf');
+            }
+@themeColor:#F9C000;
+body,body a{
+    font-family:微软雅黑;
+}
+#header{
+    color: white;
+    .firstLine{
+        background: #0e353d;
+        border-bottom:1px solid #6f703e;
+       .navbar-brand{
+           margin-left: 110px;;
+        }
+        .navbar{ 
+            margin-bottom: 0;
+            a{
+                color:white;
+                font-family: fontello;
+            }
+        }
+        .navbar ul li{
+            padding: 10px;
+        }
+        .navbar ul a{
+           padding:5px;
+           border-radius:5px; 
+           &:hover{
+               background-color: @themeColor;
+           }
+        }
+    }
+    .signUp{
+        height:500px;
+        padding:60px;
+        background:url(../images/top-bg.jpg);
+        background-size:100% 100%;
+        .logo{
+            color: @themeColor;
+        }
+    }
+ // 注册
+    form{
+        margin: 50px auto;
+        input[type='email']{
+            width: 300px;
+        }
+        input[type='submit']{
+            background: #f3c100;
+            border: none;
+            width: 90px;
+        }
+    }
+ //分享
+    .share{
+        margin: 0 auto;
+        li{
+           span{
+                display: block;
+                text-align: center;
+                width: 35px;
+                height: 35px;
+                line-height: 35px;
+                border-radius: 50%; 
+                color:#948E6C;
+                font-size: 20px;
+           }
+            &:nth-of-type(1) span{background:#b86f31 ;}
+            &:nth-of-type(2) span{background:#3c569a ;}
+            &:nth-of-type(3) span{background:#51a3ad ;}
+            &:nth-of-type(4) span{background:#b45f30 ;}
+            &:nth-of-type(5) span{background:#51a3ad;}
+        }
+       
+    }
+    .yellow{
+        padding: 40px 20px;
+        background-color:#ffc700;
+        font-size: 20px;
+    }
+}
+.main{
+    padding-bottom: 50px;
+    background: #f0f0f0;
+    .sTitle{
+        margin-top: 30px;
+        span{
+            display: block;
+            width: 70px;
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+            font-size: 38px;
+            margin: 0 auto;
+            background-color: black;
+            color: white;
+            border-radius: 50%;
+        }
+    }
+    button{
+        color: #f1c100;
+        background: none;
+        border: none;
+    }
+     &>button{
+        display: block;
+        margin: 20px auto;
+        line-height: 50px;
+        padding:0 20px;
+        background: @themeColor;
+        border-radius: 5px;
+        color: white;
+    }
+}
+.portfolio>div{
+    margin: 10px auto;
+}
+.services{
+    &>div{padding: 20px 15px;}
+    .xsTitle{
+        background: #e7e7e7;
+        padding: 20px 15px;
+     }
+    .xsTitle span{
+       font-size: 28px;
+       color: @themeColor;  
+    }
+}
+.our-Blog{
+    .blog-Desc{
+        overflow: auto;
+        background: white;
+        padding: 10px 15px;
+    }
+    img{
+        width: 100%;
+    }
+    time{
+        display: block;
+        margin: 20px 0;
+        color: #e3e3e3;
+    }
+   
+}

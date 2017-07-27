@@ -1,0 +1,85 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset='utf-8'>	
+	<title></title>
+	<script type='text/javascript'>
+		//setInterval(function(){},time);每time(毫秒ms)执行一次
+		//setTimeout(function(){},time);一段time(毫秒ms)后，执行一次
+		var i=10;
+		
+	</script>
+	
+	
+</head>
+
+<body>
+	<h3></h3>
+	<button id="reset"  onclick="reset()">开始计时</button>
+
+	<button  onclick="stop()" style="color:red">暂停</button>
+	<button   onclick="start()" id="start">继续</button> 
+	<!-- <button  onclick="end()">结束</button> -->
+	
+	<h1 id='h1-1'>10</h1>
+	<h1 id='h1-2'></h1>
+	
+	<script type='text/javascript'>	
+	
+		var obj1=document.getElementById('h1-1');
+		var obj2=document.getElementById('h1-2');
+		var time;
+		function set(){
+			var i = obj1.innerHTML;
+			i--;
+			//obj1.innerHTML=i;
+			obj2.innerHTML='计时开始';
+			if(i<=0){
+			clearInterval(time);
+			i=0;
+			obj2.innerHTML='计时结束';
+			}
+			obj1.innerHTML=i
+		}
+		
+		function start(){
+			document.getElementById("start").disabled='disabled';
+			clearInterval(time);
+			time=setInterval(set,1000); //time隐式声明(无var)
+			
+		}
+		
+		function stop(){
+			document.getElementById("start").disabled='';
+			clearInterval(time);//清除定时器
+			
+			obj2.innerHTML='暂停';
+			document.getElementById('reset').innerHTML='重新计时';
+		}
+		function end(){
+			document.getElementById("start").disabled='';
+			clearInterval(time);
+			//obj1.innerHTML=0;
+			obj2.innerHTML='计时结束';
+		}
+		function reset(){
+			document.getElementById("start").disabled='';
+			
+			clearInterval(time);
+			obj1.innerHTML=10;
+			obj2.innerHTML='';
+			start();
+		}
+		
+		
+		/*var i=10;
+		setInterval(function(){
+			document.write(i+"<br />");
+			i--;
+		}
+		,1000)*/ 
+		//输出10，9,8，……0，-1
+	</script>	
+
+</body>
+</html>	

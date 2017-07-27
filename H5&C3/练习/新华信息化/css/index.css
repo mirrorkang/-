@@ -1,0 +1,134 @@
+body{
+	font-family:  "微软雅黑";
+}
+header{
+	height: 40px;
+	line-height: 40px;
+	width: 100%;
+	background-color: #32528D;
+	font-size: 20px;
+	color: white;
+	text-align: center;
+	vertical-align: middle;
+	position: relative;
+	
+}
+
+header .fa-home{
+	width: 80px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 16px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	color:white; 
+	text-align: center;
+
+}
+/*新闻信息*/
+.content{
+	text-align: center;
+}
+.content li{
+	width: 100%;
+	line-height: 2.5;
+	border-bottom: 1px dashed lightgrey;
+}
+.content li.hidden{
+	display: none;
+}
+
+.content li time,.content li a{
+	display: inline-block;
+	vertical-align: middle;/*设置inline-block间的元素上下对齐*/
+}
+
+.content li time{
+	width:80px; /*25%*/
+	color: darkgray;
+}
+.content li a{
+	width: 70%;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	margin-right: 5px;
+	margin-left: 5px;
+	font-size: 14px;
+	
+	
+}
+
+.content button{
+	width: 50%;
+	line-height:2;
+	font-size: 12px;
+	color: grey;
+	border-radius: 10px;
+	/*border: 0;*/
+	margin: 5px;
+	/*left: 0;
+	right: 0;*/
+}
+/*新闻信息 结束*/
+
+
+/*footer*/
+footer{
+	text-align: center;
+	background-color:whitesmoke;
+	padding: 10px;
+	position: relative;
+}
+
+	footer .fa-sort-up{
+		
+		font-size: 30px;
+		color: gray;
+		background-color:whitesmoke;
+		position: absolute;
+		right:10px;
+		top:10px;
+	}
+	footer ul{
+		width: 60%;
+		line-height: 1.5;
+		vertical-align: middle;
+		margin: 0px auto;
+		font-size: 0;
+		border: 1px solid gray;
+		border-radius: 5px;
+		background-color: ghostwhite;
+		overflow: hidden;
+	}
+	footer li{
+		display: inline-block;
+		width:33.3%;
+		
+	}
+	footer li a{
+		display: inline-block;
+		width:100%;
+		line-height: 2;
+		font-size: 12px;
+		color: gray;
+		white-space: nowrap;
+	}
+	footer li:nth-child(1) a,footer li:nth-child(2) a{
+		border-right: 1px solid gray;
+	}
+	footer li:nth-child(3) a{
+		background-color:lightgray;
+		color: cornflowerblue;
+	}
+	
+	
+	footer p.nav{
+		margin: 10px;
+		color: #666666;
+	}
+	footer p:last-child{
+		color: gray ;
+	}
+/*footer 结束*/

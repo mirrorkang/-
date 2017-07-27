@@ -1,0 +1,229 @@
+@charset "utf-8";
+
+/*header*/
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 20px;
+    border-bottom: 1px solid #d2d2d2;
+}
+header a.logo{
+    width: 152px;
+}
+header nav{
+    width: 450px;
+    box-sizing: border-box;
+}
+header nav a{
+    display: inline-flex;
+    padding: 0 10px;
+    font-size: 16px;
+    font-family: "Microsoft Yahei";
+    color: #333;
+}
+header nav a.active,header nav a:hover{
+    color: #00aeee;
+}
+header form{
+    width: 300px;
+    display: flex;
+    align-items: center;
+}
+header form input[type=search]{
+    display: inline-flex;
+    width: 300px;
+    height: 50px;
+    text-indent: 10px;
+    font-size: 14px;
+}
+header form input[type=submit]{
+    display: none;
+}
+header form label{
+    display: inline-flex;
+    width: 50px;
+    height: 50px;
+    background-image: url("../images/sousou.jpg");
+
+}
+/*banner*/
+section.row1{
+    position: relative;
+    overflow: hidden;
+}
+section.row1 aside{
+    z-index: 5;
+    position: absolute;
+    width: 234px;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    background: rgba(0,0,0,.6);
+}
+section.row1 aside div{
+    box-sizing: border-box;
+    padding-top: 15px;
+    text-align: center;
+    width: 50%;
+}
+section.row1 aside div a{
+    display: block;
+    margin: 15px auto;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: "Microsoft Yahei";
+    color: #e6e6e6;
+}
+section.row1 aside div a:hover{
+    color: #00aeee;
+}
+section.row1 article ul{
+    position: relative;
+}
+section.row1 article ul li{
+    float: left;
+    width: 100%;
+}
+section.row1 article a{
+    display: block;
+}
+section.row1 article a img{
+    display: block;
+    width: 100%;
+}
+
+
+section.row2{
+    margin-top: 20px;
+    display: flex;
+    box-sizing: border-box;
+    padding: 0 20px;
+    justify-content: space-between;
+}
+section.row2 a{
+    display: block;
+    font-size: 16px;
+    color: #666;
+}
+section.row2 a:hover{
+    color: #00aeee;
+}
+section.row2 a img{
+    display: block;
+    max-width: 100%;
+}
+section.row2 figcaption{
+    border:1px solid #eee;
+    border-top: none;
+    text-indent: 20px;
+    font-size: 14px;
+}
+section.row2 figcaption a,section.row2 figcaption p{
+    padding: 6px 0;
+}
+section.row2 time{
+    display: inline;
+}
+section.row3{
+    display: flex;
+    box-sizing: border-box;
+    padding: 10px 30px;
+    justify-content: space-around;
+    align-items: center;
+}
+section.row3 a{
+    display: block;
+    width: 225px;
+    text-align: center;
+    color: #535353;
+}
+section.row3 a h4{
+    font-size: 15px;
+}
+section.row3 a img{
+    display: block;
+    margin: 10px auto;
+}
+
+
+@media all and (min-width: 960px){
+    .nav2,.nav3{
+        display: none;
+    }
+    figure{
+        width: 220px;
+    }
+}
+
+@media all and (min-width: 540px) and (max-width: 959px){
+    header .nav2{
+        display: block;
+    }
+    header .nav1,header .nav3,header form,section.row1 aside{
+        display: none;
+    }
+    figure{
+        width: 130px;
+    }
+    figcaption{
+        text-indent: 0 !important;
+        text-align: justify;
+    }
+    section.row3 a{
+        width: 120px !important;
+    }
+    section.row3 a img{
+        max-width: 100%;
+    }
+}
+@media all and (min-width: 320px) and (max-width: 539px){
+    header{
+        margin: 0;
+        padding: 0;
+        background: powderblue;
+    }
+    header .nav3{
+        display: block;
+        margin: auto;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+    }
+    header nav a{
+        color: darkred;
+    }
+    header .nav1,header .nav2,header .logo,header form,section.row1 aside{
+        display: none;
+    }
+    section.row2{
+        display: block;
+    }
+    figure{
+        width: 100%;
+        text-align: center;
+    }
+    figure img{
+        width: 100%;
+    }
+    figure figcaption{
+        text-indent: 0;
+        text-align: center;
+    }
+    section.row3{
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+    section.row3 a{
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+    }
+    section.row3 a img{
+        max-width: 100%;
+    }
+}

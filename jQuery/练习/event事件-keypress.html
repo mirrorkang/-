@@ -1,0 +1,123 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>表单事件</title>
+<style type="text/css">
+#login{
+	width: 400px;
+	height: 250px;
+	background-color: #f2f2f2;
+	border:1px solid #DDDDDD;
+	padding: 5px;
+}
+#login fieldset {
+	border: none;
+	margin-top: 10px;
+}
+#login fieldset legend{
+	font-weight: bold;
+}
+#login fieldset p{
+	display: block;
+	height: 30px;
+}
+#login fieldset p label {
+	display: block;
+	float:left;
+	text-align: right;
+	font-size: 12px;
+	width: 90px;
+	height: 30px;
+	line-height: 30px;
+}
+#login fieldset p input {
+	display: block;
+	float:left;
+	border: 1px solid #999;
+	width: 250px;
+	height: 30px;
+	line-height: 30px;
+}
+#login fieldset p input.code{
+	width: 60px;
+}
+#login fieldset p img{
+	margin-left: 10px;
+}
+#login fieldset p a{
+	color: #057BD2;
+	font-size: 12px;
+	text-decoration: none;
+	margin: 10px;
+}
+#login fieldset p input.btn{
+	background: url("./images/login.gif") no-repeat;
+	width: 98px;
+	height: 32px;
+	margin-left: 60px;
+	color: #ffffff;
+    cursor: pointer;
+}
+#login fieldset p input.input_focus{
+	background-color: #BEE7FC;
+}
+</style>
+<script type="text/javascript" src="./js/jquery-1.8.3.min.js" ></script>
+<script type="text/javascript">
+$(document).ready(function () {
+	 //用户名输入框的焦点事件
+	$('input').focus(function(){
+		$(this).css('background-color','lightblue')
+	})
+	$('input').blur(function(){
+		$(this).css('background-color','white')
+	})
+    //鼠标事件 click事件提交表单，鼠标移至按钮，按钮字体变粗。移出按钮则字体为正常字体
+     $('.btn').mouseover(function(){
+     	$(this).css('font-weight','bolder')
+     })
+     $('.btn').mouseout(function(){
+     	$(this).css('font-weight','normal')
+     })
+   
+    //键盘事件，敲击回车键进行表单提交,keyCode的数值代表不同的键盘按键
+    //JavaScript需要区分keyCode(IE)和which(FF)的兼容性
+    $(document).keypress(function(e){
+    	if(e.keyCode==13){  //keyCode==13  enter
+    		//alert('提交表单？')
+    		$('form').submit()
+    	}
+    })
+   
+
+      
+});
+</script>
+</head>
+<body>
+<p>设置keyCode=13时,提交表单</p>
+<form id="login">
+  <fieldset>
+    <legend>用户登录</legend>
+    <p>
+        <label>用户名：</label>
+        <input name="member" type="text" />
+    </p>
+    <p>
+        <label>密码：</label>
+        <input name="password" type="text" />
+    </p>
+    <p>
+        <label>验证码：</label>
+        <input name="code" type="text" class="code" />
+        <img src="images/code.gif" width="80" height="30" /><a href="#">换一张</a>
+	</p>
+	<p>
+	         <input name="" type="button" class="btn" value="登录" />
+	         <a href="#">注册</a><span>|</span><a href="#">忘记密码？</a>
+	</p>
+  </fieldset>
+</form>
+</body>
+</html>

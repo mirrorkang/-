@@ -1,0 +1,30 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset='utf-8'>	
+	<title></title>
+	<script type="text/javascript" language="javascript"> 
+	window.onload = function(){
+		function nowtime(){
+			var today = new Date();
+			var h= today.getHours();
+			var m=today.getMinutes();
+			var s=today.getSeconds();
+			
+			document.getElementById('time').innerHTML ='现在是：北京时间'+h+'时'+m+'分'+s+'秒'
+		}
+		nowtime();
+		setInterval(nowtime,1000)
+	
+	}
+	</script>
+	
+<head>
+
+<body>
+	
+
+<h1 id='time'></h1>
+
+</body>
+<html>	

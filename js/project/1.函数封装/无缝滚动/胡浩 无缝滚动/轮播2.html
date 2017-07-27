@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			img {
+				display: block;
+			}
+			
+			ul {
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+				float: left;
+			}
+			
+			#main {
+				position: relative;
+				overflow: hidden;
+			}
+			
+			#box {
+				overflow: hidden;
+			}
+			
+			ul li {
+				list-style: none;
+				float: left;
+			}
+			
+			span {
+				width: 30px;
+				height: 60px;
+				position: absolute;
+				line-height: 60px;
+				text-align: center;
+				color: white;
+				background-color: rgba(0, 0, 0, .3);
+				top: 50%;
+				margin-top: -30px;
+				display: none;
+				z-index: 2;
+			}
+			
+			#all>span:hover {
+				background-color: #501500;
+			}
+			
+			#pre {
+				left: 0;
+			}
+			
+			#next {
+				right: 0;
+			}
+			
+			#all {
+				width: 590px;
+				height: 340px;
+				position: relative;
+			}
+			
+			#all:hover span {
+				display: block;
+			}
+			
+			
+		</style>
+		<script type="text/javascript">
+			window.onload = function() {
+				var main = document.getElementById("main")
+//				var box = document.getElementById("box")
+				var demo = document.getElementById("demo")
+				var each = demo.getElementsByTagName('li')
+				var length = each.length;
+				var pre = document.getElementById("pre")
+				var next = document.getElementById("next")
+				var demoW = 0;
+				main.style.width = each[0].offsetWidth + 'px';
+				demo.appendChild(each[0].cloneNode(true))
+				demo.insertBefore(each[length - 1].cloneNode(true), each[0])
+
+				for(var i = 0; i < each.length; i++) {
+					demoW += each[i].offsetWidth;
+				}
+				demo.style.width = demoW + 'px';
+				main.scrollLeft = each[0].offsetWidth;
+				var speed = 5;
+				var len = 10;
+				var time = null;
+				var x = each[0].offsetWidth;
+				var direcion = 1;
+				var index = 1;
+				var indexbofore = 0;
+				var indexnow = 1;
+
+				function move() {
+					clearInterval(time)
+					time = setInterval(function() {
+						x += len * direcion;
+						if(x % (index * each[0].offsetWidth) == 0) {
+							clearInterval(time)
+							index = 1;
+						}
+						if(direcion == 1) {
+							if(main.scrollLeft >= (demo.offsetWidth - each[0].offsetWidth)) {
+								main.scrollLeft -= (demo.offsetWidth - each[0].offsetWidth)
+								x = each[0].offsetWidth
+							} else {
+								main.scrollLeft = x;
+							}
+						}
+						if(direcion == -1) {
+							if(main.scrollLeft <= each[0].offsetWidth) {
+								main.scrollLeft += (demo.offsetWidth - each[0].offsetWidth)
+								x = demo.offsetWidth - each[0].offsetWidth
+							} else {
+								main.scrollLeft = x;
+							}
+						}
+
+					}, speed)
+				}
+
+				pre.onclick = function() {
+					direcion = -1;
+					move()
+				}
+				next.onclick = function() {
+					direcion = 1;
+					move()
+				}
+				setInterval(move, 3000)
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="all">
+			<span id='pre'>&lt;</span>
+			<span id='next'>&gt;</span>
+			<div id="main">
+				<ul id='demo'></ul>
+				<ul id='demo1'>
+					<li><img src="images/1.jpg" alt="" /></li>
+					<li><img src="images/2.jpg" alt="" /></li>
+					<li><img src="images/3.jpg" alt="" /></li>
+					<li><img src="images/4.jpg" alt="" /></li>
+				</ul>
+				<ul id='demo2'></ul>
+			</div>
+
+		</div>
+	</body>
+
+</html>

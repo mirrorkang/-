@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>媒介检索css3 @media</title>
+		<style type="text/css">
+			body{
+				min-width: 320px;/* 移动端一般在320px以上*/
+			}
+			.box{/*默认 1366px时*/
+				width: 500px;
+				height: 400px;
+				background:red;
+			}
+			@media all and (min-width:768px) and (max-width:992px){
+				.box{
+					width: 500px;
+					height: 400px;
+					background: blue;
+				}
+			}
+			@media all and (min-width:320px) and (max-width:767px){
+				.box{
+					width:300px;
+					height: 100px;
+					background:orange;
+				}
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			
+		</div>
+	</body>
+</html>

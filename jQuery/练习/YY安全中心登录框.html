@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html  >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>制作YY安全中心登录框特效 </title>
+<script type="text/javascript" src="./js/jquery-1.8.3.min.js" ></script>
+<style type="text/css" >
+*{
+	margin:0px;
+	padding:0px;
+	font-size:12px;
+}
+#login{
+	position:relative;
+	height:282px;
+	width:494px; 
+	background:url(images/bg.jpg) no-repeat;
+}
+#login input.text{
+	position:absolute; 
+	height:26px;
+	line-height:26px;
+	color:#999;
+	width:207px;
+}
+.username{
+	left:183px;
+	top:105px;
+}
+
+.passwrd{
+	left:183px;
+	top:145px;
+}
+
+input.btn{
+	position:absolute; 
+	left:183px;
+	top:190px; 
+	height:32px;
+	line-height:32px;
+	width:100px; 
+	background:url(images/btn.jpg) no-repeat;
+	border:none;
+    cursor: pointer;
+}
+#msg{
+    position:absolute;
+    
+    left:183px;
+    top:230px;
+}
+</style>
+<script src="../../jquery.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	  $(document).ready(function(){
+	  	//点击提交按钮
+	  	$('.btn').click(function(){
+	  		if($('.text').val()=='通行账号/邮箱' && $('.passwrd').val()==''){
+	  				$('#msg').html('请输入账号密码');
+	  				$('#msg').css('color','red')
+	  				
+	  			
+	  		}else{
+		  		$('#msg').html('输入正确');
+		  		$('#msg').css('color','black')
+	  		}
+	  	})
+	  	//选中，离开
+		$('.username').focus(function(){
+			if($(this).val()=='通行账号/邮箱')
+	  		$(this).val('')
+	  	})
+	  	$('.username').blur(function(){
+	  		if($(this).val()==''){
+	  			$(this).val('通行账号/邮箱')
+	  		}
+//	  		else if(/.\w{}/.test($(this).val()==true){
+//	  			$(this).val('输入错误，请重新输入')
+//	  		}
+//	  		
+	  	})
+	  	
+	  })
+</script>
+</head>
+<body>
+ <div id="login">
+ 	<form>
+    	<input type="text" name='username' class='text username' value="通行账号/邮箱" />
+        <input type="password" name='password' class='text passwrd' value=""/>
+        <input type="button" name='sub'  class='btn' value=" "/>
+        <p id="msg"></p>
+    </form>
+ </div>
+
+</body>
+</html>

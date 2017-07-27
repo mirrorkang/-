@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../jQuery库/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				 $( ".div1" ).html('123');
+//				  $( ".div1" ).draggable()
+				  
+				  $('.btn').on({
+				  	'mouseenter':function(){
+				  		$(this).html('enter')
+				  	},
+				  	'click':function(){
+				  		$(this).html('click');
+//				  			alert($("#date1").val());
+				  			var val1=$("#date1").val()
+				  			alert(val1)
+				  	}
+				  })
+				  $('#date1').on('change',function(){
+				  	alert( $(this).val());
+				  	
+				  })
+			
+			})
+		</script>
+		<style>
+			div{
+				width: 200px;
+				height: 200px;
+				background: black;
+				margin: 10px 0;
+				color: white;
+			}
+			.div1{
+				
+			}
+			.overtext{
+				height: 100px;
+				background:yellow;
+				/*overflow: scroll;*/
+				
+				
+				/*overflow-x: hidden;*/
+				overflow-y: scroll;
+				
+				scrollbar-face-color: #fcfcfc; 
+				scrollbar-highlight-color: #6c6c90; 
+				scrollbar-shadow-color: #fcfcfc; 
+				scrollbar-3dlight-color: #fcfcfc; 
+				scrollbar-arrow-color: #240024; 
+				scrollbar-track-color: #fcfcfc; 
+				scrollbar-darkshadow-color: #48486c; 
+				scrollbar-base-color: #fcfcfc 
+				
+			}
+			.overtext p{
+				height: 80px;
+			}
+		</style>
+			
+	</head>
+	
+	<body>
+		<input id="date1" type="date"  value="date"/>
+		<input type="time"  value="time"/>
+		<input type="datetime"  value="datetime"/>
+		<input type="datetime-local"  value="datetime"/>
+		<section class="overtext">
+			<p>13232</p>
+			<p>132sdsd32</p>
+		</section>
+		<div class="btn">点击</div>
+		<div class="div1"></div>
+		<div class="div2"></div>
+	</body>
+</html>

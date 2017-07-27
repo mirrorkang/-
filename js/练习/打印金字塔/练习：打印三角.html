@@ -1,0 +1,51 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset='utf-8'>	
+	<title>for语句 嵌套</title>
+	<style>
+
+	</style>
+	<script type='text/javascript'>
+		//外面循环一次，里面循环一轮
+		for(i=0;i<4;i++){
+			document.write("<br/>")
+			document.write("<br/>当i="+i+"时，<br/>")
+			for(j=0;j<6;j++){
+			document.write("j="+j+"；")
+			}
+			document.write("<br/>")
+		}
+		
+		for(var i=0;i<=7;i++){
+			
+			for(var k=0;k<i; k++){
+			document.write("&nbsp;")
+			}
+			for(var j=0;j<7-i; j++){
+			document.write("倩&nbsp;")
+			}
+			document.write("<br />")
+		}
+		for(var i=0;i<=7;i++){
+			
+			for(var j=0;j<7-i; j++){
+			document.write("&nbsp;")
+			}
+			for(var k=0;k<i; k++){
+			document.write("倩&nbsp;")
+			}
+			document.write("<br />")
+		}
+		
+	</script>
+	
+<head> 
+
+<body>
+	
+
+
+
+</body>
+<html>	

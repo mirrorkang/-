@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.css" />
+	</head>
+	
+	<script src="../jQuery库/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="jquery-ui-1.12.1.custom/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+//			$('.div1').draggable();
+//			$('.div1').draggable({
+//				helper:'clone',
+//				opacity:.5
+//			})
+//			$('.div3').droppable({
+//				activeClass:'',
+//				hoverClass:'drophover',
+//				drop:function(){
+//					$(this).replaceWith('<div class="div3">dropped</div>')
+//				}
+//			})
+//
+//			$('ul').sortable()
+//			$('ul').sortable({
+//				axis:'y' //可移动的方向 x轴/y轴
+//			})
+//			$('ul').selectable()//与sortable冲突
+//			$('span').resizable()	
+			$('#accordion').accordion({
+				collapsible:true,//true点击展开，再次点击关闭  false:再其他选项展开时，上一个关闭
+				active:2,//默认展开项
+				header:'h3'//设置作为header的标签
+			})
+//			$('span').dialog();
+			$('.slider').slider({
+//				step:25
+			});
+			$('.slider').on('slidechange',function(e,ui){
+				console.log(e);
+				console.log(ui.value);
+			})
+		})
+	</script>
+	<style>
+		
+		/*div{
+			width: 100px;
+			height: 100px;
+			margin:10px;
+			background: red;
+		}*/
+		.div3{
+			background: none;
+			border: 1px dashed black;
+		}
+		.drophover{
+			border: 1px solid black;
+		}
+		ul li{
+			line-height: 1.5;
+			width: 200px;
+		}
+		.ui-selected{
+			/*font-size:40px;*/
+			background: yellow;
+		}
+		section{
+			height: 100px;
+			width: 100px;
+			border: 1px solid  black;
+		}
+		span{
+			display: block;
+			width: 100px;
+			height: 100px;
+			margin:10px;
+			background: red;
+		}
+	</style>
+	<body>
+		<div class="slider"></div>
+		<p></p>
+		<div class="slider"><p>2356</p></div>
+		<!--<section id="accordion">
+			<h3>section1</h3>
+		<div>1</div>
+		<h3>section2</h3>
+		<div>1</div>
+		<h3>section3</h3>
+		<div>1</div>
+		</section>-->
+		
+		<!--<div class="div1">123</div>
+		<div class="div2">456</div>
+		<div class="div3">accept</div>-->
+		
+		<!--<ul class="list">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>-->
+		<span>2323</span>
+	</body>
+</html>
+			

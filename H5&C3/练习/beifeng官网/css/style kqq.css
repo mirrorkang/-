@@ -1,0 +1,170 @@
+@charset "utf-8";
+a{
+	font-family: "微软雅黑";
+	color: black;
+}
+
+header{
+	
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	
+}
+img.logo{
+	display: block;
+	width: 152px;
+	height: 104px;
+} 
+
+
+header ul li{
+	display: inline-block;
+	margin: 0 5px;
+}
+header ul a{
+	/*display: inline-flex;*/
+	font-size: 16px;
+}
+header li.shouye a{
+	color:#00aeee;
+}
+
+
+/*搜素*/
+form{
+	height: 50px;
+	font-size: 0;/*清除行内元素3px间距*/
+}
+form input{
+	vertical-align: middle; 
+	/*inline-block元素之间对齐*/
+	/*默认情况下，inline-block基于文字的底线对齐*/
+}
+form input[type='search']{
+	width: 300px;
+	height: 50px;
+	box-sizing: border-box;
+	font-size: 14px;
+	text-indent: 10px;
+}
+form input[type='submit']{
+	width: 50px;
+	height: 50px;
+	border: 0;
+	background-image: url('../images/sousou.jpg')
+}
+/*内容区*/
+
+/*part 1*/
+.part1{
+	position: relative;
+}
+.part1 aside{
+	width:20%; /*230px;*/
+	height:100%; /*460px;*/
+	background-color: rgba(0,0,0,.6);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items:center;
+	position: absolute;/*脱离文档流*/
+	/*top:0;*/
+	
+}
+.part1 aside a{
+	width: 50%;
+	color: white;
+	text-align: center;
+	font-size: 14px;
+}
+.part1 img{
+	display: block;
+	width: 100%;
+}
+
+/*part 2*/
+.part2,.part3{
+	display: flex;
+	width: 100%;
+	justify-content:space-between;
+	box-sizing: border-box;
+	padding: 0 20px;
+	margin: 20px 0;
+}
+
+.part2 figure img{
+	width: 220px;
+}
+
+.part2 figcaption{
+	text-align: center;
+	color: #666666;
+	font-size: 16px;
+	box-sizing: border-box;
+	border: 1px solid #eee;
+}
+.part2 time{
+	width: 100%;
+	color:black;
+	text-align: center;
+	font-size: 14px;
+	margin:10px auto;
+}
+
+/*part 3*/
+.part3{
+	display: flex;
+	justify-content: space-between;
+}
+
+.part3 a{
+	display: block;
+	width: 220px;
+	text-align: center;
+	margin-top: 10px;
+}
+.part3 a img{
+	width: 120px;
+}
+/*内容区 结束*/
+
+/*自适应*/
+	
+@media all and (min-width: 960px){
+	ul.nav2,ul.nav3{
+		display: none;
+	}
+}
+
+@media all and (min-width: 540px) and (max-width: 959px){
+   header .nav2{display: block;}
+   .nav1,.nav3,.search,.part1 aside{display: none;}
+   .part2 a,.part3 a{ width:120px;  }
+   .part2 a img{ width: 100%;   }
+}
+@media all and (min-width: 320px) and (max-width: 539px){
+	header .nav3{
+		 display: block;
+		 width: 100%;
+		 height: 50px;
+		 line-height: 50px;
+		 text-align: center;
+		 background-color:#B0E0E6;
+	}
+   	.nav1,.nav2,.search,img.logo,.part1 aside{
+   		display: none;
+   	}
+   .part2,.part3{ /*flex 变为block*/
+   		display: block;
+   }
+   .part2 a img{
+   		width: 100%;
+   }
+   .part3 a{
+   	margin: 10px auto;
+   }
+   .part3 a img{
+   		width: 100%;
+   }
+}

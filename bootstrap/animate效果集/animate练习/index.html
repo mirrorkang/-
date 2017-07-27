@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="css/animate.min.css">
+  <style>
+    ul{
+      width: 1000px;
+      height: 400px;
+      padding: 0;
+      display: flex;
+      margin: 0 auto;
+      justify-content: space-between;
+      list-style: none;
+      overflow: hidden;
+    }
+    li{
+      height: 230px;
+      box-sizing: border-box;
+      padding: 10px;
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body>
+<ul>
+  <li class="animated bounceInDown wow" data-wow-delay=".5s"><img src="images/1.jpeg" alt="1"></li>
+  <li class="animated bounceInDown wow" data-wow-delay="1s"><img src="images/2.jpeg" alt="2"></li>
+  <li class="animated bounceInDown wow" data-wow-delay="1.5s"><img src="images/3.jpeg" alt="3"></li>
+  <li class="animated bounceInDown wow" data-wow-delay="2s"><img src="images/4.jpeg" alt="4"></li>
+</ul>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script>
+  new WOW().init();
+</script>
+</body>
+</html>

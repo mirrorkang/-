@@ -1,0 +1,116 @@
+@charset "utf-8";
+
+body{
+    background: #F2EEE0;
+     width: 320px;
+     padding: 5px;
+}
+header{
+    width: 310px;
+    height: 48px; /*尽量为偶数*/
+    line-height: 48px;
+    margin:0 auto;
+    background: #f5eddd;
+    font-size: 0;/*解决子元素间 变为inline-block时的间距*/
+}
+header a,header span{
+    vertical-align: middle;
+    display: inline-block;
+}
+
+header .back-bar{
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+    background: url("../images/title_bar.png") no-repeat;
+    background-size: contain;  /*背景图片比容器大时使用*/
+
+
+}
+
+header .logo{
+    width: 92px;
+    height: 24px;
+}
+
+header .user{
+    width: 22px;
+    height: 22px;
+    margin-left: 32px;
+    background: url("../images/user.png") no-repeat;
+    background-size: contain;
+}
+header .shopping-cart{
+    width: 22px;
+    height: 22px;
+    margin-left: 32px;
+    background: url("../images/shop_cart_on.png") no-repeat;
+    background-size: contain;
+    position: relative;
+}
+header .shopping-cart span{
+    position: absolute;
+    left: 15px;
+    top:-7px;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    text-align: center;
+    color: white;
+    border-radius: 50%;
+    font-size: 12px;
+
+}
+
+nav{
+	width: 310px;
+	margin: 0 auto;
+	font-size: 0;
+	background: #f4f4eb;
+}
+nav a{
+	display: inline-block;
+	width: 95px;
+	vertical-align: middle;
+	text-align: center;
+	margin: 15px 0;
+}
+nav a img{
+	width: 44px;
+	height:44px ;
+}
+nav a span{
+	display: block;
+	font-size: 13px;
+	font-weight: bold;
+	color: #999;
+	margin-top: 5px;
+}
+.username{
+	width: 310px;
+	height: 46px;
+	line-height: 46px;
+	overflow: hidden;//清浮动
+}
+.username .fl{
+	margin-left: 14px;
+}
+.username .fr{
+	float: right;
+	margin-right: 14px;
+}
+
+footer{
+	 width: 310px;
+	 margin: 0 auto;
+	 line-height: 40px;
+}
+footer .load{
+	border-bottom: 1px solid lightgrey;
+	border-top: 1px solid lightgrey;
+	font-size: 0;
+	text-align: center;
+}
+footer .copyright{
+	text-align: center;
+}

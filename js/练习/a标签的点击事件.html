@@ -1,0 +1,27 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset='utf-8'>	
+	<title></title>
+	<script type='text/javascript'>
+		function outPut(){
+			alert('outPut的内容')
+		}
+	</script>
+	
+<head>
+
+<body>
+	<!-- <a href='javascript:alert('a标签的弹出')>a标签本身有onclick功能，无需单独设置</a>  -->
+	<a href='javascript:outPut()'/> a标签本身有onclick功能，无需单独设置</a> 
+	
+	不推荐：
+	   这种方法会影响this等参数的传递，IE里也会使gif动画停止播放
+	   alibaba 每个的javascript方法都用try、catch包围。
+	 
+	 替代方法：void(0)返回undefined，地址不发生跳转
+		<a href="javascript:void(0);" onclick="js_method()"/>
+		<a href="javascript:;" onclick="js_method()"/>
+		<a href="#" onclick="js_method();return false;"/>
+</body>
+<html>	

@@ -1,0 +1,231 @@
+﻿http://www.bootcss.com/
+
+bootstrap组类
+	html font-size:14px
+	h1-h6
+		h1-h3 margin-top:20px;margin-botttom:10px
+			h1 36px
+			h2 30px
+			h3 24px
+		h4-h6 margin-top:20px;margin-botttom:10px
+			h4 18px
+			h5 14px
+			h6 12px
+	small 副标题
+		h1-h3 small 字体大小65%
+		h4-h6 small 字体大小75%
+		line-height:1
+		font-weight:normal
+		color:#999  灰色
+	<h1>标题1<small>副标题</small></h1>
+	<h2>标题1<small>副标题</small></h2>
+	<h6>标题1<small>副标题</small></h6>
+	
+	.text-muted 提示，柔和灰（#999）
+	.text-primary 主要蓝（#337ab7）
+	.text-success 成功绿(#3c763d)
+	.text-info 通知蓝（#31708f）
+	.text-warning 警告黄（#8a6d3b）
+	.text-danger 危险红（#a94442）
+	
+	.text-left：左 对 齐
+	.text-center：居 中 对 齐
+	.text-right：右 对 齐
+	.text-justify：两 端 对 齐
+	
+	ul:
+		list-unstyled
+		list-inline
+	dl:
+		dl-horizontal 1.标题与内容同行显示2.dt内容过长时，省略显示
+		1、将dt设置了一个左浮动，并且设置了一个宽度为160px
+		2、将dd设置一个margin-left的值为180px，达到水平的效果
+		3、当标题宽度超过160px时，将会显示三个省略号
+		
+	代码风格	
+	1.code行内代码   有字体颜色和背景颜色
+	2.pre：多行代码，内部特殊符号需转译  &lt; '<'  / &gt;'>'
+		pre-scrollable 超过340px时出现纵向滚动条
+	3.kbd:生成按键效果  KeyBoard键入
+		<p><kbd>导航</kbd>学习指南<kbd>ctr+c</kbd>和<kbd>ctrl+v</kbd></p>
+	
+	
+	table	
+	 .table：基 础 表 格  外边框加粗/响应式
+	 .table-responsive：响 应 式 表 格-媒体查询	  不能与table同用
+	
+	 .table-striped：斑 马 线 表 格/隔行变色
+	 .table-bordered：带 边 框 的 表 格/边框大小相同
+	 .table-hover：鼠 标 悬 停 高 亮 的 表 格
+	 .table-condensed：紧 凑 型 表 格 padding:5px(原8px)
+	
+	table tr
+		.active 表示当前活动的信息
+		.success
+		.info
+		.warning
+	
+	
+	form
+		div class="form-group"  margin-bottom:15px;
+				  form-inline //水平排列
+		input class="form-control" max-width:100%
+		
+		<br /><br />form-group
+		<form action="#" method="post">
+			<div class="form-group ">
+				<input class="form-control" type="text" name="" id="username" value="请输入用户名"  />
+				<label for="username" class='control-label'>用户名</label>  <!--绑定tab键-->
+			</div>
+			<div class="form-group">
+				<input class="form-control" type="submit" value="提交"/>
+			</div>
+		</form>
+	
+	
+	button
+		btn
+		<button type='button' class="btn btn-info" >基础按钮</button>
+		btn-default 默认按钮
+		btn-primary 主要按钮/首选项样式
+		btn-info 通知按钮/一般信息样式
+		btn-warning 警告按钮
+		btn-danger 危险按钮
+		btn-success 成功按钮
+		btn-link 链接样式
+		尺寸大小
+		 btn-sm 小按钮   //small
+		 btn-xs 超小按钮  //extra small
+		 btn 正常大小
+		 btn-lg 大按钮  //large
+		 
+		 btn-block 块级按钮
+		 active 激活按钮
+		 disabled 禁用
+	img	 
+		img-responsive：响应式图片
+	 	img-rounded：圆角图片
+		img-circle：圆形图片
+		img-thumbnail：缩略图片	 有一定宽度的白色边缘
+		
+		
+	thumbnail	栅格的缩略图应用
+		.container > .row > .thumbnail > img
+		img的父元素设置thumbnail类
+		thumbnail a>img, .thumbnail>img {
+			margin-right: auto;
+			margin-left: auto;
+		}
+		
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 col-sm-6 col-sx-12 thumbnail">
+					<img src="images/sea.png" alt="1"/>
+				</div>
+			</div>
+		</div>
+		
+		
+	警示框 alert
+		alert-info
+		alert-warning
+		alert-danger
+		alert-success
+		
+		<p class="alert alert-danger ">alert-danger
+			<button type="button" class="close" data-dismiss='alert'>&times;</button><!--可关闭的警示框-->
+		</p>
+	<!-- 可关闭的警示框：button.close -->
+	 	1.给.alert添加.alert-dismissable样式。
+	  	2.关闭按钮button的class="close"<button class="close" data-dismiss='alert'>&times;</button>
+	 	3.button：“data-dismiss="alert"”（因为可关闭警示框需要借助于Javascript来检测该属性，从而控制警示框的关闭）。
+	1.简洁版
+		<p class="alert">
+			<button type="button" class="close" data-dismiss='alert'>&times;</button><!--可关闭的警示框-->
+		</p>
+	2.完整版 属性role无实际意义，增强标签语义性
+		<div class="alert alert-dismissable" role="alert">
+			<button class="close" type="button" data-dismiss="alert">&times;</button>
+			恭喜您操作成功！
+		</div>
+	
+	<!-- 警示框内的链接	a.alert-link -->
+		字体加粗；颜色与警示框字体颜色一致
+		<div class="alert alert-success" role="alert">
+			<strong>Well done!</strong> 
+			You successfully read 
+			<a href="#" class="alert-link">this important alert message</a>
+		</div>
+		
+		
+		
+		
+	进度条progress
+		.progress>.progres-bar
+		
+		progress-bar-info：表示信息进度条，进度条颜色为蓝色
+		progress-bar-success：表示成功进度条，进度条颜色为绿色
+		progress-bar-warning：表示警告进度条，进度条颜色为黄色
+		progress-bar-danger：表示错误进度条，进度条颜色为红色
+		<div class="progress">
+			<div class="progress-bar progress-bar-success" style="width: 30%;">30%</div>
+		</div>
+		条纹进度条     .progress-striped 
+		动态条纹进度条 .progress-striped > .progress-bar.active
+		<div class="progress progress-striped">
+			<div class="progress-bar progress-bar-danger active" style="width: 30%;">30%</div>
+		</div>
+		
+		
+	分页导航 pagination
+		pagination-lg 导航变大；
+		pagination-sm 导航变小：
+	<ul class="pagination pagination-lg">
+		<li><a href="#">&laquo;上一页</a></li>
+		<li><a href="#">1</a></li>
+		<li class="active"><a href="#">2</a></li>
+		……
+		<li><a href="#">最后一页&raquo;</a></li>
+	</ul>
+	
+	翻页导航pager
+		previous 居左;next 居右
+		<!--1. 按钮两端分散 -->
+		<ul class="pager">
+		   <li class="previous"><a href="#">&laquo;上一页</a></li>
+		   <li class="next"><a href="#">下一页&raquo;</a></li>
+		</ul>
+		<!--2. 按钮紧挨 -->
+		<ul class="pager">
+		   <li><a href="#">&laquo;上一页</a></li>
+		   <li><a href="#">下一页&raquo;</a></li>
+		</ul>
+		
+	提示标签label
+		背景色突显
+		color:white 字体加粗
+		label-deafult:默认标签，深灰色
+		label-primary：主要标签，深蓝色
+		label-success：成功标签，绿色
+		label-info：信息标签，浅蓝色
+		label-warning：警告标签，橙色
+		label-danger：错误标签，红色
+		
+	徽章badge
+		灰色背景 background-color: #777;
+		圆角border-radius: 10px;
+		<a href="#">收件箱 <span class="badge">36</span></a>
+		<!-- 胶囊式导航下的 徽章 -->
+		背景颜色变白色
+		.list-group-item.active>.badge, .nav-pills>.active>a>.badge {
+			color: #337ab7;
+			background-color: #fff;
+		}
+		<ul class="nav nav-pills">
+		  <li class="active"><a href="#">Home <span class="badge">42</span></a></li>
+		   …
+		  <li><a href="#">Messages<span class="badge">3</span></a></li>
+		</ul>
+		
+	图标glyphicon
+		glyphicon glyphicon-glass

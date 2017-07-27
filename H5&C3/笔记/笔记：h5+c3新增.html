@@ -1,0 +1,510 @@
+﻿html5的八大特性
+
+HTML5是用于取代1999年所制定的 HTML 4.01 和 XHTML 1.0 标准的 HTML [1]（标准通用标记语言下的一个应用）标准版本；
+现在仍处于发展阶段，但大部分浏览器已经支持某些 HTML5 技术。
+HTML 5有八大特点：
+
+1.语义特性（Class：Semantic）
+	HTML5赋予网页更好的意义和结构。
+	更加丰富的标签将随着对RDFa的，微数据与微格式等方面的支持，构建对程序、对用户都更有价值的数据驱动的Web。
+
+2.本地存储特性（Class: OFFLINE & STORAGE）
+
+	基于HTML5开发的网页APP拥有更短的启动时间，更快的联网速度，这些全得益于HTML5 APP Cache，以及本地存储功能。
+	Indexed DB（html5本地存储最重要的技术之一）和API说明文档。
+
+3.设备兼容特性 (Class: DEVICE ACCESS)
+
+	从Geolocation功能的API文档公开以来，HTML5为网页应用开发者们提供了更多功能上的优化选择，带来了更多体验功能的优势。
+	HTML5提供了前所未有的数据与应用接入开放接口。使外部应用可以直接与浏览器内部的数据直接相连，
+		例如视频影音可直接与microphones及摄像头相联。
+
+4.连接特性（Class: CONNECTIVITY）
+	
+	更有效的连接工作效率，使得基于页面的实时聊天，更快速的网页游戏体验，更优化的在线交流得到了实现。
+	HTML5拥有更有效的服务器推送技术，Server-Sent Event和WebSockets就是其中的两个特性，
+		这两个特性能够帮助我们实现服务器将数据“推送”到客户端的功能。
+
+5.网页多媒体特性(Class: MULTIMEDIA)
+
+	支持网页端的Audio、Video等多媒体功能， 与网站自带的APPS，摄像头，影音功能相得益彰。
+
+6.三维、图形及特效特性（Class: 3D, Graphics & Effects）
+
+	基于SVG、Canvas、WebGL及CSS3的3D功能，用户会惊叹于在浏览器中，所呈现的惊人视觉效果。
+
+7.性能与集成特性（Class: Performance & Integration）
+
+	没有用户会永远等待你的Loading——HTML5会通过XMLHttpRequest2等技术，帮助您的Web应用和网站在多样化的环境中更快速的工作。
+
+8.CSS3特性(Class: CSS3)
+
+	在不牺牲性能和语义结构的前提下，CSS3中提供了更多的风格和更强的效果。
+	此外，较之以前的Web排版，Web的开放字体格式（WOFF）也提供了更高的灵活性和控制性。
+
+	
+	
+	
+11.29  11.30 h5新增标签
+
+<!--11.29  -->
+<!--浏览器内核 -->
+	-moz-  Mozilla内核
+		firefox火狐浏览器
+	-webkit-	WebKit内核
+		chrome safari浏览器
+		移动端（android4.4+）
+		360极速版
+	-o-
+		opera 欧鹏浏览器
+	
+	-ms-
+		以ie9+为主
+		360极速版
+	
+<!-- h5新增标签 -->
+header
+nav 一个页面只能出现一次
+main 已废弃
+footer
+
+hgroup对一个区块内容标题进行组合
+
+section章节、区块
+
+article 独立、完整的内容
+	article可包含在section内部
+aside 与article相关的周边信息
+	如，相关推荐
+	
+figure独立的流内容
+	figcaption流内容的标题
+	如，文章内插入的 图片和图片标题
+	<figure>
+		<img src="images/shanghai_lupu_bridge.jpg"/>
+		<figcaption>卢浦大桥</figcaption>
+	 </figure>
+
+mark标记文本 字体背景色变黄色
+strong强调文本 字体加粗
+
+		
+time 表示日期或时间
+		
+s 字体中间出现删除线line-through的效果
+	<p><s>原价：100</s>  <span>现价:80</span></p>
+
+wbr软换行  系统默认效果
+		
+ruby 注音		
+	<ruby>
+		昝<rt>zan</rt>
+		<rp>注音未显示</rp><!-- 在<ruby>注释中使用，以定义不支持<ruby>元素的浏览器所显示的内容 -->
+	</ruby>
+
+progress 进度条 与属性max连用
+		<progress value='20' max='100'></progress>：ie9- 不支持
+meter测量、度量与属性min max连用
+		<meter value='20' min='0' max='100'></meter>
+		
+datalist + option 
+		与input连用，实现下拉选择效果，或自动补全效果
+		<!--input的list  =  datalist的id-->
+		<input type="" name="" id="" value="" list='list1' />
+		<datalist id="list1">
+			<option value="你们"></option>
+			<option value="我们"></option>
+			<option value="他们"></option>
+			<option value="他们一共四个人"></option>
+		</datalist>
+		
+details + summary  展开/收缩
+	<!-- 仅Chrome及opera支持 -->
+		<details>
+			<summary>我们：</summary><!--默认显示-->
+		<!--默认隐藏 点击后展开-->
+			<p>年轻</p>
+			<p>活力</p>
+			<p>脑袋大开</p>
+		</details>	 
+	 
+	
+a标签 href新增值：tel sms mailto 
+	<a href="tel:18721963066">拨号 :18721963066</a>
+    <a href="sms:18721963066">发送信息至 :18721963066</a>
+    <a href="mailto:570027630@qq.com">发送邮件至:570027630@qq.com</a>
+    <a download="download" href="images/web.png ">下载</a><!-- 浏览器端-->
+
+	
+	
+@media媒体检索<!-- css3新增 -->
+	<!-- 移动端设备 320px以下不予考虑 -->
+	@media all and (min-width:768px) and (max-width:992px){ .box{}  }
+	@media all and (min-width:320px) and (max-width:767px){ .box{}  }	
+	
+video
+	MPEG4：带有H.264视频编码和AAC音频编码的MPEG 4文件。 常用*
+	Ogg：带有Theora视频编码和Vorbis音频编码的Ogg文件。
+	WebM：带有VP8视频编码和Vorbis音频编码的WebM文件。
+	<video controls>
+	<!-- video属性 -->
+		controls播放控件
+		preload预加载
+			auto 默认 / none 不预加载 / metadata 加载基础信息（时长）
+		autoplay 自动播放
+		loop 是否循环播放 默认无限次循环
+			 可赋值'1'循环一次； '2'等 
+		poster='封面地址' 封面
+		<source src='video/oceans-clip.ogv' type="video/ogg"></source> 规定type类型，可提高性能
+		<source src='video/oceans-clip.mp4' type="video/mp4"></source>
+		<source src='video/oceans-clip.webm' type="video/webm"></source>
+		当前浏览器不支持 video直接播放<!--兼容ie-->
+		
+	<!-- 视频下载  a标签的download -->
+		 <a href="video/oceans-clip.webm" download>下载视频</a>
+		 
+	<!-- 自制控件 -->
+		<!-- 播放与暂停 -->
+		play.onclick=function(){
+			<!-- paused暂停了的   pause()方法的属性 -->
+			if(video.paused){
+				video.play();this.innerHTML='暂停'
+			}else{
+				video.pause();this.innerHTML='播放'
+			}
+		}
+		<!-- 全屏 -->
+			full.onclick=function(){video.width=635}
+		<!--音量控制  结合input控制音量-->
+			<input type="range" min='0' max="1" step=".1" name="" id="val" value="" />
+			val.onchange=function(){video.volume=val.value}
+	
+	</video>
+audio
+	<audio controls>
+		<source src='audio/nizhan.mp3'></source><!--mp3多数浏览器都支持，ie6,7,8除外-->
+		当前浏览器不支持 audio直接播放
+	</audio>
+	
+canvas 画布
+	<canvas id="canvas" width="" height="">你的浏览器不支持canvas</canvas>
+	<script type="text/javascript">
+		var canvas=document.getElementById("canvas");
+		var ctx=canvas.getContext('2d');
+		ctx.strokeRect(50,50,100,100)
+	</script>
+
+	
+embed:嵌入：  图片  媒体（音频，视频，flash）
+	<embed src='video/oceans-clip.mp4'></embed>
+
+output	
+	<form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+		0<input type="range" id="a" value="50">100
+		+<input type="number" id="b" value="50">
+		=<output name="x" for="a b"></output>
+			<!-- for 定义输出域相关的元素 -->
+			<!-- name定义对象的唯一名称。（表单提交时使用） -->
+	</form>
+	
+ol reversed 有序列表  序号逆序排列
+	<ol reversed></ol>
+
+	
+keygen 下拉选择密码强度 
+	<!-- ie不兼容 -->
+	<!-- 谷歌 1024（中等强度）2048（高强度） -->
+	<!-- 火狐：中级 高级 -->
+	<form action="" method="post">
+		<!--注意name赋值，便于后端抓取-->
+		用户名：<input type="text" name="username" id="username" value="" />
+		 Encryption: <keygen name='security'></keygen>
+		<input type="submit" value="提交"/>
+	</form>
+
+<!-- h5废除的标签 -->
+<basefont>、<big>、<center>、<font>、<s>、<strike>、<tt>、<u>	使用CSS代替
+<frameset>、<frame>、<noframes>	使用<frame>框架或服务器方创建的由多个页面组成的复合页面代替
+<rb>	使用<ruby>替代
+<acronym>	使用<abbr>替代
+<isindex>	使用<form>与<input>相结合的方式替代
+<dir>	使用<ul>替代
+
+
+
+<!-- 11.30 -->
+水平居中与垂直居中<!-- 复习 -->
+	行内元素
+	text-align: center;/*父元素设置*/
+	块元素
+	margin:x auto;/*自身有宽度,可实现自身水平居中。*/
+	
+	
+	
+	line-height
+		/*line-height=width，子元素垂直居中*/
+	
+	块元素居中 水平+垂直
+		父元素设置display:table-cell
+		自身：margin:auto;
+		
+	vertical-align:middle;
+		实现水平、垂直居中
+		/*设置inline-block间的元素上下对齐*/
+	<!-- 定位 -->
+		<!-- 水平/垂直居中 -->
+			position:absolute;<!-- 自身定位 -->
+			top: 50%; <!-- top:50% -->
+			margin-top: -15px;<!-- 负的自身高度的1/2 -->
+		
+		<!-- 完全居中 自适应-->
+			position:aboslute;
+			left:0;
+			top:0;
+			right:0;
+			bottom:0;
+	<!-- 浮动 -->
+css通用字体
+	通用字体系列：拥有相似外观的字体系统组合，（如“serif”或“monospace”）。
+		CSS定义了5种通用字体系列：
+		serif 字体、sans-serif 字体、monospace字体、cursive 字体、fantasy字体。
+	特定字体系列：具体的字体系列（如“Times”或“Courier”）。
+		
+		
+@font-face 自定义字体
+	该字体文件存放到Web服务器上，它会在需要时被自动下载到用户的计算机上
+	<!-- 字体自定义 -->
+	@font-face {
+		font-family:myfont; <!-- 自定义字体名称 -->
+		src: url('font-family/Sansation_Light.eot');/*eot  兼容ie9*/
+		src: url('font-family/Sansation_Light.ttf');
+		<!-- font-stretch;font-style;font-weight;unicode-range -->
+	}
+	<!-- 使用自定义字体-->
+	p{
+		font-family: myfont;
+	}
+	
+	
+	
+font-awesome 矢量图标引用
+	http://www.bootcss.com/p/font-awesome/
+	优点：1.矢量图标，放大不失真 2.以伪元素追加的方式::before,布局简单
+	<!-- 1.引用font-awesome文件 -->
+	<head>
+		<link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css"/>
+	</head>
+	<!-- 2.使用图标：通过给元素加相应类名 ，自动插入图标-->
+		<!--fa必需类名； fa-glass 对应图标类名-->
+	<span class="fa fa-glass">在内容之前显现图标</span>
+
+ border-collapse	内部单元格之间的边框合并
+   table{  border-collapse: collapse; }	
+   
+   
+CSS3文本属性：
+	text-align： left center right
+	text-indent 首行缩进
+		多用于input（text）
+		
+	<!--字间距-->
+	word-spacing  用于英文单词，空格隔开的中文；
+		默认值 normal 或0
+		可为负值，把文字拉近
+	letter-spacing 用于汉字，英文字母间;可为负值
+		默认值 normal 或0
+		
+		
+<!-- 复习 -->
+	white-space 处理文本行之间的空白字符
+		会影响到对源文档中的空格、换行和tab字符的处理。
+		normal pre nowrap prewrap pre-line inherit
+	
+	font-style:normal  italic斜体 oblique(无斜体时倾斜显示)
+	
+	font-size
+		绝对大小：16px
+		相对大小：1em
+	<!-- 文本溢出 -->
+		结合使用
+		1.white-space: nowrap;
+		2.overflow: hidden;
+		3.text-overflow: ellipsis;
+			 <!-- ellipsis [i'lipsis] 省略 ；clip 平切 -->
+		
+		p{
+			width: 200px; 固定宽度
+			/*line-height: 15px;*/	/可设置line-height实现盒子高度联动*/
+			overflow: hidden;
+			text-overflow: ellipsis; /可不设置*/
+			
+			/*谷歌 欧鹏 移动端*/
+			display: -webkit-box; 
+			-webkit-box-orient: vertical;/*文字排列方式*/
+			-webkit-line-clamp:4;/*文字排列方式*/
+			
+		}
+	<!--控制字母大小写-->
+	text-transform 英文字母大小写 
+		none
+		uppercase 全大写
+		lowercase 全小写
+		capitalize首字母大写
+	
+	border-radius 
+		值：px或百分比
+	
+	
+	<!--文字阴影-->
+	text-shadow:x y blur color;
+			 x轴偏移量：正值，向右；负值向左；
+			 y轴偏移量：正值，向下；负值向上；
+			 blur:模糊半径，正值   从出现到消失的长度；
+			 color:可多个  支持阴影叠加
+		text-shadow: 5px 5px 20px red,
+		15px 15px 20px orange; 	
+	<!--容器阴影-->
+	box-shadow（x轴偏移量，y轴偏移量，阴影大小，阴影扩展，阴影颜色，阴影投射方式）
+			阴影大小：只可为正值，值越大阴影的边缘就越模糊
+			阴影投射方式： 默认外阴影 ：内阴影inset
+			
+			阴影扩展:阴影开始模糊的位置，可为负值
+			
+css颜色  红、绿、蓝光的组合  #rrggbb
+	对光源进行设置的最低值可以是0（十六进制00），最高值是255（十六进制FF）
+		<!-- 十六进制（HEX）: #rrggbb -->  所有浏览器都支持十六进制颜色值;
+			#000000	= rgb(0,0,0)
+			#FF0000	= rgb(255,0,0)
+			#00FF00	= rgb(0,255,0)
+			#0000FF	= rgb(0,0,255)
+			#FFFF00	= rgb(255,255,0)
+			#00FFFF	= rgb(0,255,255)
+			#FF00FF	= rgb(255,0,255)
+			#FFFFFF	= rgb(255,255,255)
+			#CCCCCC	= rgb(204,204,204)
+			#C0	= rgb(192,192,192)
+		<!-- RGB颜色值  rgb(red, green, blue) -->所有浏览器都支持RGB颜色值
+			(red、green及blue)定义颜色的强度，介于0～255之间的整数 或 是百分比值（从0%～100%）
+		<!-- RGBA颜色值 rgba(red, green, blue, alpha)-->
+			IE9+、Firefox 3+、Chrome、Safari及Opera 10+
+			alpha参数是介于0.0（完全透明）与1.0（完全不透明）之间的数字
+		<!-- HSL	 -->
+			hsl(hue色调, saturation饱和度, lightness亮度)。
+		<!-- hsla(hue, saturation, lightness, alpha) -->
+		
+		<!-- 预定义/跨浏览器颜色名 -->
+			HTML和CSS颜色规范中定义了147种颜色名（17种标准颜色加130种其他颜色）
+			<!-- 17种标准色 -->所有浏览器都支持的颜色名
+			aqua浅绿色、black、blue、fuchsia紫红色、gray、green、lime绿黄色、maroon褐红色(栗色 茶色)
+			navy深蓝色（藏青色）、olive、orange、purple、red、silver、teal青色、white、yellow。
+
+		
+透明设置  rgba&opacity
+	<!-- rgba 仅背景图片透明 -->
+		background: rgba(0,0,0,.5);/* */
+	<!-- opacity 其内所有元素均有透明效果 -->
+		opacity: .5;/* 子元素也有透明效果*/
+		filter: Alpha(opacity=50);/*Alpha滤镜：0-100  兼容ie8-*/
+			<!-- filter 滤镜 -->
+
+
+12.5表单验证
+
+autocomplete='on'自动补全  对之前的输入有记忆
+novalidate不做表单验证
+	<form  autocomplete="on" novalidate action="#" method="post" ></form>
+
+autofocus 光标自动聚焦在密码栏
+	<input type="password" name="psd" placeholder="密码" autofocus/>
+
+required 内置表单验证，不能为空 具体与type的具体值相匹配，
+	<input type="text" name="uername" placeholder="请输入用户名" required />
+
+
+<!-- type="file"效果优化 -->
+	//input设置隐藏
+	//所需格式用关联label设置
+	<input type="file" style="display:none" name="" id="file"/>
+	<label for="file" style="background-image: url();">选择文件</label>
+
+type="submit" 提交时，改写form属性
+	<input type="submit" value="提交" formmethod="get"/>
+		formmethod="get"改写form提交方式
+		formtarget
+		formaction
+表单标签（h5新增）	<!-- ie不支持的，降级为type="text"处理-->
+	<!--type="number" 数量加减 min='' max='' step='10'-->
+		<input type="number" min='1' max='51' step='10' name="" id="" value="1" />
+	
+	<!-- type="url" 自带验证 移动端会提示输入'www'、'.com'-->
+		<input type="url"  required name="url地址" id="" value="" />
+	
+	<!--type="search"搜索框-->
+		1.右侧‘X’可快速删除全部输入内容 2.ios框自带圆角效果
+		<input type="search"  required name="search" id="" value="" />
+	<!--type="email" 自带验证：@前后有内容-->
+		
+	<!--type="range" 滑动条 min='' max=''-->
+		0<input type="range" min='0' max='100' name=""  value="50" />100
+		
+	<!--图片按钮-->
+		<input type="image" src="" name="" value="" />
+		
+	<!--color颜色切换-->
+		<input type="color" name="" id="" value="#ff00ff" />
+	
+		
+	<!--表示时间的表单-->
+	type="time" data  datatime-local week month
+	
+		<input type="time" name="" id="" value="" />
+		<input type="date" name="" id="" value="" />
+		<input type="datetime-local" name="" id="" value="" />
+		<input type="week" name="" id="" value="" />
+		<input type="month" name="" id="" value="" />
+	
+	<!--type="tel" 移动端-->多数浏览器不支持验证
+		<input type="tel" pattern="^[1][3,4,5,7,8][0-9]{9}$" name="手机" value="" />
+		<!-- pattern允许在输入框内定义一段正则 -->
+
+表单样式：		
+<!-- placeholder样式设置 需兼容 -->
+	input::-webkit-input-placeholder{
+		color: #515151;
+	}
+	input::-moz-placeholder{/*火狐 高版本*/
+		color: #515151;
+	}
+	input:-moz-placeholder{/*火狐 低版本*/
+		color: #515151;
+	}
+	input:-ms-input-placeholder{
+		color: #515151;
+	}
+		
+input:valid 表单符合条件后的样式
+
+	input{
+		background: url('1') no-repeat;
+		background-position: center right;
+	}
+	<!-- 鼠标移入时的样式 -->
+	input:focus{
+		background: url('2') no-repeat;
+		background-position: center right;
+	}
+	<!-- 验证成功时的样式 -->
+	input:valid{
+		background: url('3') no-repeat;
+		background-position: center right;
+	}
+
+<!-- 本地存储 cookie,session,localStorage -->
+	cookie 存储时间有限；加密程度高； ie支持
+	localStorage 本地存储,无过期时间
+	sessionStorage 关闭即刷新
+	window.localStorage.setItem("自定义属性key",变量属性值value);//定义需存储的属性和值
+	window.localStorage.getItem("自定义属性key");//获取已存储的属性和值
+	window.localStorage.clear()；//	清除本地存储的属性和值
+	
+	

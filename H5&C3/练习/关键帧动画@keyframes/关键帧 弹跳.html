@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			@keyframes jump{
+				0%{
+					opacity: 0;
+					
+					margin-top: -500px;
+				}
+				20%{
+					opacity: 1;
+					margin-top: 200px;
+				}
+				40%{
+					margin-top: 120px;
+				}
+				60%{
+					margin-top: 200px;
+				}
+				80%{
+					margin-top: 180px;
+				}
+				100%{
+					margin-top: 200px;
+				}
+			}
+			img{
+				display: block;
+				margin: 0 auto;
+				margin-top: 200px;
+				animation: jump 1s; /*infinite alternate*/
+				
+			}
+		</style>
+	</head>
+	<body>
+		<img src="images/01.jpg"/>
+	</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		#main{
+			position: relative
+		}
+		.imgs{
+			position:relative;
+		}
+		img{
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: none;
+		}
+		img:first-child{
+			display: block;
+		}
+		
+		.nums{
+			position: absolute;
+			width: 300px;
+			height: 50px;
+			
+			top:300px;
+			left:150px;
+		}
+		.nums div{
+			margin-left: 5px;
+			width: 30px;
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+			float: left;
+			background-color: rgba(0,0,0,.3);
+		}
+		.nums div:hover,.hover1{
+			background-color: rgba(0,0,0,.8);
+			color:white;
+		}
+		
+	</style>
+	<script type="text/javascript">
+	window.onload=function(){
+		var box=document.getElementById("main")
+		var img=document.getElementsByTagName('img');
+		var nums=document.getElementsByClassName('nums')[0].getElementsByTagName('div');
+		var i=0;var j
+		function changeImage(){
+			i++;
+			if(i>img.length-1){
+				i=0;
+			}
+			for(j=0;j<img.length;j++){
+				img[j].style.display='none';
+				nums[j].className='hidden';
+			}
+			img[i].style.display='block';
+			nums[i].className='hover1'
+			
+		}
+		t=setInterval(changeImage,1000);
+		
+		box.onmouseover=function(){
+			clearInterval(t);
+			for(var m=0;m<nums.length;m++){
+				nums[m].onmouseover=function(){
+					for (var n=0;n<nums.length;n++) {
+						if(this==nums[n]){
+							img[n].style.display='block';
+							nums[n].className='hover1';
+							i=n;
+						}else{
+							img[n].style.display='none';
+							nums[n].className='hidden'
+						}
+					}
+				}
+			}
+		}
+		box.onmouseout=function(){
+			t=setInterval(changeImage,1000);
+		}
+	}	
+	</script>
+	<body>
+		<div id="main">
+			<div class="imgs">
+				<img src="images/1.jpg"/>
+				<img src="images/2.jpg"/>
+				<img src="images/3.jpg"/>
+				<img src="images/4.jpg"/>
+				<img src="images/5.jpg"/>
+				<img src="images/6.jpg"/>
+				<img src="images/7.jpg"/>
+				<img src="images/8.jpg"/>
+			</div>
+			<div class="nums">
+				<div>1</div>
+				<div>2</div>
+				<div>3</div>
+				<div>4</div>
+				<div>5</div>
+				<div>6</div>
+				<div>7</div>
+				<div>8</div>
+			</div>
+		</div>
+	</body>
+</html>

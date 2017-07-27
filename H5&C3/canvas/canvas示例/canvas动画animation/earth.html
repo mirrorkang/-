@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>html5之canvas太阳系</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        canvas{
+            background-color: rgba(0,0,0,.5);
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="800" height="600">您的浏览器不支持html5的canvas标签！</canvas>
+<script>
+    var canvas = document.getElementById('canvas');
+    var cxt = canvas.getContext('2d');
+    var time=0;
+    function draw()
+    {
+        //清除画布
+        cxt.clearRect(0,0,canvas.width,canvas.height);
+        // 画轨道
+        // 设置笔触颜色
+        cxt.strokeStyle = "#fff";
+        cxt.beginPath();
+        cxt.arc(400, 200, 100, 0, Math.PI*2, false);
+        cxt.closePath();
+        cxt.stroke();
+        // 画太阳
+        cxt.beginPath();
+        cxt.arc(400, 200, 20, 0, Math.PI*2, false);
+        cxt.closePath();
+
+        //设置填充颜色（渐变色）
+        var sunColor=cxt.createRadialGradient(500,500,0,500,500,20);
+        sunColor.addColorStop(0,"#f00");
+        sunColor.addColorStop(1,"#f90");
+        cxt.fillStyle=sunColor;
+        cxt.fill();
+        // 画地球
+        cxt.save();
+        cxt.translate(400, 200);
+        cxt.rotate(time*365/360*Math.PI/190);//设置旋转角度
+        cxt.beginPath();
+        cxt.arc(0,-100,10,0,360,false);
+        cxt.closePath();
+        cxt.fill();
+        cxt.restore();
+        time ++;
+    }
+    setInterval(draw, 10);
+</script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#main {
+				position: relative;
+				overflow: hidden;
+				width: 590px;
+				height: 340px;
+			}
+			
+			#demo {
+				background: greenyellow;
+				position: absolute;
+				/*width: 250px;*/
+				left: 0;
+				width: 9440px;
+			}
+			
+			#demo>div {
+				width: 4720px;
+				overflow: hidden;
+				float: left;
+			}
+			
+			#demo>div img {
+				float: left;
+			}
+			
+			ul {
+				margin: 0;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function() {
+				/*1.关于css设定，主容器main要设置宽高，
+					也就是显示区域。设置超出部分隐藏。
+				  2.容器的宽度要足够宽。否则两个图片容器会换行。
+				  3.建议通过获取图片的宽度，动态设置图片容器的宽度
+				  	以及显示容器的宽度。这样当图片不一样大小的时候，也可用
+				*/
+				//获取内容容器的父容器demo
+				var demo = document.getElementById("demo");
+				//图片容器一
+				var demo1 = document.getElementById("demo1");
+				//图片容器二
+				var demo2 = document.getElementById("demo2");
+				//讲图片1容器的内容给容器二
+				demo2.innerHTML = demo1.innerHTML;
+				//声明速度值i
+				var i = 10;
+				//声明x用做容器用做demo定位值
+				var x = 0;
+				//声明变量为中间值，通过中间值的j++，负值给x
+				var j = 0;
+				//执行函数
+				function move() {
+//					设置循环执行函数的名称
+					time = setInterval(function() {
+//						将i的值给j
+						j += i;
+						//通过判断取整的方法清除定时器，做到暂时停止
+						if(j % 590 == 0) {
+
+							clearInterval(time)
+						}
+						//赋值 x
+						x = -j;
+						//demo判断向左的距离是否大于等于图片容器一的宽度，
+						//大于就让left的值瞬间向右移动这个距离，在这里是加上
+						//图片容器一的宽度
+						if(-x >= demo1.offsetWidth) {
+							x += demo1.offsetWidth;
+						//加完后重新定义jwei0.重新开始
+							j = 0;
+						}
+						// 设定demo的left的值
+						demo.style.left = x + 'px';
+					}, 5)
+				}
+				//每time事件执行一次。注意不要太小
+				time = setInterval(move, 2000)
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="main">
+			<div id="demo">
+				<div id="demo1">
+					<img src="images/1.jpg" alt="" />
+					<img src="images/2.jpg" alt="" />
+					<img src="images/3.jpg" alt="" />
+					<img src="images/4.jpg" alt="" />
+					<img src="images/5.jpg" alt="" />
+					<img src="images/6.jpg" alt="" />
+					<img src="images/7.jpg" alt="" />
+					<img src="images/8.jpg" alt="" />
+				</div>
+				<div id="demo2"></div>
+			</div>
+		</div>
+	</body>
+
+</html>

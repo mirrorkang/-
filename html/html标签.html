@@ -1,0 +1,156 @@
+10.24
+<!-- img图片标签 -->
+<img src="images/myphotos.png" alt='图片加载失败' width='200px' height='150px' title='myphotos'/>
+title='' 鼠标悬停在图片上是显示的文字
+alt='' 图片加载失败时显示的文字
+
+<!-- 文本标签 -->
+	<!-- 标题标签	 -->
+		<h1>标题</h1> 
+		<h2>标题</h2> 
+		<h3>标题</h3>
+		<h4>标题</h4> 
+		<h5>标题</h5> 
+		<h6>标题</h6> 
+		
+	<strong>李清照</strong><!-- 加粗 -->
+	<em>（1084年3月13日~1155年5月12日）</em><!-- 倾斜 -->
+	<hr/> 分割线
+	
+<!-- a标签：超链接 -->a标签内不能包含a标签
+		<a href="shouye.html">跳转到本地页面的链接</a> 
+		<a href="http://www.w3school.com.cn/">跳转到外网,并且可以在新页面打开</a>
+	
+	<!-- a链接跳转到 a链接 用name关联 -->	
+		<a href="#star">我是通过id方式跳转当前页面的</a>
+		<a href="#" name="star"></a>
+	
+	<!-- a链接跳转到 其他标签 用id关联 -->
+		<a href="#study">通过name跳转当前页面</a>
+		<div id="study"></div>
+		
+				
+	a标签，不跳转
+	<!-- href='javascript:;'/'###'  不跳转，执行js-->
+	<!-- href="#"跳转至当前页面  刷新页面的效果-->
+	
+
+	
+10.25
+1.
+<!-- 插入网页 -->
+<iframe src='login.html' width='300px' height='300px' frameborder='0px'  scrolling='no'></iframe>
+<iframe src='http://www.baidu.com/' width='450px' height='450px' frameborder='2px' ></iframe>
+
+<!-- 表单 -->
+<form action='' method='post'>
+			名字：<input type='text' placeholder='请输入中文名字' /> 
+	<!-- placeholder 表示输入框提示的信息 -->
+	
+			再次输入密码：<input type='password' required/>
+	<!-- required 表明用户必须输入一个值，否则无法通过输入验证 -->
+	
+			性别:<input type='radio' name='sex' id='boy'/><label for='boy'>男</label>
+				 <input type='radio' name='sex' id='girl'/><label for='girl'>女</label>
+	<!-- label for的值 = input id的值，可保证，在点击label的内容时，也能成功勾选。 -->
+	
+	checkbox  checked表示选中状态
+	<!-- name取相同值，可保证单选 -->
+	
+			<input type='checkbox'/>A
+			<input type='checkbox'/>B
+			<input type='checkbox'/>C
+			
+			<input type='button' value='提交'/>
+			<input type='file' />
+			<input type='email' />
+			
+			<input type='submit' value='提交' disabled />
+	<!-- disabled 不可点击、编辑或修改 元素变灰色 -->
+			<input type='reset' value='重填'/>
+			
+	<!-- 下拉框选择 -->selected='selected'表示默认选项,如不设置，默认选项为第一个option里的内容
+		<select name='year'>
+			<option value=''>--选择年份--</option>
+			<option value=''>--2000--</option>
+			<option value=''>--2001--</option>
+			<option value='' selected='selected'>--2016--</option>
+		</select>	
+
+	 <!-- 多行文本输入框 -->
+			请留下您宝贵的建议
+			<textarea cols='20' rows='5'>我的建议是：</textarea>
+	<!-- 可设置输入框默认大小：cols宽，rows高（行数）；
+	输入的字数无限制，用户拖动输入框可随意更改大小； -->
+</form>
+
+<!-- 表格	 -->
+<table border='2px' width='500px' height='400px'>
+			<caption>汇总表</caption>  <!-- 表头 -->
+			<thead bgcolor='pink'>
+				<tr>
+					<th>这</th>
+					<th>是</th>
+					<th>标</th>
+					<th>题</th>
+				</tr>
+			</thead>
+			
+			<tbody bgcolor='yellow'>
+	<!-- colspan合并列 -->
+	<!-- rowspan合并行 -->
+				<tr height='20px'>
+					<td colspan='2'>1</td>
+	<!-- align='center'单元格内文字对齐方向center.left，right -->
+					<td align='center'>1</td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td rowspan='2'>1</td>
+				</tr>
+				
+			</tbody>
+			
+			<tfoot bgcolor='lightblue' align='center'>
+				<tr>
+					<td>总</td>
+					<td>结</td>
+					<td>备</td>
+					<td>注</td>
+				</tr>
+			
+			</tfoot>
+</table>		
+
+<!-- 列表 -->
+	定义列表： 用来定义或解释某种事物或原理
+<dl>
+		<dt>标题</dt>
+		<dd>内容</dd>
+		<dd>内容</dd>
+		<dd>内容</dd>
+</dl>		
+	有序列表
+<ol>
+	<li>内容</li>
+	<li>内容</li>
+	<li>内容</li>
+</ol>		
+	无序列表
+<ul>
+	<li>7</li>
+	<li>8</li>
+	<li>9</li>
+</ul>
+
+li{
+	list-style: none;
+	list-style-type: circle/square;
+	list-style-image: url(item.png);
+	list-style-position: outside/inside;
+				
+	}	
+		

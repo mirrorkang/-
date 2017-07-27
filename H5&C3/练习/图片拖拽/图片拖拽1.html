@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 500px;
+				height: 300px;
+				background-color: #00FFFF;
+				margin: 10px auto;
+			}
+		</style>
+		<script type="text/javascript">
+			function drag(ev){
+				ev.dataTransfer.setData('temp',ev.target.id)
+			}
+			function dragover(ev){
+				ev.preventDefault()
+			}
+			function drop(ev){
+				ev.preventDefault()
+				var data=ev.dataTransfer.getData('temp')
+				var img1=document.getElementById(data)
+				ev.target.appendChild(img1)
+			}
+		</script>
+	</head>
+	<body>
+		<div  ondragover="dragover(event)" ondrop="drop(event)">
+			<img id='01' draggable="true" ondragstart="drag(event)" src="cloud-up.png"/>
+			<img id='02' draggable="true" ondragstart="drag(event)" src="shangchaun.png"/>
+		</div>
+		<div ondragover="dragover(event)" ondrop="drop(event)">
+			
+		</div>
+	</body>
+</html>

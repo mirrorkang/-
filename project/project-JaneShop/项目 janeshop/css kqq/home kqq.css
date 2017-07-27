@@ -1,0 +1,154 @@
+/*头部*/
+#header{
+	height:105px;
+	background-image: url('../images/headerbg.png');
+}
+.contWidth{
+	width: 990px;
+	height: 105px;
+	margin: 0 auto;
+	position: relative;
+}
+.contWidth img{
+	float: left;
+}
+.contWidth input{
+	line-height:25px ;
+	padding-left: 5px;
+	position: absolute;
+	top:15px;
+	margin-left: 20px;
+}
+.contWidth .navColor{
+	float: right;
+	margin-top:15px;
+}
+.navColor li{
+	width: 15px;
+	height: 15px;
+	float: left;
+	display: inline-block;
+	background-image: url("../images/theme.gif");
+	margin:auto 3px;
+}
+.navColor li:nth-child(1):hover{
+	background-position: 0px -15px;
+}
+.navColor li:nth-child(2):hover{
+	background-position: -20px -15px;
+}
+.navColor li:nth-child(3):hover{
+	background-position: -40px -15px;
+}
+.navColor li:nth-child(4):hover{
+	background-position: -60px -15px;
+}
+.navColor li:nth-child(5):hover{
+	background-position: -80px -15px;
+}
+.navColor li:nth-child(6):hover{
+	background-position: -100px -15px;
+}
+.navColor li:nth-child(2){
+	background-position: -20px 0px;
+}
+.navColor li:nth-child(3){
+	background-position: -40px 0px;
+}
+.navColor li:nth-child(4){
+	background-position: -60px 0px;
+}
+.navColor li:nth-child(5){
+	background-position: -80px 0px;
+}
+.navColor li:nth-child(6){
+	background-position: -100px 0px;
+}
+#mainNav{
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	background-color: #B1D410;
+	padding: 10px 0px;
+
+}
+#mainNav li{
+	display: inline-block;
+	margin: 0 10px;
+}
+#mainNav a{
+	text-decoration: none;
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+/*主体部分*/
+	#main{
+		width: 990px;
+		margin: 10px auto;
+	}
+	#main-left,#main-right{
+		height: 560px;
+		float: left;
+		
+	}
+	#main-left{
+		width: 187px;
+	}
+
+	/*左侧*/
+	#main-left{
+		width: 187px;
+	}
+	#main-left h5{
+		line-height: 30px;
+		color: white;
+		background-color: #CDE074;
+	}
+	#main-left .hot img{
+		width: 20px;
+		height: 18px;
+	}
+	#main-left .hot a{
+	color: red;
+}
+	.gdsSorts{
+		padding: 5px 5px;
+		border: 1px solid black;
+		border-top: 0px;
+		height: 524px;
+	}
+	#main-left a{
+		text-decoration: none;
+		width: 164px;
+		line-height:24px;
+		color: black;
+		font-size: 12px;
+	}
+	#main-left dl{
+		float: left;
+		margin-bottom: 10px;
+	
+	}
+	#main-left dt{
+		width: 164px;
+		font-size: 14px;
+		font-weight: bold;
+		border-bottom:1px solid #EEEEEE ;
+	}
+	#main-left dd{
+		color: black;
+		width: 85px;
+		float: left;
+	}
+	/*右侧*/
+	
+	/*尾部*/
+	#footer{
+		width: 900px;
+		line-height: 55px;
+		margin: 20px auto;
+		text-align: center;
+		color: #666666;
+	}

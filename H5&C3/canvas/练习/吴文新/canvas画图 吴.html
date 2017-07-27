@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				text-align: center;
+				
+			}
+			canvas{
+				background: #3C3C3C;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<canvas onmousemove="mousexy(event)" id="myCanvas" width="800" height="600">
+			您的浏览器不支持canvas，请更换浏览器。
+		</canvas>
+		
+		<div id="div"></div>
+		<script type="text/javascript">
+		
+		function mousexy(e){
+			var div = document.getElementById('div');
+			var canvas = document.getElementById("myCanvas");
+			
+			//定义鼠标所在位置
+			x = e.clientX - canvas.offsetLeft;
+			y = e.clientY - canvas.offsetTop;
+			
+			div.innerHTML='坐标：x-->'+x+';y-->'+y;
+			var canvas = document.getElementById("myCanvas");
+			//图形绘制的上下文环境为2d-画笔
+			var e = canvas.getContext('2d');
+			//strokeStyle描边的颜色
+			e.beginPath()
+			//保存当前绘制条件
+			e.strokeStyle = '#FFFFFF'
+			e.lineWidth = 5;
+			e.save();
+			e.strokeStyle='gold';
+			e.fillstyle='white'
+			e.moveTo(x,y);
+			e.lineTo(x+1,y+1);
+			
+			e.restore();
+			e.closePath()
+			e.stroke();
+			
+			
+		}
+		
+		function clear(){
+			e.clearRect(0,0,canvas.width,canvas.height);
+		}
+		
+		setInterval(clear,80);
+		
+		//获取dom对象
+			var canvas = document.getElementById("myCanvas");
+			//图形绘制的上下文环境为2d-画笔
+			var e = canvas.getContext('2d');
+			//strokeStyle描边的颜色
+			
+			
+			
+			//创建图片对象
+//			var img = new Image();
+//			//指定图片的src
+//			img.src = '1.jpg';
+//			//图片加载好后画到canvas上
+//			img.onload = function(){
+//				e.drawImage(img,0,0,800,600);
+//			}
+			
+			e.font='bold 80px Microsoft Yahei';
+			e.shadowOffsetX = 5;
+			e.shadowOffsetY = 5;
+			e.shadowBlur = 10; //模糊半径
+			e.shadowColor = 'yellow'
+			
+			e.strokeText('别玩了',300,200);
+			e.fillText('弄啥咧',300,300)
+			
+			e.beginPath()
+			e.lineCap = 'round'
+			e.lineJoin = 'round'
+			e.moveTo(100,100) //将画笔移动到指定位置
+			e.lineTo(400,300) //确定另一个端点
+			e.lineTo(100,500) 
+			e.lineWidth = 20;
+			e.strokeStyle = 'red';
+			e.stroke()
+			
+			
+			
+		</script>
+	</body>
+</html>

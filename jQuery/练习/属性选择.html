@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+		</style>
+		<script src= "js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		$(function(){
+			var input1=document.getElementsByTagName('input')[0];
+			//var $input=$('input:eq[0]');
+			var $input=$(input1);
+			$input.click(function(){
+				if($(this).attr("checked")){
+					alert('您已阅读条款，请注册')
+				}
+			})
+	})
+	
+	//js
+//		window.onload=function(){
+//				var input1 =$('input')[0];
+//				input1.onclick=function(){
+//					
+//					if(this.checked==true){
+//						alert('您已阅读条款，请注册')
+//					}
+//				
+//				}
+//		}
+		</script>
+	</head>
+	<body>
+		<form action="" method="post">
+			
+			<input type="checkbox" name="" id="" value="" /><span>请先阅读<a href="#">条款</a>并接受</span>
+		</form>
+		
+	</body>
+</html>

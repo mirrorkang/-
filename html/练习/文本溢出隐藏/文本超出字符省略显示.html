@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.class1{
+				width: 300px;
+				height: 100px;
+				background-color: pink;
+			/*单行文本*/	
+				/*text-overflow: ellipsis;
+				overflow: hidden;
+				white-space: nowrap;*/
+			/*多行文本*/	
+				/*text-overflow: ellipsis;省略号*/
+				overflow: hidden;
+				display: -webkit-box;
+				-webkit-line-clamp: 4;
+				/*省略号所在的行(结合height,可设置省略出现在最后一行)*/
+				-webkit-box-orient: vertical;
+			}
+		</style>
+	</head>
+	<body>
+		<pre style="font-size:18px">
+		单行文本，超出宽度时，文本自动省略
+			white-space: nowrap;文本强制不换行
+			overflow: hidden;隐藏 溢出文本
+			text-overflow: ellipsis;溢出文本省略号显示
+			
+			
+			
+		多行文本，文本超出范围自动省略（适合于谷歌浏览器，手机移动端，safari）
+			注释：(可结合height,设置省略出现在最后一行)
+			text-overflow: ellipsis;
+			overflow: hidden;
+			display: -webkit-box;
+			-webkit-line-clamp:2;省略功能所在的行-- 文本的行数
+			-webkit-box-orient: vertical;
+			
+		</pre> <hr />
+		<div class="class1">
+			一大段文字一大段文字一大段文字
+			一大段文字一大段文字一大段文字
+			一大段文字一大段文字一大段文字
+			一大段文字一大段文字一大段文字
+			一大段文字一大段文字一大段文字
+			一大段文字一大段文字一大段文字
+			一大段文字一大段文字一大段文字
+			一大段文字一大段文字一大段文字
+			一大段文字一大段文字一大段文字
+			一大段文字一大段文字一大段文字
+		</div>
+	</body>
+</html>

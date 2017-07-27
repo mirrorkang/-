@@ -1,0 +1,147 @@
+@font-face {
+  font-family: fontello;
+  src: url(../font/fontello.eot);
+  src: url(../font/fontello.svg);
+  src: url(../font/fontello.ttf);
+  src: url(../font/fontello.woff);
+}
+#header {
+  color: white;
+}
+#header .firstLine {
+  background: #0e353d;
+  border-bottom: 1px solid #6f703e;
+}
+#header .firstLine .navbar-brand {
+  margin-left: 110px;
+}
+#header .firstLine .navbar {
+  margin-bottom: 0;
+}
+#header .firstLine .navbar a {
+  color: white;
+  font-family: fontello;
+}
+#header .firstLine .navbar ul li {
+  padding: 10px;
+}
+#header .firstLine .navbar ul a {
+  padding: 5px;
+  border-radius: 5px;
+}
+#header .firstLine .navbar ul a:hover {
+  background-color: #f9c000;
+}
+#header .signUp {
+  height: 500px;
+  padding: 60px;
+  background: url(../images/top-bg.jpg);
+  background-size: 100% 100%;
+}
+#header .signUp .logo {
+  color: #f9c000;
+}
+#header form {
+  margin: 50px auto;
+}
+#header form input[type='email'] {
+  width: 300px;
+}
+#header form input[type='submit'] {
+  background: #f3c100;
+  border: none;
+  width: 90px;
+}
+#header .share {
+  margin: 0 auto;
+}
+#header .share li span {
+  display: block;
+  text-align: center;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  border-radius: 50%;
+  color: #948E6C;
+  font-size: 20px;
+}
+#header .share li:nth-of-type(1) span {
+  background: #b86f31 ;
+}
+#header .share li:nth-of-type(2) span {
+  background: #3c569a ;
+}
+#header .share li:nth-of-type(3) span {
+  background: #51a3ad ;
+}
+#header .share li:nth-of-type(4) span {
+  background: #b45f30 ;
+}
+#header .share li:nth-of-type(5) span {
+  background: #51a3ad;
+}
+#header .yellow {
+  padding: 40px 20px;
+  background-color: #ffc700;
+  font-size: 20px;
+}
+.main {
+  padding-bottom: 50px;
+  background: #f0f0f0;
+}
+.main .sTitle {
+  margin-top: 30px;
+}
+.main .sTitle span {
+  display: block;
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  text-align: center;
+  font-size: 38px;
+  margin: 0 auto;
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+}
+.main button {
+  color: #f1c100;
+  background: none;
+  border: none;
+}
+.main > button {
+  display: block;
+  margin: 20px auto;
+  line-height: 50px;
+  padding: 0 20px;
+  background: #f9c000;
+  border-radius: 5px;
+  color: white;
+}
+.portfolio > div {
+  margin: 10px auto;
+}
+.services > div {
+  padding: 20px 15px;
+}
+.services .xsTitle {
+  background: #e7e7e7;
+  padding: 20px 15px;
+}
+.services .xsTitle span {
+  font-size: 28px;
+  color: #f9c000;
+}
+.our-Blog .blog-Desc {
+  overflow: auto;
+  background: white;
+  padding: 10px 15px;
+}
+.our-Blog img {
+  width: 100%;
+}
+.our-Blog time {
+  display: block;
+  margin: 20px 0;
+  color: #e3e3e3;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				position: relative;
+				width: 590px;
+				height: 340px;
+				overflow: hidden;
+			}
+			
+			div>img {
+				position: absolute;
+				opacity: 0;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function() {
+				var main = document.getElementById("main")
+				var img = main.getElementsByTagName('img');
+				var index = 0;
+				var i = 0.2;
+				var j = (-0.2);
+				var time = null;
+				function start() {
+					clearInterval(time)
+					var m = 1;
+					var n = 0;
+					index++;
+					time = setInterval(function() {
+						m += j;
+						n += i;
+						console.log(m)
+						if(m <= 0) {
+							clearInterval(time);
+							m = 0;
+						}
+						if(n >= 1) {
+							clearInterval(time);
+							n = 1;
+						}
+						if(index > 3) {
+							index = 0
+						}
+						switch(index) {
+							case 0:
+								img[3].style.opacity = m;
+								img[0].style.opacity = n;
+								break;
+							case 1:
+								img[0].style.opacity = m;
+								img[1].style.opacity = n;
+								break;
+							case 2:
+								img[1].style.opacity = m;
+								img[2].style.opacity = n;
+								break;
+							case 3:
+								img[2].style.opacity = m;
+								img[3].style.opacity = n;
+								break;
+						}
+					}, 100)
+				}
+				setInterval(start, 3000)
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="main">
+			<img src="images/1.jpg" style="opacity: 1" alt="" />
+			<img src="images/2.jpg" alt="" />
+			<img src="images/3.jpg" alt="" />
+			<img src="images/4.jpg" alt="" />
+		</div>
+	</body>
+
+</html>

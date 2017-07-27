@@ -1,0 +1,53 @@
+﻿tablesorter() //表格排序
+	1.引入jquery.tablesorter.js
+	2.点选表题自动排序
+		$('#mytable').tablesortble()
+	
+
+draggable &  droppable 拖拽
+		$('.div1').draggable();
+		
+		$('.div1').draggable({
+			helper:'clone',
+			opacity:.5，
+			start:function(){
+			},
+			stop:function(){
+			},
+		})
+		
+		$('.div3').droppable({
+			activeClass:'class1', //有拖动元素时
+			hoverClass:'class2', //拖动元素经过该元素时
+			drop:function(){
+				$(this).replaceWith('<div class="div3">dropped</div>')
+			}
+		})
+		
+		
+sortable //可排序的  使其内部元素可拖动排序
+		$('ul').sortable()
+	
+		$('ul').sortable({
+			axis:'y' //可移动的方向 x轴/y轴
+		})
+selectable  子元素可被选中//与sortable冲突
+	$('ul').selectable() 
+		.ui-selected  直接定义选中元素样式
+resizable() //用户可手动改变元素大小，自带下拉小三角
+
+accordion() //手风琴/折叠 元素内部 奇数项作为标题显示，偶数项默认收缩，点击展开
+	$('#accordion').accordion({
+		collapsible:true,//true点击展开，再次点击关闭  false:再其他选项展开时，上一个关闭
+		active:2,//默认展开项
+		header:'h3'//设置作为header的标签
+	})
+	
+dialog() 以弹出的对话框形式显示
+
+slider() //空标签以滑动条形式显示  无参数时，可自由拖动
+	slider({step:25}) //步长
+	$('.slider').on('slidechange',function(e,ui){
+		console.log(e);
+		console.log(ui.value);
+	})

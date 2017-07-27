@@ -1,0 +1,181 @@
+@charset "utf-8";
+/*header height: .44rem;*/
+#home{
+	z-index: 1;
+}
+body{
+	background-color: #dcd5cd;
+	/*display: none;*/
+}
+nav{
+	position: fixed;
+	top:0;
+	width:7.5rem;
+	height: 1.44rem;
+	/*width: 100%;*/
+	padding-top:.44rem ;
+	background-color:#f17e56;
+	opacity: 0.8;
+	text-align: center;
+	
+}
+nav .fa{
+	display: block;
+	width: 1rem;
+	height: 1rem;
+	line-height: 1rem;
+	text-align: center;
+	font-size: .44rem;
+	color: white;
+}
+nav .logo{
+	width:1.84rem ;
+	height:.68rem;
+	margin:.16rem auto;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-image:url(../images/dpr2_logo.png);
+}
+/*主体部分*/
+
+.container{
+	margin-top:1.44rem;
+	padding: .1rem;
+}
+
+.container a{
+	display: block;
+	font-family:times;
+	margin-top: .20rem;
+}
+.container a:nth-child(1){
+	margin-top: 0;
+}
+.container figure{
+	height: 4.90rem;
+	width:7.3rem;
+	padding: .20rem;
+	background-size: 100%;
+	}
+.container figure.one{
+	background-image:url(../images/myhome_dpr1_01.png);	
+}
+.container figure.two {
+	background-image:url(../images/myhome_dpr1_02.png);	
+}
+.container figure.three{
+	background-image:url(../images/myhome_dpr1_03.png);	
+}
+.container figcaption{
+	margin-top:3.4rem;
+	height: 1.14rem;
+	padding: .20rem 0;
+	padding-left: 1.34rem;
+	overflow: hidden; /*清浮动*/
+	display: flex;
+	flex-direction: column;
+	background-size: 1.14rem 1.14rem;
+	background-repeat: no-repeat;
+}
+.container article:nth-child(1) figcaption{
+	background-image: url(../images/myhome_dpr2_photo1.png);
+	background-image: -webkit-image-set(url(../images/myhome_dpr1_photo1.png) 1x,url(../images/myhome_dpr2_photo1.png) 2x,url(../images/myhome_dpr3_photo1.png) 3x);	
+}
+.container article:nth-child(2) figcaption{
+	background-image: url(../images/myhome_dpr2_photo2.png);
+	background-image: -webkit-image-set(url(../images/myhome_dpr1_photo2.png) 1x,url(../images/myhome_dpr2_photo2.png) 2x,url(../images/myhome_dpr3_photo2.png) 3x);	
+}
+.container article:nth-child(3) figcaption{
+	background-image: url(../images/myhome_dpr2_photo3.png);
+	background-image: -webkit-image-set(url(../images/myhome_dpr1_photo1.png) 1x,url(../images/myhome_dpr2_photo3.png) 2x,url(../images/myhome_dpr3_photo3.png) 3x);	
+}
+
+
+.container figcaption h4{
+	color: white;
+	font-size: .34rem;
+}
+.container figcaption p{
+	color: #E5E5E4;
+	font-size: .28rem;
+}
+.container figcaption .fa::before{
+	color: #85d2c5;
+}
+
+.container  aside{
+	display: none;
+}
+.container article:nth-child(2) aside{
+	display: flex;
+}
+.container aside{
+	height: 4.90rem;
+	width: 1.06rem;
+	background-color: white;
+	font-size: .40rem;
+	text-align: center;
+	/*display: flex;*/
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: space-between;
+	
+}
+.container aside button{
+	cursor: pointer;
+	display: block;
+	width: .74rem;
+	height:.93rem;
+	line-height:.74rem;
+	/*margin-top: .17rem;*/
+	background:none;
+	border-bottom:1px solid #f0f0f0;
+	/*border-color:#f0f0f0;*/
+	border-left:none;
+	border-right:none;
+	border-top:none;
+}
+aside button.fa-heart{
+	color:#f17e56 ;
+}
+aside  button.fa-comment{
+	color:#85d2c5;
+}
+aside  button.fa-share{
+	color:#fadb9b ;
+}
+aside  button.fa-ellipsis-h{
+	color:#cac5be;
+	border: none;
+}
+/*主体部分 结束*/
+
+
+/*尾部*/
+footer{
+	height: 1.10rem;
+	width: 7.5rem;
+	position: fixed;
+	bottom: 0;
+	background-color: #685f55;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	font-size: .30rem;
+}
+footer a.fa{
+	display: block;
+	color: #968f88;
+	width:1.10rem;
+	height:1.10rem;
+	line-height: 1.10rem;
+	text-align: center;
+	font-size: .50rem;
+}
+footer a:active{
+	color: #f17e56;;
+}
+footer a:nth-child(1){
+	color: #f17e56;;
+}
+/*尾部 结束*/

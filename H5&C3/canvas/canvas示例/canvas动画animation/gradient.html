@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        window.onload=function(){
+        var canvas =document.getElementById("canvas");
+        var context =canvas.getContext("2d");
+        var lGrd = context.createLinearGradient(0,0, 300, 300);
+            /*(x1, y1)点到(x2, y2)点的线性渐变对象*/
+            lGrd.addColorStop(0, '#ff0000');
+            lGrd.addColorStop(.5, '#ff00f0');
+            lGrd.addColorStop(.8, '#ccc');
+            lGrd.addColorStop(1, '#0000ff');
+            /*0表示起点，1表示终点；color表示添加的颜色*/
+        context.fillStyle = lGrd;
+        context.fillRect(0, 0, 300, 300);
+
+        var rGrd =context.createRadialGradient(450, 150, 30, 450, 150, 150);
+            /*创建一个从以(x1, y1)点为圆心、r1为半径的圆到以(x2, y2)点为圆心、r2为半径的圆的径向渐变对象。*/
+        rGrd.addColorStop(0, 'orange');
+        rGrd.addColorStop(1, 'red');
+            /*0表示起点，1表示终点；color表示添加的颜色*/
+        context.fillStyle = rGrd;
+        context.fillRect(300, 0, 300, 300);
+        }
+    </script>
+</head>
+<body>
+<canvas id="canvas" width="800" height="600">您的浏览器不支持canvas</canvas>
+</body>
+</html>

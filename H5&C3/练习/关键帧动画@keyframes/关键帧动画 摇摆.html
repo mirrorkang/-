@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			@keyframes shake{
+				12.5%{
+					transform: translate(-50px,0);
+				}
+				25%{
+					transform: translate(0px,0);
+				}
+				37.5%{
+					transform: translate(50px,0);
+				}
+				50%{
+					transform: translate(0px,0);
+				}
+				62.5%{
+					transform: translate(-25px,0);
+				}
+				75%{
+					transform: translate(0px,0);
+				}
+				87.5%{
+					transform: translate(25px,0);
+				}
+				
+			}
+			div{
+				width: 150px;
+				height: 150px;
+				border: 1px solid red;
+				margin: 0 auto;
+				animation:shake .5s  infinite;
+				/*interation-count 默认1   infinite 无限次循环*/
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>

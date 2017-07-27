@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			span{
+				font-size: 10em;
+				font-family:"楷体";
+				color: lightpink;
+				position: relative;
+			}
+			
+			span:before{
+				content: '康';
+				position: absolute;
+				color: chartreuse;
+				width: 40%;
+				overflow: hidden;
+				z-index: 2;
+				
+			}
+			span:after{
+				content: '康';
+				position: absolute;
+				height: 60%;
+				color: darkorange; 
+				overflow: hidden;
+				left: 0;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		
+		<span>康</span>
+	</body>
+</html>

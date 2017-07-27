@@ -1,0 +1,173 @@
+
+/*header部分*/
+	.login-header{
+		padding: 30px 80px 0 80px;
+		overflow: hidden;
+		/*border: 1px solid black;*/
+	}
+	.login-header-left,.login-header-mid{
+		float: left;
+	}
+	.login-header-mid{
+	    margin-top: 27px;
+	    margin-left: 10px;
+	}
+	.login-header ul{
+		float: right;
+		margin: 20px 0 0 0;
+		padding: 0;
+}
+.login-header li{
+	display: inline-block;
+	margin:auto 3px;
+}
+.login-header-right a,span{
+	font-size: 12px;
+	
+}
+.login-header-right a{
+	color: #1965b3;
+	text-decoration: none;
+}
+.login-header-right a:hover{
+	text-decoration:underline;
+}
+ /*body部分*/
+.login-body{
+	overflow: hidden;
+}
+	/*左侧banner*/
+	.login-body-left{
+		float: left;
+		overflow: hidden;
+	}
+	.login-body-banner1{
+		float: left;
+		
+	}
+	
+	.clear{
+		clear: both;
+	}
+	/*绿色  3个网站优点*/
+	
+.login-body-benefits{
+	font-size: 12px;
+	font-family: "微软雅黑";
+	
+
+}
+
+.login-body-benefits dl{
+	display: inline-block;
+	/*float: left;*/
+	width: 150px;
+	margin-left: 10px ;
+	text-align: center;
+}
+.login-body-benefits dl:first-child{
+	border-right: 1px dashed  black;
+	padding: 0 20px;
+}
+.login-body-benefits dl:last-child{
+	border-left: 1px dashed  black;
+	padding: 0 20px;
+}
+.login-body-benefits dt{
+	color: #519403;
+	font-weight: bold;
+	margin-bottom: 7px;
+}
+.login-body-benefits dd{
+	margin-left: 0;
+	color: #666666;
+}
+/*登陆框*/
+.login-body-loginbox{
+	width:300px;
+	font-size: 12px;
+	font-family: "微软雅黑";
+	text-align: right;
+	float: right;
+	border: 1px solid black;
+	padding: 5px 6px 20px 5px;
+	
+}
+.login-body-loginbox p{
+	margin-right: 40px;
+}
+
+.login-loginbox-unlock{
+	background-image: url(../images/login_icon_bg_01.gif);
+	background-repeat: no-repeat;
+	background-position: -300px -20px;
+	color: #900;
+	padding-left: 35px;
+	padding-top: 20px;
+	text-align: left;
+	font-weight: bold;
+	overflow: hidden;
+
+}
+.login-loginbox-cutline{
+	background-image:url(../images/login_icon_bg_02.gif);
+	background-repeat: repeat-x;
+	background-position: 0 -10px;
+	height: 3px;
+}
+
+ .login-body-banner2{
+ 	float: right;
+ 	overflow: hidden;
+ }
+
+
+/*登录信息填写*/
+.login-boginbox-button{
+	margin-left: 110px;
+	width: 77px;
+	height:26px;
+	background-image: url(../images/login_icon_bg_01.gif);
+	background-position: 0 -30px;
+	background-repeat: no-repeat;
+}
+
+.login-boginbox-button:hover{
+	background-position: -77px -30px;
+}
+/*登陆框:注册提示*/
+	.login-loginbox-tip{
+		background-image: url(../images/login_icon_bg_02.gif);
+		background-repeat: repeat-x;
+		padding: 5px;
+		text-align: left;
+		margin-top: 20px;
+		border-top:1px dashed lightgray;
+	}
+	.login-loginbox-tip p{
+		margin: 10px 20px;
+	}
+.login-loginbox-registbutton{
+	width:144px;
+	height:26px;
+	background-image: url(../images/login_icon_bg_01.gif);
+	background-position: 0 -3px;
+	background-repeat: no-repeat;
+	margin-left: 120px;
+}
+.login-loginbox-registbutton:hover{
+	background-position:-144px -3px;
+	background-repeat: no-repeat;
+}
+
+.login-footer{
+	/* width: 800px; */
+	text-align: center;
+	font-size: 12px;
+	color: #333;
+	margin-top:150px;
+	/*line-height: 20px;*/
+}
+.login-footer img{
+	vertical-align: middle;
+}

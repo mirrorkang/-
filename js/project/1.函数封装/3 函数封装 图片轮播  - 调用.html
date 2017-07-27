@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset='utf-8'>	
+	<title></title>
+	<style type='text/css'>
+		#control span{
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			text-align: center;
+			background-color: pink;
+		}
+		
+		#control .isControl{
+			background-color:red;
+		}
+		#control .notControl{
+			background-color:pink;
+		}
+		#show img{
+			display: none;
+			float: left;
+		}
+	</style>
+	<script type="text/javascript" src="3 函数封装 图片轮播 .js"></script>
+	<script type="text/javascript" language="javascript"> 
+		window.onload=function(){change('control','span','show','img',1000)}
+	</script>
+	
+<head>
+
+<body>
+	<div id="control">
+		<span class="isControl">1</span>
+		<span>2</span>
+		<span>3</span>
+		<span>4</span>
+		<span>5</span>
+		<span>6</span>
+	</div>
+	<div id="show">
+		<img src="images/1.jpg" alt="" style="display: block;"/>
+		<img src="images/2.jpg" alt="" />
+		<img src="images/3.jpg" alt="" />
+		<img src="images/4.jpg" alt="" />
+		<img src="images/5.jpg" alt="" />
+		<img src="images/6.jpg" alt="" />
+	</div>
+	
+
+
+</body>
+<html>	

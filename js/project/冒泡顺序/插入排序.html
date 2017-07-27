@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">function insertSort(arr) {
+	for (var i = 1; i < arr.length; i++) { //从第二个数开始
+		var idx = i; //创建一个2个元素的新数组 [5,];
+		document.write('新数组的值：');
+		for (var j = 0; j < idx; j++) {
+			document.write(arr[j]);
+		}
+		document.write('<br>');
+		var temp = arr[i]; //将后面的数依次放在临时变量中
+		document.write('从旧数组拿来的值-->' + temp + '<br>');
+		while ((idx > 0) && (arr[idx - 1] > temp)) {
+			arr[idx] = arr[idx - 1]; //把大的数放在后面
+			idx--; //新数组排序
+
+		}
+		arr[idx] = temp; //将原数组放到新数组中
+		document.write('组合之后的新数组' + arr + '<br>');
+		document.write('<hr>');
+	}
+	
+}
+var arr = [5, 4, 3, 2, 1];
+
+insertSort(arr);
+		
+		</script>
+		
+		
+	</head>
+	<body>
+	</body>
+</html>

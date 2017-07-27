@@ -1,0 +1,174 @@
+@charset "utf-8";
+/*header height: .44rem;*/
+body{
+	background-color: #dcd5cd;
+	width: 7.5rem;
+}
+
+nav{
+	position: fixed;
+	top:0;
+	width:7.5rem;
+	height: 1.44rem;
+	line-height: 1rem;
+	padding-top:.44rem ;
+	background-color:#f17e56;
+	opacity: 0.8;
+	text-align: center;
+	color: white;
+	font-size: .40rem;
+	
+}
+nav .fa{
+	display: block;
+	width: 1rem;
+	height: 1rem;
+	line-height: 1rem;
+	text-align: center;
+	font-size: .44rem;
+	color: white;
+}
+/*主体部分*/
+
+.container{
+	margin-top:1.44rem;
+	padding: .1rem;
+}
+.container section{
+	border-radius: .1rem;
+}
+
+.container figure{
+	height: 4.90rem;
+	width: 100%;
+	padding: .20rem;
+	text-align: center;
+	background-size: 100%;
+	background-image:url(../images/myhome_dpr2_01.png);	
+}
+
+.container figcaption div{
+	width: 2.48rem;
+	height: 2.48rem;
+	margin: .46rem auto;
+	background-size: 100%;
+	background-image:url(../images/friends_photo_dpr2.png);
+	background-image:-webkit-image-set(url(../images/friends_photo_dpr1.png) 1x,url(../images/friends_photo_dpr2.png) 2x,url(../images/friends_photo_dpr3.png) 3x);
+}
+
+.container figcaption h4{
+	color: white;
+	font-size: .34rem;
+}
+.container figcaption p{
+	color: #9c9892;
+	font-size: .24rem;
+}
+.container .fa-map-marker::before{
+	color: #85d2c5;
+	margin-right: .10rem;}
+.container aside{
+	height: 1.28rem;
+	background-color: white;
+	padding: .18rem .24rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.container aside a{
+	color: #79746e;
+	text-indent: .24rem;
+}
+.container aside h5{
+	font-size: .26rem;
+}
+.container aside a:nth-child(2),.container aside a:nth-child(3){
+	border-left: 1px solid #95918d;
+}
+
+
+.container aside button{
+	width: 1.92rem;
+	height: .74rem;
+	padding-left: .18rem;
+	background-color: #705d76;
+	border: none;
+	border-radius: .05rem;
+	color: white;
+	font-size: .30rem;
+	
+	/*text-indent: .10rem;*/
+}
+.container button.fa::before{
+	display:inline-block;
+	color: #85d2c5;
+	/*width: .64rem;*/
+	height: .64rem;
+	line-height: .64rem;
+}
+.container button span{
+	margin: 0 .24rem;
+}
+.container .pictures{
+	display:flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	height: 4.40rem;
+	width: 100%;
+}
+.container .pictures a{
+	margin-top: .24rem;
+	width: 2.32rem;
+	height: 2.32rem;
+	background-size: 100% 100%;
+}
+.container .pictures a:nth-child(1){
+	background-image: url(../images/friends_01_dpr2.png);
+	background-image: -webkit-image-set(url(../images/friends_01_dpr1.png) 1x,url(../images/friends_01_dpr2.png) 2x,url(../images/friends_01_dpr3.png) 3x)
+}
+.container .pictures a:nth-child(2){
+	background-image: url(../images/friends_01_dpr2.png);
+	background-image: -webkit-image-set(url(../images/friends_02_dpr1.png) 1x,url(../images/friends_02_dpr2.png) 2x,url(../images/friends_02_dpr3.png) 3x)
+}
+.container .pictures a:nth-child(3){
+	background-image: url(../images/friends_01_dpr2.png);
+	background-image: -webkit-image-set(url(../images/friends_03_dpr1.png) 1x,url(../images/friends_03_dpr2.png) 2x,url(../images/friends_03_dpr3.png) 3x)
+}
+.container .pictures a:nth-child(4){
+	background-image: url(../images/friends_04_dpr2.png);
+	background-image: -webkit-image-set(url(../images/friends_04_dpr1.png) 1x,url(../images/friends_04_dpr2.png) 2x,url(../images/friends_04_dpr3.png) 3x)
+}
+.container .pictures a:nth-child(5){
+	background-image: url(../images/friends_01_dpr2.png);
+	background-image: -webkit-image-set(url(../images/friends_05_dpr1.png) 1x,url(../images/friends_05_dpr2.png) 2x,url(../images/friends_05_dpr3.png) 3x)
+}
+.container .pictures a:nth-child(6){
+	background-image: url(../images/friends_06_dpr2.png);
+	background-image: -webkit-image-set(url(../images/friends_06_dpr1.png) 1x,url(../images/friends_06_dpr2.png) 2x,url(../images/friends_01_dpr3.png) 3x)
+}
+
+/*尾部*/
+footer{
+	height: 1.10rem;
+	width: 7.5rem;
+	position: fixed;
+	bottom: 0;
+	background-color: #685f55;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	font-size: .30rem;
+}
+footer a.fa{
+	display: block;
+	color: #968f88;
+	width:1.10rem;
+	height:1.10rem;
+	line-height: 1.10rem;
+	text-align: center;
+	font-size: .50rem;
+}
+footer a:active{
+	color: #f17e56;;
+}
+/*尾部 结束*/

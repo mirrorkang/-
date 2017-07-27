@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--采用最新版本的IE文档模式渲染页面-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--移动设备优先，让viewport等于设备宽度，初始化缩放比例为1-->
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>bootstrap模板</title>
+    <link rel="stylesheet" href="bootstrap-3.3.5-dist/bootstrap-3.3.5-dist/css/bootstrap.min.css"/>
+    <!--引入bootstrap的css压缩版，比普通版的体积小-->
+    <!--[if lt IE 9]-->
+    <script src="js/html5shiv.js"></script> <!--html5shiv.js让IE6,7,8支持html5-->
+    <script src="js/respond.js"></script> <!--respond.js让IE6,7,8支持媒体查询-->
+    <!--[endif]-->
+ 
+   	<style type="text/css">
+   		img{
+   			display: block;
+   			margin:auto;
+   			/*width: 100%;
+   			height: 100%;*/
+   		}
+   		/*a{
+   			vertical-align: middle;
+   		}*/
+   	</style>
+</head>
+<body>
+	<!--轮播图容器 carousel旋转-->
+	<div class="carousel slide" id='car'>
+		<!--控制区-->
+		<ol class="carousel-indicators">
+			<!--data-slide-to =index 与显示区关联-->
+			<li class="active" data-target='#car' data-slide-to = "0"></li>
+			<li data-target='#car' data-slide-to = "1"></li>
+			<li data-target='#car' data-slide-to = "2"></li>
+			<li data-target='#car' data-slide-to = "3"></li>
+		</ol>
+		<!--显示区-->
+		<div class="carousel-inner">
+			<div class="item active">
+				<img src="images/1.jpg" alt="1" />
+				<div class="carousel-caption">
+					鞋子
+				</div>
+			</div>
+			<div class="item"><img src="images/2.jpg" alt="2" /></div>
+			<div class="item"><img src="images/3.jpg" alt="3" /></div>
+			<div class="item"><img src="images/4.jpg" alt="4" /></div>
+		</div>
+		<a href="#car" class="carousel-control left" data-slide = "prev">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</a>
+		<a href="#car" class="carousel-control right" data-slide = "next">
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</a>
+	</div>
+
+
+
+<script src="js/jquery-1.12.4.min.js"></script>
+<script src="bootstrap-3.3.5-dist/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<!--bootstrap.js依赖于jquery，所以引入bootstrap.js之前一定要先引入jquery-->
+<script type="text/javascript">
+	$('.carousel').carousel({
+		interval:1000
+	});
+</script>
+
+
+</body>
+</html>

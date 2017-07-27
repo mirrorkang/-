@@ -1,0 +1,40 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset='utf-8'>	
+	<title></title>
+	<script type="text/javascript" language="javascript"> 
+		var url ='http://www.ibeifeng.cn/index.php?code=sdR4';
+		//console.log(url.indexOf('?')) //32  通过有代表性的字符推算目标字符的位置
+		
+		//url.substr()
+		document.write('url.substr(38,4)：'+url.substr(38,4)+'<br />');//从38位开始，取4位
+		document.write('url.substr(38)：'+url.substr(38)+'<br />');//从38位开始，取至最后
+		document.write('<br />');
+		
+		//url.substring()
+		document.write('url.substring(38,42)：'+url.substring(38,42)+'<br />');//取38-42之间的值
+		document.write('url.substring(42,38)：'+url.substring(42,38)+'<br />');//取38-42之间的值，不分先后顺序
+		document.write('url.substring(38)：'+url.substring(38)+'<br />');//从38位开始，取至最后
+		document.write('<br />');
+		
+		//url.slice()
+		document.write('url.slice(38,42)：'+url.slice(38,42)+'<br />');//从38位开始，取至42位
+		document.write('url.slice(38)：'+url.slice(38)+'<br />'); //从38位开始，取至最后
+		document.write('url.slice(-4)：'+url.slice(-4));//从倒数第4位开始，取至最后
+		document.write('<br /><br />');
+		
+		var code1=url.slice(-4);
+		//alert(code1);
+		document.write('变大写：'+code1.toLocaleUpperCase())
+	</script>
+	
+<head>
+
+<body>
+	
+
+
+
+</body>
+<html>	

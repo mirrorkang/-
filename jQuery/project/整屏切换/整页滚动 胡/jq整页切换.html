@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.1.0.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function isUPorDown(event) {
+				var upANDdown;
+				//向下
+				if(event.originalEvent.wheelDelta < 0 || event.detail > 0) {
+					upANDdown = true;
+				}
+				//向上
+				if(event.originalEvent.wheelDelta > 0 || event.detail < 0) {
+					upANDdown = false;
+				}
+				return upANDdown;
+			}
+			function scroll(event) {
+				var screenw = $(window).width();
+				var screenh = $(window).height();
+				var len = $('.move div').length;
+				$('.main,.move div').width(screenw)
+				$('.main,.move div').height(screenh)
+				$('.move').height(screenh * len);
+				
+				if(isUPorDown(event)) {
+					if(flag) {
+						scrollIndex++;
+						if(scrollIndex>len-1){
+							scrollIndex=len-1
+						}
+						console.log(scrollIndex)
+						$('.move').stop(true, true).animate({
+							top: -screenh * scrollIndex
+						}, 500, function() {
+							flag = true;
+							return;
+						})
+					}
+					flag = false;
+				}
+				if(!isUPorDown(event)) {
+					if(flag) {
+						scrollIndex--;
+						if(scrollIndex<0){
+							scrollIndex=0
+						}
+						$('.move').stop(true, true).animate({
+							top: -screenh * scrollIndex
+						}, 500, function() {
+							flag = true;
+							return;
+						})
+					}
+					flag = false;
+
+				}
+			}
+			var scrollIndex = 0;
+			var flag = true;
+			$(document).ready(function() {
+				var screenw = $(window).width();
+				var screenh = $(window).height();
+				var len = $('.move div').length;
+				$('.main,.move div').width(screenw)
+				$('.main,.move div').height(screenh)
+				$('.move').height(screenh * len);
+				
+				
+				$(document).on('mousewheel DOMMouseScroll', function(event) {
+					scroll(event);
+				})
+				
+			})
+			$(window).resize(function(){
+				var screenw = $(window).width();
+				var screenh = $(window).height();
+				var len = $('.move div').length;
+				$('.main,.move div').width(screenw)
+				$('.main,.move div').height(screenh)
+				$('.move').height(screenh * len);
+				})
+		</script>
+		<style type="text/css">
+			body {
+				margin: 0;
+			}
+			
+			.main {
+				width: 100%;
+				position: relative;
+				overflow: hidden;
+				/*box-sizing: border-box;*/
+			}
+			
+			.move {
+				width: 100%;
+				position: absolute;
+			}
+			
+			.move div {
+				width: 100%;
+				/*border: 2px solid red;*/
+				box-sizing: border-box;
+			}
+			
+			.box1 {
+				background: red;
+			}
+			
+			.box2 {
+				background: orange;
+			}
+			
+			.box3 {
+				background: yellow;
+			}
+			
+			.box4 {
+				background: green;
+			}
+			
+			.box5 {
+				background: cyan;
+			}
+			
+			.box6 {
+				background: blue;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="main">
+			<div class="move">
+				<div class="box1"></div>
+				<div class="box2"></div>
+				<div class="box3"></div>
+				<div class="box4"></div>
+				<div class="box5"></div>
+				<div class="box6"></div>
+			</div>
+		</div>
+	</body>
+
+</html>

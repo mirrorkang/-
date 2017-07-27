@@ -1,0 +1,46 @@
+<!DOCTYPE html  >
+<html>
+<head>
+    <title>  获取爱好 </title>
+    <meta http-equiv = "content-type" content ="text/html;charset=utf-8" />
+    <script type="text/javascript" src="./js/jquery-1.8.3.min.js"></script>
+</head>
+
+<body>
+<form id="myForm">
+    <h3>选择你的爱好：</h3>
+    <ul id="hobby">
+        <li><input type="checkbox" value="音乐" />音乐</li>
+        <li><input type="checkbox" value="登山" />登山</li>
+        <li><input type="checkbox" value="游泳" />游泳</li>
+        <li><input type="checkbox" value="阅读" />阅读</li>
+        <li><input type="checkbox" value="打球" />打球</li>
+        <li><input type="checkbox" value="跑步" />跑步</li>
+        <li><input type="checkbox" value="其他" />其他</li>
+    </ul>
+    <hr/>
+    <ul>
+        <li><input type="button" value="查看我选择的爱好" /></li>
+    </ul>
+    <p id="text"></p>
+
+</form>
+<script type="text/javascript">
+    $(document).ready(function(){
+    	$(':button').click(function(){
+    		var txt='';
+    		var $input=$(':checkbox:checked');
+	    	
+	    	for (var i=0;i<$input.length;i++) {
+    		 txt+=$input[i].value+'<br />';
+    		}
+	    	$('#text').html(txt);
+    	})
+    	
+    	
+    })
+
+</script>
+
+</body>
+</html>
